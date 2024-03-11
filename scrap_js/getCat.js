@@ -1,91 +1,114 @@
 
-const playwright = require("playwright"); 
+const playwright = require("playwright");
+const fs = require('fs'); 
+const SaveFile = require('./saveFile.js');
 
+const categorias = [
+	{name: 'Aceite, especias y salsas', url: 'https://tienda.mercadona.es/categories/112'},
+	{name: 'Agua y refrescos', url: 'https://tienda.mercadona.es/categories/156'},
+	{name: 'Aperitivos', url: 'https://tienda.mercadona.es/categories/135'},
+	{name: 'Arroz, legumbres y pasta', url: 'https://tienda.mercadona.es/categories/118'},
+	{name: 'Azúcar, caramelos y chocolate', url: 'https://tienda.mercadona.es/categories/89'},
+	{name: 'Bebé', url: 'https://tienda.mercadona.es/categories/216'},
+	{name: 'Bodega', url: 'https://tienda.mercadona.es/categories/164'},
+	{name: 'Cacao, café e infusiones', url: 'https://tienda.mercadona.es/categories/86'},
+	{name: 'Carne', url: 'https://tienda.mercadona.es/categories/46'},
+	{name: 'Cereales y galletas', url: 'https://tienda.mercadona.es/categories/78'},
+	{name: 'Charcutería y quesos', url: 'https://tienda.mercadona.es/categories/48'},
+	{name: 'Congelados', url: 'https://tienda.mercadona.es/categories/147'},
+	{name: 'Conservas, caldos y cremas', url: 'https://tienda.mercadona.es/categories/122'},
+	{name: 'Cuidado del cabello', url: 'https://tienda.mercadona.es/categories/201'},
+	{name: 'Cuidado facial y corporal', url: 'https://tienda.mercadona.es/categories/192'},
+	{name: 'Fitoterapia y parafarmacia', url: 'https://tienda.mercadona.es/categories/213'},
+	{name: 'Fruta y verdura', url: 'https://tienda.mercadona.es/categories/27'},
+	{name: 'Huevos, leche y mantequilla', url: 'https://tienda.mercadona.es/categories/77'},
+	{name: 'Limpieza y hogar', url: 'https://tienda.mercadona.es/categories/226'},
+	{name: 'Maquillaje', url: 'https://tienda.mercadona.es/categories/206'},
+	{name: 'Marisco y pescado', url: 'https://tienda.mercadona.es/categories/32'},
+	{name: 'Mascotas', url: 'https://tienda.mercadona.es/categories/222'},
+	{name: 'Panadería y pastelería', url: 'https://tienda.mercadona.es/categories/65'},
+	{name: 'Pizzas y platos preparados', url: 'https://tienda.mercadona.es/categories/897'},
+	{name: 'Postres y yogures', url: 'https://tienda.mercadona.es/categories/105'},
+	{name: 'Zumos', url: 'https://tienda.mercadona.es/categories/99'},
+];
 
 function sleep(ms) {
 	return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function getCategorias() { 
 
-	cat = [
-		'Aceite, especias y salsas',
-		'Agua y refrescos',
-		'Aperitivos',
-		'Arroz, legumbres y pasta',
-		'Azúcar, caramelos y chocolate',
-		'Bebé',
-		'Bodega',
-		'Cacao, café e infusiones',
-		'Carne',
-		'Cereales y galletas',
-		'Charcutería y quesos',
-		'Congelados',
-		'Conservas, caldos y cremas',
-		'Cuidado del cabello',
-		'Cuidado facial y corporal',
-		'Fitoterapia y parafarmacia',
-		'Fruta y verdura',
-		'Huevos, leche y mantequilla',
-		'Limpieza y hogar',
-		'Maquillaje',
-		'Marisco y pescado',
-		'Mascotas',
-		'Panadería y pastelería',
-		'Pizzas y platos preparados',
-		'Postres y yogures',
-		'Zumos'
-	  ]
+async function getEveryProduct(categoria) {
+	url = categoria.url;
+	let salir = false;
+	const products = [];
 
-	// Launch the headless browser 
 	const browser = await playwright.chromium.launch({ 
 		headless: false, 
 	}); 
-	// const baseLink = 'https://tienda.mercadona.es/search-results?query='
-	// const fullLink = baseLink + encodeURIComponent(queryStr)
-	// console.log(fullLink)
 
 	const page = await browser.newPage(); 
-	await page.goto("https://tienda.mercadona.es/categories/"); 
-	// await page.goto(fullLink);
-	
-	await page.getByLabel('Código postal').fill('28001');
-	await page.getByLabel('Continuar').click()
-
-	// await page.waitForSelector('.category-menu');
-
-	// const titles = []; 
-	// const buttons = await page.locator(".category-menu").locator('button').all();
-	// for (let bt of buttons) { 
-	// 	const title = await bt.innerText();
-	// 	// await bt.click();
-	// 	// const title = page.url();
-	// 	titles.push(title);
+	try {
 		
-	// 	// const title = await tag.locator('.subhead1-r.product-cell__description-name').first().innerText();
-	// 	// // await tag.waitForSelector('img');
-	// 	// const imgUrl = await tag.locator('img').first().getAttribute('src');
-	// 	// const price = (await tag.locator('.product-price').first().innerText()).split('€')[0];
-	// 	// data.push({title: title, price: price, imgUrl: imgUrl});
-	// } 
-
-	const urls = [];
-	for (let t of cat) {
-		await page.getByText(t).getByRole('button').click();
-		console.log(page.url());
-		// await page.getByText(t).locator('button').click();
-		// urls.push(page.url());
+		await page.goto(url);
+	} catch (error) {
+		console.log('Error1', error);
 	}
- 
-	console.log(urls); 
-	await sleep(5000);
 
-	await browser.close(); 
-} 
- 
-
-async function main() {
-	await getCategorias();
+	try {
+		
+		
+		const postalCode = await page.getByText('Continuar').all();
+		if (postalCode.length > 0) {
+			await page.getByLabel('Código postal').fill('28001');
+			await page.getByLabel('Continuar').click()
+			await sleep(3000);
+		}
+	
+		while (!salir) {
+			
+			await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+			
+			const tags = await page.locator(".product-container > .product-cell").all();
+			
+			for (let tag of tags) { 
+				const title = await tag.locator('.subhead1-r.product-cell__description-name').first().innerText();
+				const imgUrl = await tag.locator('img').first().getAttribute('src');
+				const price = (await tag.locator('.product-price').first().innerText()).split('€')[0];
+				
+				// console.log({title: title, price: price, imgUrl: imgUrl});
+				products.push({title: title, price: price, imgUrl: imgUrl, categoria: categoria});
+			} 
+			
+			const nextButton = await page.locator('.category-detail__next-subcategory').all();
+			if (nextButton.length > 0) {
+				await page.locator('.category-detail__next-subcategory').click();
+			} else {
+				salir = true;
+			}
+			await sleep(500);
+		}
+		console.log('Seccion terminada');
+		await browser.close(); 
+		
+	} catch (error) {
+		console.log(error);
+	}
+	return products;
 }
 
-main();
+
+async function main() {
+	let fullProducts = [];
+
+	const saveFile = new SaveFile('productos.json');
+
+	for (let c of categorias) {
+		const p = await getEveryProduct(c);
+		
+		fullProducts = fullProducts.concat(p);
+		console.log(categorias.indexOf(c) + 1, 'de', categorias.length, 'secciones completadas');
+		saveFile.guardar(p);
+	}
+}
+
+main()
