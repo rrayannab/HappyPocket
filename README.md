@@ -19,5 +19,5 @@ Por lo tanto, desarrollando esta aplicación web conseguiremos ahorrar tiempo a 
 | 3| Marta | Muñoz Aguilar | martamunozaguilar@uma.es |
 | 4| Eduardo J. | Cantero Ramón | eduardocantero@uma.es |
 | 5| Rayan | Abarkan | rayan10@uma.es |
-| 6| Jorge | Rodríguez Mata | jorg_roma@uma.es |
+| 6| Jorge | Rodríguez Mata | jorge_roma@uma.es |
 
