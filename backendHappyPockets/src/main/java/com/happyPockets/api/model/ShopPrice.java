@@ -1,6 +1,11 @@
 package com.happyPockets.api.model;
 
 public class ShopPrice {
+    final String CARREFOUR = "Carrefour";
+    final String DIA = "Dia";
+    final String CORTE_INGLES = "Corte Ingles";
+    final String EQUAL = "Equal";
+
     private double priceCarrefour;
     private double priceDia;
     private double priceCorteIngles;
@@ -35,5 +40,17 @@ public class ShopPrice {
 
     public void setPriceCorteIngles(double priceCorteIngles) {
         this.priceCorteIngles = priceCorteIngles;
+    }
+
+    public String cheapestPrice(){
+        if(priceCarrefour < priceDia && priceCarrefour < priceCorteIngles){
+            return CARREFOUR;
+        }else if(priceDia < priceCarrefour && priceDia < priceCorteIngles){
+            return DIA;
+        }else if(priceCorteIngles < priceCarrefour && priceCorteIngles < priceDia){
+            return CORTE_INGLES;
+        }
+        return EQUAL;
+
     }
 }
