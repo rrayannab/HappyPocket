@@ -9,6 +9,7 @@ public class ShopPrice {
     private double priceCarrefour;
     private double priceDia;
     private double priceCorteIngles;
+    private String cheapestStore;
 //    private String link;
 
 
@@ -16,6 +17,7 @@ public class ShopPrice {
         this.priceCarrefour = priceCarrefour;
         this.priceDia = priceDia;
         this.priceCorteIngles = priceCorteIngles;
+        this.cheapestStore = getCheapestStore();
     }
 
     public double getPriceCarrefour() {
@@ -24,6 +26,7 @@ public class ShopPrice {
 
     public void setPriceCarrefour(double priceCarrefour) {
         this.priceCarrefour = priceCarrefour;
+        this.cheapestStore = getCheapestStore();
     }
 
     public double getPriceDia() {
@@ -32,6 +35,7 @@ public class ShopPrice {
 
     public void setPriceDia(double priceDia) {
         this.priceDia = priceDia;
+        this.cheapestStore = getCheapestStore();
     }
 
     public double getPriceCorteIngles() {
@@ -40,9 +44,10 @@ public class ShopPrice {
 
     public void setPriceCorteIngles(double priceCorteIngles) {
         this.priceCorteIngles = priceCorteIngles;
+        this.cheapestStore = getCheapestStore();
     }
 
-    public String cheapestPrice(){
+    public String getCheapestStore(){
         if(priceCarrefour < priceDia && priceCarrefour < priceCorteIngles){
             return CARREFOUR;
         }else if(priceDia < priceCarrefour && priceDia < priceCorteIngles){
