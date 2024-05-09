@@ -1,12 +1,14 @@
 package com.happyPockets.api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class ShopPrice {
     final String CARREFOUR = "Carrefour";
     final String DIA = "Dia";
     final String CORTE_INGLES = "Corte Ingles";
     final String EQUAL = "Equal";
 
-    private String[] stores = new String[] {CARREFOUR, DIA, CORTE_INGLES, EQUAL};
+    private String[] stores = new String[] {CARREFOUR, DIA, CORTE_INGLES};
     private double[] prices = new double[3];
     private String cheapestStore;
 //    private String link;
@@ -17,6 +19,7 @@ public class ShopPrice {
         this.cheapestStore = getCheapestStore();
     }
 
+    @JsonIgnore
     public double getPriceCarrefour() {
         return this.prices[0];
     }
@@ -26,6 +29,7 @@ public class ShopPrice {
         this.cheapestStore = getCheapestStore();
     }
 
+    @JsonIgnore
     public double getPriceDia() {
         return this.prices[1];
     }
@@ -35,6 +39,7 @@ public class ShopPrice {
         this.cheapestStore = getCheapestStore();
     }
 
+    @JsonIgnore
     public double getPriceCorteIngles() {
         return this.prices[2];
     }
@@ -45,8 +50,8 @@ public class ShopPrice {
     }
 
     public String getCheapestStore(){
-        if (this.prices[0] == this.prices[1] && this.prices[1] == this.prices[2])
-            return EQUAL;
+//        if (this.prices[0] == this.prices[1] && this.prices[1] == this.prices[2])
+//            return EQUAL;
 
         double min = this.prices[0];
         int index = 0;
@@ -57,5 +62,13 @@ public class ShopPrice {
             }
         }
         return stores[index];
+    }
+
+    public double[] getPrices(){
+        return this.prices;
+    }
+
+    public String[] getStores(){
+        return this.stores;
     }
 }
