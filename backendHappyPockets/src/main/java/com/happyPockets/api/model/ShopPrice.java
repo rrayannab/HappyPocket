@@ -6,56 +6,56 @@ public class ShopPrice {
     final String CORTE_INGLES = "Corte Ingles";
     final String EQUAL = "Equal";
 
-    private double priceCarrefour;
-    private double priceDia;
-    private double priceCorteIngles;
+    private String[] stores = new String[] {CARREFOUR, DIA, CORTE_INGLES, EQUAL};
+    private double[] prices = new double[3];
     private String cheapestStore;
 //    private String link;
 
 
-    public ShopPrice(double priceCarrefour, double priceDia, double priceCorteIngles) {
-        this.priceCarrefour = priceCarrefour;
-        this.priceDia = priceDia;
-        this.priceCorteIngles = priceCorteIngles;
+    public ShopPrice(double priceCarrefour, double priceDia, double priceCorteIngles) {;
+        this.prices = new double[] {priceCarrefour, priceDia, priceCorteIngles};
         this.cheapestStore = getCheapestStore();
     }
 
     public double getPriceCarrefour() {
-        return priceCarrefour;
+        return this.prices[0];
     }
 
     public void setPriceCarrefour(double priceCarrefour) {
-        this.priceCarrefour = priceCarrefour;
+        this.prices[0] = priceCarrefour;
         this.cheapestStore = getCheapestStore();
     }
 
     public double getPriceDia() {
-        return priceDia;
+        return this.prices[1];
     }
 
     public void setPriceDia(double priceDia) {
-        this.priceDia = priceDia;
+        this.prices[1] = priceDia;
         this.cheapestStore = getCheapestStore();
     }
 
     public double getPriceCorteIngles() {
-        return priceCorteIngles;
+        return this.prices[2];
     }
 
     public void setPriceCorteIngles(double priceCorteIngles) {
-        this.priceCorteIngles = priceCorteIngles;
+        this.prices[2] = priceCorteIngles;
         this.cheapestStore = getCheapestStore();
     }
 
     public String getCheapestStore(){
-        if(priceCarrefour < priceDia && priceCarrefour < priceCorteIngles){
-            return CARREFOUR;
-        }else if(priceDia < priceCarrefour && priceDia < priceCorteIngles){
-            return DIA;
-        }else if(priceCorteIngles < priceCarrefour && priceCorteIngles < priceDia){
-            return CORTE_INGLES;
-        }
-        return EQUAL;
+        if (this.prices[0] == this.prices[1] && this.prices[1] == this.prices[2])
+            return EQUAL;
 
+        double min = this.prices[0];
+        int index = 0;
+        for (int i = 1; i < this.prices.length; i++) {
+            if (this.prices[i] < min) {
+                min = this.prices[i];
+                index = i;
+            }
+        }
+        return stores[index];
     }
 }
