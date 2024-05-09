@@ -50,4 +50,8 @@ public class ProductService {
         }
         return optinal;
     }
+
+    public List<Product> getProductList() {
+        return productList;
+    }
 }
