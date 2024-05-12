@@ -166,7 +166,8 @@ label{
 .logo_agile h1 a {
     color: #000;
     font-size: 38px;
-	font-style: italic;
+	font-style: normal;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 	text-decoration: none;
 }
 .logo_agile h1 a:hover {
