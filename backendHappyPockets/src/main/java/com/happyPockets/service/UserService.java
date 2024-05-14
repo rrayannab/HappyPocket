@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -16,7 +17,7 @@ import java.util.Optional;
 @Service
 public class UserService {
     private List<User> userList;
-    private int newInsert;
+    private int newInsert = 0;
     private final String rutaArchivo = ".\\src\\main\\java\\com\\happyPockets\\service\\usuarios.xlsx";
 
     public UserService() {
@@ -32,11 +33,10 @@ public class UserService {
             int i = 0;
 
             for (Row fila : hoja) {
+                newInsert++;
                 if (fila.getRowNum() < 1) continue;
-                else if (fila.getCell(0) == null) {
-                    newInsert = fila.getRowNum();
-                    break;
-                }
+                if (fila.getCell(0) == null) break;
+
 
                 try {
                     String username = fila.getCell(0).getStringCellValue();
@@ -87,7 +87,7 @@ public class UserService {
 
             Sheet hoja = libro.getSheetAt(0);
 
-            Row fila = hoja.getRow(newInsert);
+            Row fila = hoja.createRow(newInsert);
 
             int id = newInsert;
             fila.createCell(0).setCellValue(username);
@@ -101,6 +101,10 @@ public class UserService {
             User user = new User(id,username,password,email,name,surname1,surname2,phone);
 
             userList.add(user);
+
+            FileOutputStream outputStream = new FileOutputStream(rutaArchivo);
+            libro.write(outputStream);
+            newInsert++;
 
             libro.close();
 
