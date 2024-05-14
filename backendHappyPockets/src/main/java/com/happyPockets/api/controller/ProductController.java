@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,5 +33,10 @@ public class ProductController {
     @GetMapping("/products")
     public List<Product> getProducts(){
         return productService.getProductList();
+    }
+
+    @GetMapping("/products/order")
+    public List<Product> getProducts(@RequestParam String order){
+        return productService.getProductList(order);
     }
 }
