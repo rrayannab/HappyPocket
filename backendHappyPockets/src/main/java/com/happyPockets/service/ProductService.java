@@ -17,30 +17,7 @@ public class ProductService {
     public ProductService(){
         productList = new ArrayList<>();
 
-        Product product1 = new Product(1, "Galletas", "Marca", "Categoria",
-            new ShopPrice(1.5, 1.6, 1.7),
-            "https://www.carrefour.es/galletas"
-        );
-        Product product2 = new Product(2, "Leche", "Marca", "Categoria",
-            new ShopPrice(1.5, 1.6, 1.7),
-            "https://www.carrefour.es/leche"
-        );
-        Product product3 = new Product(3, "Pan", "Marca", "Categoria",
-            new ShopPrice(1.5, 1.6, 1.7),
-            "https://www.carrefour.es/pan"
-        );
-        Product product4 = new Product(4, "Cerveza", "Marca", "Categoria",
-            new ShopPrice(1.5, 1.6, 1.7),
-            "https://www.carrefour.es/cerveza"
-        );
-        Product product5 = new Product(5, "Vino", "Marca", "Categoria",
-            new ShopPrice(1.5, 1.6, 1.7),
-            "https://www.carrefour.es/vino"
-        );
-        Product product6 = new Product(6, "Queso", "Marca", "Categoria",
-            new ShopPrice(1.5, 1.6, 1.7),
-            "https://www.carrefour.es/queso"
-        );
+
 
         String rutaArchivo = "productos.xlsx";
 
