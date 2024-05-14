@@ -2,7 +2,6 @@ package com.happyPockets.api.controller;
 
 import com.happyPockets.api.model.Product;
 import com.happyPockets.api.model.User;
-import com.happyPockets.service.ProductService;
 import com.happyPockets.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
