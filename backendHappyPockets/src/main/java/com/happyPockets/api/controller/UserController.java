@@ -32,4 +32,20 @@ public class UserController {
     public List<User> getUsers(){
         return userService.getUserList();
     }
+
+    /**
+     *
+     * @param username
+     * @param password
+     * @param email
+     * @param name
+     * @param surname1
+     * @param surname2
+     * @param phone
+     * @return true si se ha podido añadir corectamente, false en cualquier otro caso
+     */
+    @GetMapping("/addUser")
+    public boolean addUser(@RequestParam String username, String password, String email, String name, String surname1, String surname2, int phone){
+        return userService.addUser(username, password, email, name, surname1, surname2, phone);
+    }
 }

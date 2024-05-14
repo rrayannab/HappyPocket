@@ -14,15 +14,13 @@ import java.util.*;
 public class ProductService {
 
     private List<Product> productList;
+    private final String rutaArchivo = ".\\src\\main\\java\\com\\happyPockets\\service\\productos.xlsx";
 
     public ProductService(){
         productList = new ArrayList<>();
 
-
-//        String rutaArchivo = "path\\productos.xlsx";
-        String rutaArchivo = "C:\\Users\\jorge\\Dev-offline\\iis\\backendHappyPockets\\src\\main\\java\\com\\happyPockets\\service\\productos.xlsx";
-
-        try (FileInputStream fis = new FileInputStream(new File(rutaArchivo))) {
+        try (FileInputStream fis = new FileInputStream(new File(rutaArchivo)))
+        {
             // Abrir el libro de Excel
             Workbook libro = WorkbookFactory.create(fis);
 
@@ -34,22 +32,26 @@ public class ProductService {
                 if (fila.getRowNum() < 2) continue;
                 else if (fila.getCell(0) == null) break;
 
-                int id = ++i;
-                String name = fila.getCell(0).getStringCellValue();
-                String brand = fila.getCell(1).getStringCellValue();
-                String cat = fila.getCell(2).getStringCellValue();
-                ShopPrice shopPrices = new ShopPrice(fila.getCell(3).getNumericCellValue(), fila.getCell(4).getNumericCellValue(), fila.getCell(5).getNumericCellValue());
-                String imageLink = fila.getCell(6).getStringCellValue();
+                try {
+                    String name = fila.getCell(0).getStringCellValue();
+                    String brand = fila.getCell(1).getStringCellValue();
+                    String cat = fila.getCell(2).getStringCellValue();
+                    ShopPrice shopPrices = new ShopPrice(fila.getCell(3).getNumericCellValue(), fila.getCell(4).getNumericCellValue(), fila.getCell(5).getNumericCellValue());
+                    String imageLink = fila.getCell(6).getStringCellValue();
+                    int id = ++i;
 
-                Product product = new Product(id, name, brand, cat, shopPrices, imageLink);
-                System.out.println(product);
-                productList.add(product);
+                    Product product = new Product(id, name, brand, cat, shopPrices, imageLink);
+
+                    productList.add(product);
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
             }
             libro.close();
+
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-        
     }
 
     public Optional<Product> getProductId(Integer id) {
