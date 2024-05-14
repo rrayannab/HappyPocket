@@ -19,7 +19,8 @@ public class ProductService {
         productList = new ArrayList<>();
 
 
-        String rutaArchivo = "path\\productos.xlsx";
+//        String rutaArchivo = "path\\productos.xlsx";
+        String rutaArchivo = "C:\\Users\\jorge\\Dev-offline\\iis\\backendHappyPockets\\src\\main\\java\\com\\happyPockets\\service\\productos.xlsx";
 
         try (FileInputStream fis = new FileInputStream(new File(rutaArchivo))) {
             // Abrir el libro de Excel
@@ -76,10 +77,8 @@ public class ProductService {
             products.sort(Comparator.comparing(Product::getName).reversed());
             return products;
         } else if (order.equalsIgnoreCase("precio")){
-            products.sort(Comparator.comparing(Product::getBestPrice));
+            products.sort(Product.comparadorPorPrecio);
             return products;
-        }else {
-            return products;
-        }
+        }else return null;
     }
 }

@@ -3,6 +3,8 @@ package com.happyPockets.api.controller;
 import com.happyPockets.api.model.Product;
 import com.happyPockets.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,11 +33,19 @@ public class ProductController {
     }
 
     @GetMapping("/products")
-    public List<Product> getProducts(@RequestParam Optional<String> order){
+    public ResponseEntity<List<Product>> getProducts(@RequestParam Optional<String> order){
         String orderValue = order.orElse("");
-        if (order == null || orderValue.equals(""))
-            return productService.getProductList();
+        List<Product> productList = null;
 
-        return productService.getProductList(orderValue);
+        if (order == null || orderValue.equals(""))
+            productList =  productService.getProductList();
+        else
+            productList =  productService.getProductList(orderValue);
+
+        if (productList!=null)
+            return ResponseEntity.ok(productList);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+
+
     }
 }
