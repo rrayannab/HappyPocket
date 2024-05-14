@@ -12,22 +12,24 @@ public class ShopPrice {
 
     private String[] stores = new String[] {CARREFOUR, DIA, CORTE_INGLES};
     private double[] prices = new double[3];
-    private String cheapestStore;
+    private int bestIndex;
 //    private String link;
 
 
     public ShopPrice(double priceCarrefour, double priceDia, double priceCorteIngles) {;
         this.prices = new double[] {priceCarrefour, priceDia, priceCorteIngles};
-        this.cheapestStore = getCheapestStore();
+        this.bestIndex = getCheapestIndex();
     }
 
     @Override
     public String toString() {
         return "ShopPrice{" +
-                CARREFOUR + "='" + prices[0] + '\'' +
+                "Best Price=" + getBestPrice() + '\'' +
+                "Best Store=" + getBestStore() + '\'' +
+                "Prices{" + CARREFOUR + "='" + prices[0] + '\'' +
                 DIA + "='" + prices[1] + '\'' +
                 CORTE_INGLES + "='" + prices[2] + '\'' +
-                '}';
+                "}}";
     }
 
     @JsonIgnore
@@ -37,7 +39,7 @@ public class ShopPrice {
 
     public void setPriceCarrefour(double priceCarrefour) {
         this.prices[0] = priceCarrefour;
-        this.cheapestStore = getCheapestStore();
+        this.bestIndex = getCheapestIndex();
     }
 
     @JsonIgnore
@@ -47,7 +49,7 @@ public class ShopPrice {
 
     public void setPriceDia(double priceDia) {
         this.prices[1] = priceDia;
-        this.cheapestStore = getCheapestStore();
+        this.bestIndex = getCheapestIndex();
     }
 
     @JsonIgnore
@@ -57,10 +59,10 @@ public class ShopPrice {
 
     public void setPriceCorteIngles(double priceCorteIngles) {
         this.prices[2] = priceCorteIngles;
-        this.cheapestStore = getCheapestStore();
+        this.bestIndex = getCheapestIndex();
     }
 
-    public String getCheapestStore(){
+    private int getCheapestIndex(){
 //        if (this.prices[0] == this.prices[1] && this.prices[1] == this.prices[2])
 //            return EQUAL;
 
@@ -72,7 +74,7 @@ public class ShopPrice {
                 index = i;
             }
         }
-        return stores[index];
+        return index;
     }
 
     public double[] getPrices(){
@@ -85,11 +87,11 @@ public class ShopPrice {
 
     @JsonIgnore
     public double getBestPrice() {
-        if (this.cheapestStore.equals(CARREFOUR))
-            return this.prices[0];
-        else if (this.cheapestStore.equals(DIA))
-            return this.prices[1];
-        else
-            return this.prices[2];
+        return this.prices[bestIndex];
+    }
+
+    @JsonIgnore
+    public String getBestStore() {
+        return this.stores[bestIndex];
     }
 }

@@ -83,9 +83,8 @@ public class Product implements Comparable<Product> {
         return shopPrices.getBestPrice();
     }
 
-    public String getCheapesStore(){
-//        return shopPrices
-        return "";
+    public String getBestStore(){
+        return shopPrices.getBestStore();
     }
 
     // Método para comparar productos por nombre
