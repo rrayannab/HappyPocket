@@ -17,24 +17,24 @@ public class ProductService {
     public ProductService(){
         productList = new ArrayList<>();
 
-        Product product1 = new Product(1, "Galletas", "https://www.carrefour.es/galletas", new ShopPrice[]{
+        Product product1 = new Product(1, "Galletas", "https://www.carrefour.es/galletas",
                 new ShopPrice(1.5, 1.6, 1.7)
-        });
-        Product product2 = new Product(2, "Leche", "https://www.carrefour.es/leche", new ShopPrice[]{
+        );
+        Product product2 = new Product(2, "Leche", "https://www.carrefour.es/leche",
                 new ShopPrice(1.5, 1.6, 1.7)
-        });
-        Product product3 = new Product(3, "Pan", "https://www.carrefour.es/pan", new ShopPrice[]{
+        );
+        Product product3 = new Product(3, "Pan", "https://www.carrefour.es/pan",
                 new ShopPrice(1.5, 1.6, 1.7)
-        });
-        Product product4 = new Product(4, "Cerveza", "https://www.carrefour.es/cerveza", new ShopPrice[]{
+        );
+        Product product4 = new Product(4, "Cerveza", "https://www.carrefour.es/cerveza",
                 new ShopPrice(1.5, 1.6, 1.7)
-        });
-        Product product5 = new Product(5, "Vino", "https://www.carrefour.es/vino", new ShopPrice[]{
+        );
+        Product product5 = new Product(5, "Vino", "https://www.carrefour.es/vino",
                 new ShopPrice(1.5, 1.6, 1.7)
-        });
-        Product product6 = new Product(6, "Queso", "https://www.carrefour.es/queso", new ShopPrice[]{
+        );
+        Product product6 = new Product(6, "Queso", "https://www.carrefour.es/queso",
                 new ShopPrice(1.5, 1.6, 1.7)
-        });
+        );
 
         productList.addAll(Arrays.asList(product1, product2, product3, product4, product5, product6));
     }
