@@ -19,6 +19,18 @@ public class Product implements Comparable<Product> {
         this.cat = cat;
     }
 
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", brand='" + brand + '\'' +
+                ", cat='" + cat + '\'' +
+                ", shopPrices=" + shopPrices +
+                ", imageLink='" + imageLink + '\'' +
+                '}';
+    }
+
     public String getBrand() {
         return brand;
     }
