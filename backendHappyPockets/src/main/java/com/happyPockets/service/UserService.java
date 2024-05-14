@@ -17,7 +17,7 @@ import java.util.Optional;
 @Service
 public class UserService {
     private List<User> userList;
-    private int newInsert = 0;
+    private int newInsert = 1;
     private final String rutaArchivo = ".\\src\\main\\java\\com\\happyPockets\\service\\usuarios.xlsx";
 
     public UserService() {
@@ -33,7 +33,6 @@ public class UserService {
             int i = 0;
 
             for (Row fila : hoja) {
-                newInsert++;
                 if (fila.getRowNum() < 1) continue;
                 if (fila.getCell(0) == null) break;
 
@@ -56,7 +55,7 @@ public class UserService {
                 }
             }
             libro.close();
-
+            newInsert = i+1;
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -80,9 +79,10 @@ public class UserService {
 
 
     public boolean addUser(String username, String password, String email, String name, String surname1, String surname2, int phone) {
+        if (InUserList(username))
+            return false;
         try (FileInputStream fis = new FileInputStream(new File(rutaArchivo)))
         {
-            // Abrir el libro de Excel
             Workbook libro = WorkbookFactory.create(fis);
 
             Sheet hoja = libro.getSheetAt(0);
@@ -98,20 +98,28 @@ public class UserService {
             fila.createCell(5).setCellValue(surname2);
             fila.createCell(6).setCellValue(phone);
 
+            FileOutputStream fos = new FileOutputStream(rutaArchivo);
+            libro.write(fos);
+
             User user = new User(id,username,password,email,name,surname1,surname2,phone);
 
             userList.add(user);
 
-            FileOutputStream outputStream = new FileOutputStream(rutaArchivo);
-            libro.write(outputStream);
-            newInsert++;
-
             libro.close();
+            newInsert++;
 
             return true;
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
             return false;
         }
+    }
+
+    private boolean InUserList(String username) {
+        for (User user : userList) {
+            if (user.getUsername().equals(username))
+                return true;
+        }
+        return false;
     }
 }
