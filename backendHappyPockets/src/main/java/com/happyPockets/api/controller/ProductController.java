@@ -31,12 +31,11 @@ public class ProductController {
     }
 
     @GetMapping("/products")
-    public List<Product> getProducts(){
-        return productService.getProductList();
-    }
+    public List<Product> getProducts(@RequestParam Optional<String> order){
+        String orderValue = order.orElse("");
+        if (order == null || orderValue.equals(""))
+            return productService.getProductList();
 
-    @GetMapping("/products/order")
-    public List<Product> getProducts(@RequestParam String order){
-        return productService.getProductList(order);
+        return productService.getProductList(orderValue);
     }
 }
