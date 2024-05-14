@@ -71,4 +71,14 @@ public class ShopPrice {
     public String[] getStores(){
         return this.stores;
     }
+
+    @JsonIgnore
+    public double getBestPrice() {
+        if (this.cheapestStore.equals(CARREFOUR))
+            return this.prices[0];
+        else if (this.cheapestStore.equals(DIA))
+            return this.prices[1];
+        else
+            return this.prices[2];
+    }
 }
