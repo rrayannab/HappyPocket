@@ -12,13 +12,10 @@ public class ShopPrice {
 
     private String[] stores = new String[] {CARREFOUR, DIA, CORTE_INGLES};
     private double[] prices = new double[3];
-    private int bestIndex;
-//    private String link;
 
 
     public ShopPrice(double priceCarrefour, double priceDia, double priceCorteIngles) {;
         this.prices = new double[] {priceCarrefour, priceDia, priceCorteIngles};
-        this.bestIndex = getCheapestIndex();
     }
 
     @Override
@@ -39,7 +36,6 @@ public class ShopPrice {
 
     public void setPriceCarrefour(double priceCarrefour) {
         this.prices[0] = priceCarrefour;
-        this.bestIndex = getCheapestIndex();
     }
 
     @JsonIgnore
@@ -49,7 +45,6 @@ public class ShopPrice {
 
     public void setPriceDia(double priceDia) {
         this.prices[1] = priceDia;
-        this.bestIndex = getCheapestIndex();
     }
 
     @JsonIgnore
@@ -59,7 +54,6 @@ public class ShopPrice {
 
     public void setPriceCorteIngles(double priceCorteIngles) {
         this.prices[2] = priceCorteIngles;
-        this.bestIndex = getCheapestIndex();
     }
 
     private int getCheapestIndex(){
@@ -85,13 +79,13 @@ public class ShopPrice {
         return this.stores;
     }
 
-    @JsonIgnore
+
     public double getBestPrice() {
-        return this.prices[bestIndex];
+        return this.prices[getCheapestIndex()];
     }
 
-    @JsonIgnore
+
     public String getBestStore() {
-        return this.stores[bestIndex];
+        return this.stores[getCheapestIndex()];
     }
 }

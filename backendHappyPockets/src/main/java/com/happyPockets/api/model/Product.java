@@ -79,14 +79,6 @@ public class Product implements Comparable<Product> {
         this.shopPrices = shopPrices;
     }
 
-    public double getBestPrice(){
-        return shopPrices.getBestPrice();
-    }
-
-    public String getBestStore(){
-        return shopPrices.getBestStore();
-    }
-
     // Método para comparar productos por nombre
     @Override
     public int compareTo(Product product2) {
@@ -97,7 +89,7 @@ public class Product implements Comparable<Product> {
     public static Comparator<Product> comparadorPorPrecio = new Comparator<Product>() {
         @Override
         public int compare(Product p1, Product p2) {
-            return Double.compare(p1.getBestPrice(), p2.getBestPrice());
+            return Double.compare(p1.shopPrices.getBestPrice(), p2.shopPrices.getBestPrice());
         }
     };
 
