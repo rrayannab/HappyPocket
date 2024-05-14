@@ -5,10 +5,7 @@ import com.happyPockets.api.model.Product;
 import com.happyPockets.api.model.ShopPrice;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class ProductService {
@@ -42,20 +39,20 @@ public class ProductService {
             new ShopPrice(1.5, 1.6, 1.7),
             "https://www.carrefour.es/queso"
         );
-        Workbook libro = new Workbook("productos.xlsx");
-
-        Sheet hoja = libro.getSheetAt(0);
-
-        int i = 0;
-
-        for (Row fila : hoja) {
-            int id = i;
-            String name = fila.getCell(0).getStringCellValue();
-
-            String imageLink = fila.getCell(1).getStringCellValue();
-            ShopPrice[] shopPrices;
-
-        }
+//        Workbook libro = new Workbook("productos.xlsx");
+//
+//        Sheet hoja = libro.getSheetAt(0);
+//
+//        int i = 0;
+//
+//        for (Row fila : hoja) {
+//            int id = i;
+//            String name = fila.getCell(0).getStringCellValue();
+//
+//            String imageLink = fila.getCell(1).getStringCellValue();
+//            ShopPrice[] shopPrices;
+//
+//        }
 
         /*
         Product product1 = new Product(1, "Galletas", "https://www.carrefour.es/galletas", new ShopPrice[]{
@@ -95,5 +92,21 @@ public class ProductService {
 
     public List<Product> getProductList() {
         return productList;
+    }
+
+    public List<Product> getProductList(String order) {
+        List<Product> products = getProductList();
+        if (order.equalsIgnoreCase("ascendente")) {
+            products.sort(Comparator.comparing(Product::getName));
+            return products;
+        } else if (order.equalsIgnoreCase("descendente")) {
+            products.sort(Comparator.comparing(Product::getName).reversed());
+            return products;
+        } else if (order.equalsIgnoreCase("precio")){
+            products.sort(Comparator.comparing(Product::getBestPrice));
+            return products;
+        }else {
+            return products;
+        }
     }
 }
