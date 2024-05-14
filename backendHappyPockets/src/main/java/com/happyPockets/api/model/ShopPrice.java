@@ -2,6 +2,8 @@ package com.happyPockets.api.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.util.Arrays;
+
 public class ShopPrice {
     final String CARREFOUR = "Carrefour";
     final String DIA = "Dia";
@@ -17,6 +19,15 @@ public class ShopPrice {
     public ShopPrice(double priceCarrefour, double priceDia, double priceCorteIngles) {;
         this.prices = new double[] {priceCarrefour, priceDia, priceCorteIngles};
         this.cheapestStore = getCheapestStore();
+    }
+
+    @Override
+    public String toString() {
+        return "ShopPrice{" +
+                CARREFOUR + "='" + prices[0] + '\'' +
+                DIA + "='" + prices[1] + '\'' +
+                CORTE_INGLES + "='" + prices[2] + '\'' +
+                '}';
     }
 
     @JsonIgnore
