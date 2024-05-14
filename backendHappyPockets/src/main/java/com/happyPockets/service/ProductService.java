@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.net.URL;
 import java.util.*;
 
 @Service
@@ -18,8 +19,7 @@ public class ProductService {
         productList = new ArrayList<>();
 
 
-
-        String rutaArchivo = "productos.xlsx";
+        String rutaArchivo = "path\\productos.xlsx";
 
         try (FileInputStream fis = new FileInputStream(new File(rutaArchivo))) {
             // Abrir el libro de Excel
@@ -30,6 +30,9 @@ public class ProductService {
             int i = 0;
 
             for (Row fila : hoja) {
+                if (fila.getRowNum() < 2) continue;
+                else if (fila.getCell(0) == null) break;
+
                 int id = ++i;
                 String name = fila.getCell(0).getStringCellValue();
                 String brand = fila.getCell(1).getStringCellValue();
@@ -38,11 +41,13 @@ public class ProductService {
                 String imageLink = fila.getCell(6).getStringCellValue();
 
                 Product product = new Product(id, name, brand, cat, shopPrices, imageLink);
-
+                System.out.println(product);
                 productList.add(product);
             }
             libro.close();
-        } catch (Exception ex) { }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
         
     }
 
