@@ -5,16 +5,34 @@ import java.util.Comparator;
 public class Product implements Comparable<Product> {
     private int id;
     private String name;
-    private double price;
     private String imageLink;
     private ShopPrice shopPrices;
+    private String brand;
+    private String cat;
 
-    public Product(int id, String name, String link, ShopPrice shopPrices) {
+    public Product(int id, String name, String brand, String cat, ShopPrice shopPrices, String link) {
         this.imageLink = link;
-        this.price = price;
         this.name = name;
         this.id = id;
         this.shopPrices = shopPrices;
+        this.brand = brand;
+        this.cat = cat;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getCat() {
+        return cat;
+    }
+
+    public void setCat(String cat) {
+        this.cat = cat;
     }
 
     public int getId() {
