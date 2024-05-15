@@ -48,9 +48,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="col-md-4 logo_agile">
 				<h1>
 					<a href="index.html">
-						<!--<img src="images/Logo.png" alt=" ">--> <!--ARREGLAR TAMAÑO LOGO-->
 						<span>H</span>appy
 						<span>P</span>ocket
+						<img src="images/logo2.png" alt=" ">
 					</a>
 				</h1>
 			</div>
@@ -64,6 +64,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<span class="fa fa-truck" aria-hidden="true"></span>Track Order</a>
 					</li>
 					-->
+					<li>
+						<a class="play-icon popup-with-zoom-anim" href="#small-dialog1">
+							<span class="fa fa-map-marker" aria-hidden="true"></span> Selecciona tu ubicación</a>
+					</li>
 					<li>
 						<span class="fa fa-phone" aria-hidden="true"></span> +34 951 23 45 67
 					</li>
@@ -84,24 +88,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<button type="submit" class="btn btn-default" aria-label="Left Align">
 							<span class="fa fa-search" aria-hidden="true"> </span>
 						</button>
-					</form>
-				</div>
-				<div class="agileits-navi_search">
-					<form action="#" method="post">
-						<select id="agileinfo-nav_search" name="agileinfo_search" required="">
-							<option value="">Categorías Productos</option><!--Ver categoría disponibles de la BD, NO FUNCIONA EL BOTÓN-->
-							<option value="Kitchen">Cocina</option>
-							<option value="Household">Hogar</option>
-							<option value="Snacks &amp; Beverages">Snacks & Beverages</option>
-							<option value="Personal Care">Cuidado personal</option>
-							<option value="Gift Hampers">Gift Hampers</option>
-							<option value="Fruits &amp; Vegetables">Frutas y Verduras</option>
-							<option value="Baby Care">Baby Care</option>
-							<option value="Soft Drinks &amp; Juices">Soft Drinks & Juices</option>
-							<option value="Frozen Food">Congelados</option>
-							<option value="Bread &amp; Bakery">Panadería y pastelería</option>
-							<option value="Sweets">Dulces</option>
-						</select>
 					</form>
 				</div>
 				<!-- //search -->
@@ -128,7 +114,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div id="small-dialog1" class="mfp-hide">
 														<!-- CAMBIAR TODAS LAS CIUDAD Y NOMBRES  *****INICIO***** -->
 		<div class="select-city">
-			<h3>Selecciona tu ubicación</h3><!--¿Dónde está esto en el html?-->
+			<h3>Selecciona tu ubicación</h3>
 			<select class="list_of_cities">
 				<optgroup label="Málaga">
 					<option selected style="display:none;color:#eee;">Seleccione su ciudad</option>
@@ -246,10 +232,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- navigation -->
 	<div class="ban-top">
 		<div class="container">
-			<!--	<div class="agileits-navi_search">
+			<!-- Ver categoría disponibles de la BD, NO FUNCIONA EL BOTÓN
+				<div class="agileits-navi_search">
 				<form action="#" method="post">
 					<select id="agileinfo-nav_search" name="agileinfo_search" required="">
-						<option value="">Categorías Productos</option>
+						<option value="">Categorías Productos</option>   
 						<option value="Kitchen">Cocina</option>
 						<option value="Household">Hogar</option>
 						<option value="Snacks &amp; Beverages">Snacks & Beverages</option>
@@ -263,7 +250,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<option value="Sweets">Dulces</option>
 					</select>
 				</form>
-			</div> -->
+			</div>
+			-->
 			<div class="top_nav_left">
 				<nav class="navbar navbar-default">
 					<div class="container-fluid">
@@ -280,6 +268,92 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav menu__list">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle nav-stylehead" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categorías Productos
+										<span class="caret"></span>
+									</a>
+									<ul class="dropdown-menu multi-column columns-3">
+										<div class="agile_inner_drop_nav_info">
+											<div class="col-sm-4 multi-gd-img">
+												<ul class="multi-column-dropdown">
+													<li>
+														<a href="product.html?category=aceitesyvinagres">Aceites y Vinagres</a>
+													</li>
+													<li>
+														<a href="product.html?category=azucar">Azúcar</a>
+													</li>
+													<li>
+														<a href="product.html?category=cerealesygalletas">Cereales y Galletas</a>
+													</li>
+													<li>
+														<a href="product.html?category=frutas">Frutas</a>
+													</li>
+													<li>
+														<a href="product.html?category=heladospostresynata">Helados, Postres y Nata</a>
+													</li>
+													<li>
+														<a href="product.html?category=pastasymasas">Pastas y Masas</a>
+													</li>
+													<li>
+														<a href="product.html?category=pizzas">Pizzas</a>
+													</li>
+													
+												</ul>
+											</div>
+											<div class="col-sm-4 multi-gd-img">
+												<ul class="multi-column-dropdown">
+													<li>
+														<a href="product.html">Mantequillas y Margarina</a>
+													</li>
+													<li>
+														<a href="product.html">Patatas Fritas</a>
+													</li>
+													<li>
+														<a href="product.html">Refrescos</a>
+													</li>
+													<li>
+														<a href="product.html">Salteados congelados</a>
+													</li>
+													<li>
+														<a href="product.html">Zumos</a>
+													</li>
+													<li>
+														<a href="product.html">Caldos</a>
+													</li>
+													<li>
+														<a href="product.html">Lácteos</a>
+													</li>
+												</ul>
+											</div>
+											<div class="col-sm-4 multi-gd-img">
+												<ul class="multi-column-dropdown">
+													<li>
+														<a href="product.html">Arroces</a>
+													</li>
+													<li>
+														<a href="product.html">Cafés</a>
+													</li>
+													<li>
+														<a href="product.html">Refrescos</a>
+													</li>
+													<li>
+														<a href="product.html">Salteados congelados</a>
+													</li>
+													<li>
+														<a href="product.html">Zumos</a>
+													</li>
+													<li>
+														<a href="product.html">Caldos</a>
+													</li>
+													<li>
+														<a href="product.html">Lácteos</a>
+													</li>
+												</ul>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+									</ul>
+								</li>
 								<li class="active">
 									<a class="nav-stylehead" href="index.html">Home
 										<span class="sr-only">(current)</span>
@@ -1484,14 +1558,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<footer>
 		<div class="container">
 			<!-- footer first section -->
-			<!--<p class="footer-main">
+			<!--Esto es más bien para rellenar los footers que sino queda muy vacío-->
+			<p class="footer-main">
 				<span>"Happy Pocket"</span> surge con el propósito claro de simplificar 
 				y mejorar la experiencia de compra de alimentos y productos básicos, 
 				ofreciendo a nuestros usuarios una plataforma intuitiva y eficiente que reúne los mejores productos de supermercado. 
 				Nuestro objetivo es proporcionar comodidad y facilidad a cada cliente, 
 				permitiéndoles acceder fácilmente a una amplia gama de productos de alta calidad y a precios accesibles, 
-				para así hacer su vida diaria un poco más fácil y más feliz.</p>-->
+				para así hacer su vida diaria un poco más fácil y más feliz.</p>
 			<!-- //footer first section -->
+
+
+
 			<!-- footer second section 
 			<div class="w3l-grids-footer">
 				<div class="col-xs-4 offer-footer">
@@ -1524,8 +1602,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="clearfix"></div>
 			</div>
 			 //footer second section -->
+
+
 			<!-- footer third section -->
 			<div class="footer-info w3-agileits-info">
+				
 				<!-- footer categories  QUITAR?? -->
 				<!--<div class="col-sm-5 address-right">
 					<div class="col-xs-6 footer-grids">
@@ -1576,28 +1657,30 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="clearfix"></div>
 				</div> -->
 				<!-- //footer categories -->
+
+
 				<!-- quick links -->
 				<div class="col-sm-5 address-right">
 					<div class="col-xs-6 footer-grids">
 						<h3>Quick Links</h3>
 						<ul>
 							<li>
-								<a href="about.html">About Us</a>
+								<a href="about.html">Sobre Nosotros</a>
 							</li>
 							<li>
-								<a href="contact.html">Contact Us</a>
+								<a href="contact.html">Contacto</a>
 							</li>
 							<li>
-								<a href="help.html">Help</a>
+								<a href="help.html">Ayuda</a>
 							</li>
 							<li>
-								<a href="faqs.html">Faqs</a>
+								<a href="faqs.html">Preguntas Frecuentes</a>
 							</li>
 							<li>
-								<a href="terms.html">Terms of use</a>
+								<a href="terms.html">Términos de uso</a>
 							</li>
 							<li>
-								<a href="privacy.html">Privacy Policy</a>
+								<a href="privacy.html">Política de Privacidad</a>
 							</li>
 						</ul>
 					</div>
@@ -1605,14 +1688,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<h3>Contáctenos</h3>
 						<ul>
 							<li>
-								<i class="fa fa-map-marker"></i> 123 Sebastian, USA.</li>
+								<i class="fa fa-map-marker"></i> ETSI Informática. Málaga, España</li>
 							<li>
-								<i class="fa fa-mobile"></i> 333 222 3333 </li>
+								<i class="fa fa-mobile"></i> 612 34 56 78 </li>
 							<li>
-								<i class="fa fa-phone"></i> +222 11 4444 </li>
+								<i class="fa fa-phone"></i> 951 23 45 67 </li>
 							<li>
 								<i class="fa fa-envelope-o"></i>
-								<a href="mailto:example@mail.com"> mail@example.com</a>
+								<a href="mailto:example@mail.com"> happypocket@gmail.com</a>
 							</li>
 						</ul>
 					</div>
@@ -1992,6 +2075,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		});
 	</script>
 	<!-- //smooth-scrolling-of-move-up -->
+
+	<!--MANTENER CIUDAD-->
+	<script>
+		// Selecciona el elemento del título y el elemento select
+		var title = document.querySelector('h3'); // Asegúrate de que este selector selecciona el elemento correcto
+		var title = document.querySelector('.play-icon');
+		var select = document.querySelector('.list_of_cities');
+
+		// Escucha el evento 'change' en el elemento select
+		select.addEventListener('change', function() {
+		// Cuando se dispara el evento 'change', actualiza el texto del título con el valor del elemento select
+		title.textContent = this.value;
+		});
+	</script>
 
 	<!-- for bootstrap working -->
 	<script src="js/bootstrap.js"></script>

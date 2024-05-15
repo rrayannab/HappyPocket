@@ -12,8 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!--/tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="Grocery Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<meta name="keywords" content="Happy Pocket, Supermercado, Precios Baratos, Mercados, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Compra" />
 	<script>
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
@@ -66,6 +65,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</li>
 					-->
 					<li>
+						<a class="play-icon popup-with-zoom-anim" href="#small-dialog1">
+							<span class="fa fa-map-marker" aria-hidden="true"></span> Selecciona tu ubicación</a>
+					</li>
+					<li>
 						<span class="fa fa-phone" aria-hidden="true"></span> +34 951 23 45 67
 					</li>
 					<li>
@@ -81,7 +84,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<!-- search -->
 				<div class="agileits_search">
 					<form action="#" method="post">
-						<input name="Search" type="search" placeholder="¿Que deseas buscar hoy?" required="">
+						<input name="Search" type="search" placeholder="¿Qué desea comprar hoy?" required="">
 						<button type="submit" class="btn btn-default" aria-label="Left Align">
 							<span class="fa fa-search" aria-hidden="true"> </span>
 						</button>
@@ -155,11 +158,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="modal_body_left modal_body_left1">
 						<h3 class="agileinfo_sign">Iniciar Sesión</h3>
-						<p>
-							Inicia sesión, los mejores precios al alcance de tu mano. ¿No tienes una cuenta?
-							<a href="#" data-toggle="modal" data-target="#myModal2">
-								Regístrate ahora</a>
-						</p>
 						<form action="#" method="post">
 							<div class="styled-input agile-styled-input-top">
 								<input type="text" placeholder="Nombre de usuario" name="Name" required="">
@@ -167,6 +165,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="styled-input">
 								<input type="password" placeholder="Contraseña" name="password" required="">
 							</div>
+							<p style="text-align:center">
+								¿No tienes una cuenta?<br>
+								<a href="#" data-toggle="modal" data-target="#myModal2">
+									Regístrate ahora
+								</a>
+							</p>
 							<input type="submit" value="Iniciar Sesión">
 						</form>
 						<div class="clearfix"></div>
@@ -194,8 +198,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="modal_body_left modal_body_left1">
 						<h3 class="agileinfo_sign">Registrarse</h3>
-						<p>
-							¡Únete a Happy Pocket! Vamos a preparar algo genial para ti. 
+						<p style="text-align: center;">
+							<strong>¡Únete a Happy Pocket!</strong><br> 
+							Vamos a preparar algo genial para ti. 
 						</p>
 						<form action="#" method="post">
 							<div class="styled-input agile-styled-input-top">
@@ -213,7 +218,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<input type="submit" value="Registrarse">
 						</form>
 						<p>
-							<a href="#">Registrándote afirmas de que has leído y aceptas los términos y condiciones.</a>
+							<a href="#">Registrándose afirma que ha leído y acepta los términos y condiciones</a><!--Poner botón para términos y condiciones-->
 						</p>
 					</div>
 				</div>
@@ -227,24 +232,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- navigation -->
 	<div class="ban-top">
 		<div class="container">
-			<div class="agileits-navi_search">
+			<!-- Ver categoría disponibles de la BD, NO FUNCIONA EL BOTÓN
+				<div class="agileits-navi_search">
 				<form action="#" method="post">
 					<select id="agileinfo-nav_search" name="agileinfo_search" required="">
-						<option value="">All Categories</option>
-						<option value="Kitchen">Kitchen</option>
-						<option value="Household">Household</option>
+						<option value="">Categorías Productos</option>   
+						<option value="Kitchen">Cocina</option>
+						<option value="Household">Hogar</option>
 						<option value="Snacks &amp; Beverages">Snacks & Beverages</option>
-						<option value="Personal Care">Personal Care</option>
+						<option value="Personal Care">Cuidado personal</option>
 						<option value="Gift Hampers">Gift Hampers</option>
-						<option value="Fruits &amp; Vegetables">Fruits & Vegetables</option>
+						<option value="Fruits &amp; Vegetables">Frutas y Verduras</option>
 						<option value="Baby Care">Baby Care</option>
 						<option value="Soft Drinks &amp; Juices">Soft Drinks & Juices</option>
-						<option value="Frozen Food">Frozen Food</option>
-						<option value="Bread &amp; Bakery">Bread & Bakery</option>
-						<option value="Sweets">Sweets</option>
+						<option value="Frozen Food">Congelados</option>
+						<option value="Bread &amp; Bakery">Panadería y pastelería</option>
+						<option value="Sweets">Dulces</option>
 					</select>
 				</form>
 			</div>
+			-->
 			<div class="top_nav_left">
 				<nav class="navbar navbar-default">
 					<div class="container-fluid">
@@ -261,15 +268,101 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav menu__list">
-								<li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle nav-stylehead" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categorías Productos
+										<span class="caret"></span>
+									</a>
+									<ul class="dropdown-menu multi-column columns-3">
+										<div class="agile_inner_drop_nav_info">
+											<div class="col-sm-4 multi-gd-img">
+												<ul class="multi-column-dropdown">
+													<li>
+														<a href="product.html?category=aceitesyvinagres">Aceites y Vinagres</a>
+													</li>
+													<li>
+														<a href="product.html?category=azucar">Azúcar</a>
+													</li>
+													<li>
+														<a href="product.html?category=cerealesygalletas">Cereales y Galletas</a>
+													</li>
+													<li>
+														<a href="product.html?category=frutas">Frutas</a>
+													</li>
+													<li>
+														<a href="product.html?category=heladospostresynata">Helados, Postres y Nata</a>
+													</li>
+													<li>
+														<a href="product.html?category=pastasymasas">Pastas y Masas</a>
+													</li>
+													<li>
+														<a href="product.html?category=pizzas">Pizzas</a>
+													</li>
+													
+												</ul>
+											</div>
+											<div class="col-sm-4 multi-gd-img">
+												<ul class="multi-column-dropdown">
+													<li>
+														<a href="product.html">Mantequillas y Margarina</a>
+													</li>
+													<li>
+														<a href="product.html">Patatas Fritas</a>
+													</li>
+													<li>
+														<a href="product.html">Refrescos</a>
+													</li>
+													<li>
+														<a href="product.html">Salteados congelados</a>
+													</li>
+													<li>
+														<a href="product.html">Zumos</a>
+													</li>
+													<li>
+														<a href="product.html">Caldos</a>
+													</li>
+													<li>
+														<a href="product.html">Lácteos</a>
+													</li>
+												</ul>
+											</div>
+											<div class="col-sm-4 multi-gd-img">
+												<ul class="multi-column-dropdown">
+													<li>
+														<a href="product.html">Arroces</a>
+													</li>
+													<li>
+														<a href="product.html">Cafés</a>
+													</li>
+													<li>
+														<a href="product.html">Refrescos</a>
+													</li>
+													<li>
+														<a href="product.html">Salteados congelados</a>
+													</li>
+													<li>
+														<a href="product.html">Zumos</a>
+													</li>
+													<li>
+														<a href="product.html">Caldos</a>
+													</li>
+													<li>
+														<a href="product.html">Lácteos</a>
+													</li>
+												</ul>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+									</ul>
+								</li>
+								<li class="active">
 									<a class="nav-stylehead" href="index.html">Home
 										<span class="sr-only">(current)</span>
 									</a>
 								</li>
 								<li class="">
-									<a class="nav-stylehead" href="about.html">About Us</a>
+									<a class="nav-stylehead" href="about.html">Sobre Nosotros</a>
 								</li>
-								<li class="dropdown active">
+								<!--<li class="dropdown">
 									<a href="#" class="dropdown-toggle nav-stylehead" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kitchen
 										<span class="caret"></span>
 									</a>
@@ -331,8 +424,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<div class="clearfix"></div>
 										</div>
 									</ul>
-								</li>
-								<li class="dropdown">
+								</li>-->
+								<!--<li class="dropdown">
 									<a href="#" class="dropdown-toggle nav-stylehead" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Household
 										<span class="caret"></span>
 									</a>
@@ -391,11 +484,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<div class="clearfix"></div>
 										</div>
 									</ul>
-								</li>
+								</li>-->
 								<li class="">
-									<a class="nav-stylehead" href="faqs.html">Faqs</a>
+									<a class="nav-stylehead" href="faqs.html">Preguntas frecuentes</a>
 								</li>
-								<li class="dropdown">
+								<!--<li class="dropdown">
 									<a class="nav-stylehead dropdown-toggle" href="#" data-toggle="dropdown">Pages
 										<b class="caret"></b>
 									</a>
@@ -407,9 +500,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<a href="typography.html">Typography</a>
 										</li>
 									</ul>
-								</li>
-								<li>
-									<a class="" href="contact.html">Contact</a>
+								</li>-->
+								<li class="">
+									<a class="nav-stylehead" href="contact.html">Contacto</a>
 								</li>
 							</ul>
 						</div>
@@ -418,8 +511,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 	</div>
-	<!-- //navigation -->
-	<!-- banner-2 -->
+	<!-- //navigation -->	<!-- banner-2 -->
 	<div class="page-head_agile_info_w3l">
 
 	</div>
@@ -433,7 +525,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<a href="index.html">Home</a>
 						<i>|</i>
 					</li>
-					<li>Kitchen Products</li>
+					<li id="nombrecategoria"></li>
 				</ul>
 			</div>
 		</div>
@@ -443,7 +535,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="ads-grid">
 		<div class="container">
 			<!-- tittle heading -->
-			<h3 class="tittle-w3l">Kitchen Products
+			<h3 id="nombrecategoria2" class="tittle-w3l">
 				<span class="heading-style">
 					<i></i>
 					<i></i>
@@ -1185,10 +1277,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 	<!-- //top products -->
-	<!-- special offers -->
+	<!-- special offers 
 	<div class="featured-section" id="projects">
 		<div class="container">
-			<!-- tittle heading -->
+			
 			<h3 class="tittle-w3l">Special Offers
 				<span class="heading-style">
 					<i></i>
@@ -1196,7 +1288,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<i></i>
 				</span>
 			</h3>
-			<!-- //tittle heading -->
+			
 			<div class="content-bottom-in">
 				<ul id="flexiselDemo1">
 					<li>
@@ -1475,7 +1567,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 	</div>
-	<!-- //special offers -->
+	 //special offers -->
 	<!-- newsletter 
 	<div class="footer-top">
 		<div class="container-fluid">
@@ -1501,12 +1593,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<footer>
 		<div class="container">
 			<!-- footer first section -->
+			<!--Esto es más bien para rellenar los footers que sino queda muy vacío-->
 			<p class="footer-main">
-				<span>"Grocery Shoppy"</span> Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-				magni dolores eos qui ratione voluptatem sequi nesciunt.Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-				accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
-				beatae vitae dicta sunt explicabo.</p>
+				<span>"Happy Pocket"</span> surge con el propósito claro de simplificar 
+				y mejorar la experiencia de compra de alimentos y productos básicos, 
+				ofreciendo a nuestros usuarios una plataforma intuitiva y eficiente que reúne los mejores productos de supermercado. 
+				Nuestro objetivo es proporcionar comodidad y facilidad a cada cliente, 
+				permitiéndoles acceder fácilmente a una amplia gama de productos de alta calidad y a precios accesibles, 
+				para así hacer su vida diaria un poco más fácil y más feliz.</p>
 			<!-- //footer first section -->
+
+
+
 			<!-- footer second section 
 			<div class="w3l-grids-footer">
 				<div class="col-xs-4 offer-footer">
@@ -1514,7 +1612,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<span class="fa fa-map-marker" aria-hidden="true"></span>
 					</div>
 					<div class="col-xs-8 text-form-footer">
-						<h3>Track Your Order</h3>
+						<h3>Localiza tu pedido</h3>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -1539,12 +1637,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="clearfix"></div>
 			</div>
 			 //footer second section -->
+
+
 			<!-- footer third section -->
 			<div class="footer-info w3-agileits-info">
-				<!-- footer categories -->
-				<div class="col-sm-5 address-right">
+				
+				<!-- footer categories  QUITAR?? -->
+				<!--<div class="col-sm-5 address-right">
 					<div class="col-xs-6 footer-grids">
-						<h3>Categories</h3>
+						<h3>Categorías</h3>
 						<ul>
 							<li>
 								<a href="product.html">Grocery</a>
@@ -1589,51 +1690,53 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</ul>
 					</div>
 					<div class="clearfix"></div>
-				</div>
+				</div> -->
 				<!-- //footer categories -->
+
+
 				<!-- quick links -->
 				<div class="col-sm-5 address-right">
 					<div class="col-xs-6 footer-grids">
 						<h3>Quick Links</h3>
 						<ul>
 							<li>
-								<a href="about.html">About Us</a>
+								<a href="about.html">Sobre Nosotros</a>
 							</li>
 							<li>
-								<a href="contact.html">Contact Us</a>
+								<a href="contact.html">Contacto</a>
 							</li>
 							<li>
-								<a href="help.html">Help</a>
+								<a href="help.html">Ayuda</a>
 							</li>
 							<li>
-								<a href="faqs.html">Faqs</a>
+								<a href="faqs.html">Preguntas Frecuentes</a>
 							</li>
 							<li>
-								<a href="terms.html">Terms of use</a>
+								<a href="terms.html">Términos de uso</a>
 							</li>
 							<li>
-								<a href="privacy.html">Privacy Policy</a>
+								<a href="privacy.html">Política de Privacidad</a>
 							</li>
 						</ul>
 					</div>
 					<div class="col-xs-6 footer-grids">
-						<h3>Get in Touch</h3>
+						<h3>Contáctenos</h3>
 						<ul>
 							<li>
-								<i class="fa fa-map-marker"></i> 123 Sebastian, USA.</li>
+								<i class="fa fa-map-marker"></i> ETSI Informática. Málaga, España</li>
 							<li>
-								<i class="fa fa-mobile"></i> 333 222 3333 </li>
+								<i class="fa fa-mobile"></i> 612 34 56 78 </li>
 							<li>
-								<i class="fa fa-phone"></i> +222 11 4444 </li>
+								<i class="fa fa-phone"></i> 951 23 45 67 </li>
 							<li>
 								<i class="fa fa-envelope-o"></i>
-								<a href="mailto:example@mail.com"> mail@example.com</a>
+								<a href="mailto:example@mail.com"> happypocket@gmail.com</a>
 							</li>
 						</ul>
 					</div>
 				</div>
 				<!-- //quick links -->
-				<!-- social icons -->
+				<!-- 																							social icons 
 				<div class="col-sm-2 footer-grids  w3l-socialmk">
 					<h3>Follow Us on</h3>
 					<div class="social">
@@ -1666,26 +1769,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="clearfix"> </div>
 					</div>
 				</div>
-				<!-- //social icons -->
+				 																							//social icons -->
 				<div class="clearfix"></div>
 			</div>
 			<!-- //footer third section -->
 			<!-- footer fourth section (text) -->
 			<div class="agile-sometext">
+				<!-- QUITAR<div class="sub-some">
+					<h5>Prepare su compra</h5>
+					<p>Prepara tu compra. Todos tus productos favoritos al alcance de tu mano y de un solo "click" puedes
+						organizar tu compra de tus supermercados favoritos, comparando precios, dietas, calidad, etc. Y MUCHO MÁS.</p>
+				</div> -->
+				<!-- 			NO CONFIRMA
 				<div class="sub-some">
-					<h5>Online Grocery Shopping</h5>
-					<p>Order online. All your favourite products from the low price online supermarket for grocery home delivery in Delhi,
-						Gurgaon, Bengaluru, Mumbai and other cities in India. Lowest prices guaranteed on Patanjali, Aashirvaad, Pampers, Maggi,
-						Saffola, Huggies, Fortune, Nestle, Amul, MamyPoko Pants, Surf Excel, Ariel, Vim, Haldiram's and others.</p>
-				</div>
-				<div class="sub-some">
-					<h5>Shop online with the best deals & offers</h5>
+					<h5>Mantente actualizado a diario</h5>
 					<p>Now Get Upto 40% Off On Everyday Essential Products Shown On The Offer Page. The range includes Grocery, Personal Care,
 						Baby Care, Pet Supplies, Healthcare and Other Daily Need Products. Discount May Vary From Product To Product.</p>
 				</div>
-				<!-- brands -->
-				<div class="sub-some">
-					<h5>Popular Brands</h5>
+				           NO CONFIRMA -->
+				<!-- <div class="sub-some">
+					<h5>Popular Brands</h5> 
 					<ul>
 						<li>
 							<a href="product.html">Aashirvaad</a>
@@ -1790,9 +1893,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<a href="product2.html"> Lipton</a>
 						</li>
 					</ul>
-				</div>
+				</div> -->
 				<!-- //brands -->
-				<!-- payment -->
+
+
+
+				<!-- 																			PLATAFORMA DE PAGO 
 				<div class="sub-some child-momu">
 					<h5>Payment Method</h5>
 					<ul>
@@ -1825,7 +1931,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</li>
 					</ul>
 				</div>
-				<!-- //payment -->
+				 																				PLATAFORMA DE PAGO -->
+
+
 			</div>
 			<!-- //footer fourth section (text) -->
 		</div>
@@ -2002,10 +2110,129 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});
 	</script>
 	<!-- //smooth-scrolling-of-move-up -->
+	<!--CARGA DINAMICA-->
+	<script>
+		function getParameterByName(name, url) {
+			if (!url) url = window.location.href;
+			name = name.replace(/[\[\]]/g, '\\$&');
+			var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+				results = regex.exec(url);
+			if (!results) return null;
+			if (!results[2]) return '';
+			return decodeURIComponent(results[2].replace(/\+/g, ' '));
+		}
+	
+		// Obtén la categoría de la URL
+		var category = getParameterByName('category');
 
+		var data = {
+			aceitesyvinagres: {
+				title: "Happy Pocket | Aceites y Vinagres",
+				nombrecategoria: "Aceites y Vinagres",
+				nombrecategoria2: "Aceites y Vinagres"
+			},
+			azucar: {
+				title: "Happy Pocket | Azúcar",
+				nombrecategoria: "Azúcar",
+				nombrecategoria2: "Azúcar"
+			},
+			cerealesygalletas: {
+				title: "Happy Pocket | Cereales y Galletas",
+				nombrecategoria: "Cereales y Galletas",
+				nombrecategoria2: "Cereales y Galletas"
+			},
+			congelados: {
+				title: "Happy Pocket | Congelados",
+				nombrecategoria: "Congelados",
+				nombrecategoria2: "Congelados"
+			},
+			frutas: {
+				title: "Happy Pocket | Frutas",
+				nombrecategoria: "Frutas",
+				nombrecategoria2: "Frutas"
+			},
+			heladospostresynata: {
+				title: "Happy Pocket | Helados, Postres y Natas",
+				nombrecategoria: "Helados, Postres y Natas",
+				nombrecategoria2: "Helados, Postres y Natas"
+			},
+			pastasymasas: {
+				title: "Happy Pocket | Pastas y Masas",
+				nombrecategoria: "Pastas y Masas",
+				nombrecategoria2: "Pastas y Masas"
+			},
+			pizzas: {
+				title: "Happy Pocket | Pizzas",
+				nombrecategoria: "Pizzas",
+				nombrecategoria2: "Pizzas"
+			},
+
+		};
+
+		updatePageContent(data[category]);
+
+		function updatePageContent(data) {
+			document.title = data.title;
+			document.getElementById("nombrecategoria").innerHTML = data.nombrecategoria;
+			document.getElementById("nombrecategoria2").innerHTML = data.nombrecategoria2;
+		}
+
+	</script>
+	<!--PROBANDO 
+	<script>
+				// Importa la biblioteca xlsx
+		import * as XLSX from 'xlsx';
+
+		// Función para leer el archivo .xlsx y devolver los datos
+		function readXlsxFile(file) {
+		return new Promise((resolve, reject) => {
+			const reader = new FileReader();
+			reader.onload = function(e) {
+			const data = new Uint8Array(e.target.result);
+			const workbook = XLSX.read(data, {type: 'array'});
+			const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+			const jsonData = XLSX.utils.sheet_to_json(worksheet);
+			resolve(jsonData);
+			};
+			reader.onerror = function(e) {
+			reject(e);
+			};
+			reader.readAsArrayBuffer(file);
+		});
+		}
+
+		// Función para actualizar el DOM con los datos
+		function updateDOM(data) {
+		const productElements = document.querySelectorAll('.product-men');
+		productElements.forEach((element, index) => {
+			if (data[index]) {
+			const productNameElement = element.querySelector('h4 a');
+			const productPriceElement = element.querySelector('.item_price');
+			const productImageElement = element.querySelector('.men-thumb-item img');
+			productNameElement.textContent = data[index].name;
+			productPriceElement.textContent = data[index].price;
+			productImageElement.src = data[index].image;
+			}
+		});
+		}
+
+		// Función para manejar la selección de categoría
+		function handleCategorySelection(event) {
+		const selectedCategory = event.target.value;
+		const file = `path/to/${selectedCategory}.xlsx`; // Actualiza esto con la ruta correcta
+		readXlsxFile(file)
+			.then(data => updateDOM(data))
+			.catch(error => console.error(error));
+		}
+
+		// Escucha el evento 'change' en el elemento select
+		const selectElement = document.querySelector('#category-select'); // Actualiza esto con el selector correcto
+		selectElement.addEventListener('change', handleCategorySelection);
+	</script>
+	PROBANDO -->
 	<!-- for bootstrap working -->
 	<script src="js/bootstrap.js"></script>
-	<!-- //for bootstrap working -->
+	<!-- //for bootstrap working -->	
 	<!-- //js-files -->
 
 </body>
