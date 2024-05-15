@@ -33,14 +33,17 @@ public class ProductController {
     }
 
     @GetMapping("/products")
-    public ResponseEntity<List<Product>> getProducts(@RequestParam Optional<String> order){
+    public ResponseEntity<List<Product>> getProducts(
+            @RequestParam Optional<String> order,
+            @RequestParam Optional<Double> priceFrom,
+            @RequestParam Optional<Double> priceTo){
         String orderValue = order.orElse("");
-        List<Product> productList = null;
+        List<Product> productList =  productService.getProductList();
 
-        if (order == null || orderValue.equals(""))
-            productList =  productService.getProductList();
-        else
-            productList =  productService.getProductList(orderValue);
+        if (order != null && !orderValue.isEmpty())
+            productList =  ProductService.getProductListOrder(productList, orderValue);
+
+        productList = ProductService.getProductPriceRange(productList, priceFrom, priceTo);
 
         if (productList!=null)
             return ResponseEntity.ok(productList);
