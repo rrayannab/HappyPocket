@@ -1245,7 +1245,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</h4>
 									<div class="info-product-price">
 										<span class="item_price">$104.00</span>
-										<del>$120.00</del>
 									</div>
 									<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
 										<form action="#" method="post">
@@ -2182,7 +2181,59 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		}
 
 	</script>
-	<!--PROBANDO 
+	
+
+	
+	
+	<!--PROBANDO
+	<script>
+		// Función para generar un color aleatorio
+		function getRandomColor() {
+			const letters = '0123456789ABCDEF';
+			let color = '#';
+			for (let i = 0; i < 6; i++) {
+			color += letters[Math.floor(Math.random() * 16)];
+			}
+			return color;
+		}
+		
+		// Función para aplicar un color de fondo aleatorio
+		function applyRandomBackgroundColor() {
+			const element = document.querySelector('.header-most-top'); // Asegúrate de seleccionar el elemento correcto
+			const color = getRandomColor();
+			element.style.setProperty('--random-color', color);
+		}
+		
+		// Aplica un color de fondo aleatorio al cargar la página
+		window.onload = applyRandomBackgroundColor;
+	</script>
+
+	
+		BSUCADOR DINAMICO QUE RICO
+	<script>
+		// Selecciona el formulario y agrega un controlador de eventos 'submit'
+		document.querySelector('.agileits_search form').addEventListener('submit', function(event) {
+			// Evita que el formulario se envíe y la página se recargue
+			event.preventDefault();
+		
+			// Obtiene el valor de búsqueda
+			const searchValue = event.target.Search.value;
+		
+			// Obtiene los datos del servidor local
+			fetch('http://localhost:8080/') // Asegúrate de reemplazar esta URL con la URL de tu servidor local
+			.then(response => response.json())
+			.then(data => {
+				// Filtra los datos basándose en el valor de búsqueda
+				const filteredData = data.filter(item => item.name.includes(searchValue)); // Asegúrate de reemplazar 'item.name' con la propiedad correcta de tus datos
+		
+				// Muestra los datos filtrados
+				// Aquí necesitarás reemplazar esta parte con tu propio código para mostrar los datos
+				console.log(filteredData);
+			})
+			.catch(error => console.error('Error:', error));
+		});
+	</script>
+		
 	<script>
 				// Importa la biblioteca xlsx
 		import * as XLSX from 'xlsx';
@@ -2242,3 +2293,57 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </body>
 
 </html>
+
+
+
+<!-- CARGA DINAMICAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+	fetch('http://localhost:3000/data')
+  .then(response => response.json())
+  .then(data => {
+    // Crea una nueva sección para cada elemento de los datos
+    const sections = data.map(item => `
+      <div class="col-md-4 product-men">
+        <div class="men-pro-item simpleCart_shelfItem">
+          <div class="men-thumb-item">
+            <img src="${item.image}" alt="">
+            <div class="men-cart-pro">
+              <div class="inner-men-cart-pro">
+                <a href="single.html" class="link-product-add-cart">Quick View</a>
+              </div>
+            </div>
+            <span class="product-new-top">New</span>
+          </div>
+          <div class="item-info-product ">
+            <h4>
+              <a href="single.html">${item.name}</a>
+            </h4>
+            <div class="info-product-price">
+              <span class="item_price">$${item.price}</span>
+              <del>$${item.originalPrice}</del>
+            </div>
+            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+              <form action="#" method="post">
+                <fieldset>
+                  <input type="hidden" name="cmd" value="_cart" />
+                  <input type="hidden" name="add" value="1" />
+                  <input type="hidden" name="business" value=" " />
+                  <input type="hidden" name="item_name" value="${item.name}" />
+                  <input type="hidden" name="amount" value="${item.price}" />
+                  <input type="hidden" name="discount_amount" value="1.00" />
+                  <input type="hidden" name="currency_code" value="USD" />
+                  <input type="hidden" name="return" value=" " />
+                  <input type="hidden" name="cancel_return" value=" " />
+                  <input type="submit" name="submit" value="Add to cart" class="button" />
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    `);
+
+    // Agrega las secciones al DOM
+    document.querySelector('.product-sec1').innerHTML = sections.join('');
+  })
+  .catch(error => console.error('Error:', error));
+-->
