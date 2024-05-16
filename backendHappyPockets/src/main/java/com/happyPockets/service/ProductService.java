@@ -93,7 +93,7 @@ public class ProductService {
             List<Product> productListIn,
             @RequestParam Optional<Double> priceFrom,
             @RequestParam Optional<Double> priceTo){
-        if (productListIn == null || (priceFrom.get() <0 || priceTo.get() < 0))
+        if (productListIn == null || (priceFrom.isPresent() && priceFrom.get() < 0) || (priceFrom.isPresent() && priceTo.get() < 0))
             return null;
         if (priceFrom.isPresent()){
             productListIn = productListIn.stream().filter(product -> product.getShopPrices().getBestPrice() >= priceFrom.get()).toList();
@@ -102,6 +102,24 @@ public class ProductService {
             productListIn = productListIn.stream().filter(product -> product.getShopPrices().getBestPrice() <= priceTo.get()).toList();
         }
 
+        return productListIn;
+    }
+
+    public static List<Product> getProductCategory(List<Product> productListIn, @RequestParam Optional<String> category){
+        if (productListIn == null)
+            return productListIn;
+        if (category.isPresent()){
+            productListIn = productListIn.stream().filter(product -> product.getCat().equalsIgnoreCase(category.get())).toList();
+        }
+        return productListIn;
+    }
+
+    public static List<Product> getProductSearch(List<Product> productListIn, @RequestParam Optional<String> product){
+        if (productListIn == null)
+            return productListIn;
+        if (product.isPresent()){
+            productListIn = productListIn.stream().filter(product1 -> product1.getName().toLowerCase().contains(product.get().toLowerCase())).toList();
+        }
         return productListIn;
     }
 }
