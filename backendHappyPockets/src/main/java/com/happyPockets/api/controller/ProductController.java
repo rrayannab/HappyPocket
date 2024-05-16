@@ -36,19 +36,25 @@ public class ProductController {
     public ResponseEntity<List<Product>> getProducts(
             @RequestParam Optional<String> order,
             @RequestParam Optional<Double> priceFrom,
-            @RequestParam Optional<Double> priceTo){
+            @RequestParam Optional<Double> priceTo,
+            @RequestParam Optional<String> category,
+            @RequestParam Optional<String> producto
+            ){
         String orderValue = order.orElse("");
         List<Product> productList =  productService.getProductList();
 
         if (order != null && !orderValue.isEmpty())
             productList =  ProductService.getProductListOrder(productList, orderValue);
 
+        productList = ProductService.getProductSearch(productList, producto);
         productList = ProductService.getProductPriceRange(productList, priceFrom, priceTo);
+
+        productList = ProductService.getProductCategory(productList, category);
 
         if (productList!=null)
             return ResponseEntity.ok(productList);
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
-
-
     }
+
+
 }
