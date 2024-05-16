@@ -2209,7 +2209,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</script>
 
 	
-		BSUCADOR DINAMICO QUE RICO
+		BUSCADOR DINAMICO QUE RICO
 	<script>
 		// Selecciona el formulario y agrega un controlador de eventos 'submit'
 		document.querySelector('.agileits_search form').addEventListener('submit', function(event) {
@@ -2220,7 +2220,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			const searchValue = event.target.Search.value;
 		
 			// Obtiene los datos del servidor local
-			fetch('http://localhost:8080/') // Asegúrate de reemplazar esta URL con la URL de tu servidor local
+			fetch('http://localhost:8080/.........') // Asegúrate de reemplazar esta URL con la URL de tu servidor local
 			.then(response => response.json())
 			.then(data => {
 				// Filtra los datos basándose en el valor de búsqueda
@@ -2234,56 +2234,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		});
 	</script>
 		
-	<script>
-				// Importa la biblioteca xlsx
-		import * as XLSX from 'xlsx';
-
-		// Función para leer el archivo .xlsx y devolver los datos
-		function readXlsxFile(file) {
-		return new Promise((resolve, reject) => {
-			const reader = new FileReader();
-			reader.onload = function(e) {
-			const data = new Uint8Array(e.target.result);
-			const workbook = XLSX.read(data, {type: 'array'});
-			const worksheet = workbook.Sheets[workbook.SheetNames[0]];
-			const jsonData = XLSX.utils.sheet_to_json(worksheet);
-			resolve(jsonData);
-			};
-			reader.onerror = function(e) {
-			reject(e);
-			};
-			reader.readAsArrayBuffer(file);
-		});
-		}
-
-		// Función para actualizar el DOM con los datos
-		function updateDOM(data) {
-		const productElements = document.querySelectorAll('.product-men');
-		productElements.forEach((element, index) => {
-			if (data[index]) {
-			const productNameElement = element.querySelector('h4 a');
-			const productPriceElement = element.querySelector('.item_price');
-			const productImageElement = element.querySelector('.men-thumb-item img');
-			productNameElement.textContent = data[index].name;
-			productPriceElement.textContent = data[index].price;
-			productImageElement.src = data[index].image;
-			}
-		});
-		}
-
-		// Función para manejar la selección de categoría
-		function handleCategorySelection(event) {
-		const selectedCategory = event.target.value;
-		const file = `path/to/${selectedCategory}.xlsx`; // Actualiza esto con la ruta correcta
-		readXlsxFile(file)
-			.then(data => updateDOM(data))
-			.catch(error => console.error(error));
-		}
-
-		// Escucha el evento 'change' en el elemento select
-		const selectElement = document.querySelector('#category-select'); // Actualiza esto con el selector correcto
-		selectElement.addEventListener('change', handleCategorySelection);
-	</script>
 	PROBANDO -->
 	<!-- for bootstrap working -->
 	<script src="js/bootstrap.js"></script>
