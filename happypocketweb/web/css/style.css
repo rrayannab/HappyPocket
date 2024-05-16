@@ -57,6 +57,12 @@ label{
     background: #FF5722;;
 }
 /* //top-header */
+/* IMAGENES POTENTORRAS */
+.my_imagenes_potentorras {
+    width: 300px;
+    height: 200px;
+    object-fit: contain;
+}
 /*-- header-bottom --*/
 /*-- Header Lists --*/
 .header ul li {
