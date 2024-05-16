@@ -530,7 +530,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</h3>
 						<p>Get flat
 							<span>10%</span> Cashback</p>
-						<a class="button2" href="product.html">Shop Now </a>
+						<a class="button2" href="product.html?category=all">Shop Now </a>
 					</div>
 				</div>
 			</div>
@@ -542,7 +542,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</h3>
 						<p>Get Upto
 							<span>30%</span> Off</p>
-						<a class="button2" href="product.html">Shop Now </a>
+						<a class="button2" href="product.html?category=all">Shop Now </a>
 					</div>
 				</div>
 			</div>
@@ -555,7 +555,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<p>Get Best Offer Upto
 							<span>20%</span>
 						</p>
-						<a class="button2" href="product.html">Shop Now </a>
+						<a class="button2" href="product.html?category=all">Shop Now </a>
 					</div>
 				</div>
 			</div>
@@ -567,7 +567,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</h3>
 						<p>Get Now
 							<span>40%</span> Discount</p>
-						<a class="button2" href="product.html">Shop Now </a>
+						<a class="button2" href="product.html?category=all">Shop Now </a>
 					</div>
 				</div>
 			</div>
@@ -2089,6 +2089,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		title.textContent = this.value;
 		});
 	</script>
+	
 
 	<!-- for bootstrap working -->
 	<script src="js/bootstrap.js"></script>
@@ -2099,3 +2100,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </body>
 
 </html>
+
+<!--
+	<script>
+		// Función para generar un color aleatorio
+		function getRandomColor() {
+			const letters = '0123456789ABCDEF';
+			let color = '#';
+			for (let i = 0; i < 6; i++) {
+			color += letters[Math.floor(Math.random() * 16)];
+			}
+			return color;
+		}
+		
+		// Función para aplicar un color de fondo aleatorio
+		function applyRandomBackgroundColor() {
+			const element = document.querySelector('.header-most-top'); // Asegúrate de seleccionar el elemento correcto
+			const color = getRandomColor();
+			element.style.setProperty('--random-color', color);
+		}
+		
+		// Aplica un color de fondo aleatorio al cargar la página
+		window.onload = applyRandomBackgroundColor;
+	</script>
+-->
