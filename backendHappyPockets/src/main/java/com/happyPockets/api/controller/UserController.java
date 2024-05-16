@@ -48,4 +48,16 @@ public class UserController {
     public boolean addUser(@RequestParam String username, String password, String email, String name, String surname1, String surname2, int phone){
         return userService.addUser(username, password, email, name, surname1, surname2, phone);
     }
+
+    /**
+     *
+     * @param username
+     * @param password
+     * @return true en caso de existir el usuario en la base de datos y la contraseña se correcta.
+     *          En cualquier otro caso devuelve false.
+     */
+    @GetMapping("/logIn")
+    public boolean logIn(@RequestParam String username, String password) {
+        return userService.logIn(username, password);
+    }
 }
