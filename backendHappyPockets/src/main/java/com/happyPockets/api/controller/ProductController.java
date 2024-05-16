@@ -5,6 +5,7 @@ import com.happyPockets.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,6 +33,7 @@ public class ProductController {
         return null;
     }
 
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @GetMapping("/products")
     public ResponseEntity<List<Product>> getProducts(
             @RequestParam Optional<String> order,
