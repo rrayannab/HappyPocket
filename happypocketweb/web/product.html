@@ -142,7 +142,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							/>
 							<button
 								type="submit"
-								class="btn btn-default"
+								class="btn btn-default buscar"
 								aria-label="Left Align"
 							>
 								<span class="fa fa-search" aria-hidden="true">
@@ -798,18 +798,71 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<!-- //tittle heading -->
 				<!-- product left -->
 				<div class="side-bar col-md-3">
-					<div class="search-hotel">
-						<h3 class="agileits-sear-head">¿Qué deseas?</h3>
-						<form action="#" method="post">
-							<input
-								type="search"
-								placeholder="buscar aquí..."
-								name="search"
-								required=""
-							/>
-							<input type="submit" value=" " />
-						</form>
+					<!--ORDENAR-->
+					<div class="left-side">
+						<h3 class="agileits-sear-head">Supermercado</h3>
+						<ul>
+							<li>
+								<input type="checkbox" class="checked">
+								<span class="span">Precios más bajos primero</span>
+							</li>
+							<li>
+								<input type="checkbox" class="checked">
+								<span class="span">Precios más altos primero</span>
+							</li>
+							<li>
+								<input type="checkbox" class="checked">
+								<span class="span">De A -> Z</span>
+							</li>
+							<li>
+								<input type="checkbox" class="checked">
+								<span class="span">De Z -> A</span>
+							</li>
+						</ul>
 					</div>
+					<div class="left-side">
+						<h3 class="agileits-sear-head">Ordenar</h3>
+						<ul>
+							<li>
+								<input type="checkbox" class="checked">
+								<span class="span">Precios más bajos primero</span>
+							</li>
+							<li>
+								<input type="checkbox" class="checked">
+								<span class="span">Precios más altos primero</span>
+							</li>
+							<li>
+								<input type="checkbox" class="checked">
+								<span class="span">De A -> Z</span>
+							</li>
+							<li>
+								<input type="checkbox" class="checked">
+								<span class="span">De Z -> A</span>
+							</li>
+						</ul>
+					</div>
+					<div class="left-side">
+						<h3 class="agileits-sear-head">Marcas</h3>
+						<ul>
+							<li>
+								<input type="checkbox" class="checked">
+								<span class="span">Precios más bajos primero</span>
+							</li>
+							<li>
+								<input type="checkbox" class="checked">
+								<span class="span">Precios más altos primero</span>
+							</li>
+							<li>
+								<input type="checkbox" class="checked">
+								<span class="span">De A -> Z</span>
+							</li>
+							<li>
+								<input type="checkbox" class="checked">
+								<span class="span">De Z -> A</span>
+							</li>
+						</ul>
+					</div>
+					
 					<!-- price range -->
 					<div class="range">
 						<h3 class="agileits-sear-head">Rango de precios</h3>
@@ -825,7 +878,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										font-weight: normal;
 									"
 								/>
-								<button type="submit" class="btn btn-default" aria-label="Left Align" style="margin-top: 15px;">
+								<button type="submit" class="btn btn-default precio" aria-label="Left Align" style="margin-top: 15px;">
 									<span class="fa fa-search" aria-hidden="true">
 									</span>
 								</button>
@@ -1637,7 +1690,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			function generateUrl(order, priceFrom, priceTo) {
 				return `http://localhost:8080/products?order=${order}&priceFrom=${priceFrom}&priceTo=${priceTo}`;
 			}
-
+			// para ordenar de menor a mayor o viceversa, añadir parametro que ordena data y luego ponerlo
 			function fecthAndDisplayProducts(url){
 				let mainContainer = document.querySelector('.agileinfo-ads-display.col-md-9.w3l-rightpro .wrapper');
 				mainContainer.innerHTML = '';
@@ -1719,6 +1772,98 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				})
 				.catch((error) => console.error("Error:", error));
 			}
+
+			function searchAndDisplayResults(searchTerm) {
+				if(searchTerm === ''){
+					fecthAndDisplayProducts('http://localhost:8080/products?order=priceDesc');
+				}else{
+					let mainContainer = document.querySelector('.agileinfo-ads-display.col-md-9.w3l-rightpro .wrapper');
+					mainContainer.innerHTML = '';
+					let url = `http://localhost:8080/products?order=priceDesc`;
+
+					fetch(url, {mode: 'cors'})
+					.then((response) => response.json())
+					.then((data) => {
+						console.log(data);
+						let filteredData = data.filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
+						console.log(filteredData);
+
+						let sections = '';
+						let container = mainContainer.appendChild(document.createElement('div'));
+						container.className = 'product-sec1';
+						// Crea una nueva sección para cada elemento de los datos
+						filteredData.forEach((item, index) => {
+							let bestPrice = item.shopPrices && item.shopPrices.bestPrice ? item.shopPrices.bestPrice : 'N/A';
+							sections += `
+								<div class="col-md-4 product-men">
+									<div class="men-pro-item simpleCart_shelfItem">
+									<div class="men-thumb-item">
+										<img class="my_imagenes_potentorras" src="${item.imageLink}" alt="">
+										<div class="men-cart-pro">
+											<div class="inner-men-cart-pro">
+												<a href="single.html" class="link-product-add-cart">MÁS</a>
+												</div>
+											</div>
+											<span class="product-new-top">New</span>
+										</div>
+										<div class="item-info-product ">
+											<h4>
+												<a href="single.html">${item.name}</a>
+											</h4>
+											<div class="info-product-price">
+												<span class="item_price">$${bestPrice}</span>
+												<del>$${bestPrice}</del>
+											</div>
+											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+												<form action="#" method="post">
+													<fieldset>
+														<input type="hidden" name="cmd" value="_cart" />
+														<input type="hidden" name="add" value="1" />
+														<input type="hidden" name="business" value=" " />
+														<input type="hidden" name="item_name" value="${item.name}" />
+														<input type="hidden" name="amount" value="${bestPrice}" />
+														<input type="hidden" name="currency_code" value="€" />
+														<input type="hidden" name="return" value=" " />
+														<input type="hidden" name="cancel_return" value=" " />
+														<input type="submit" name="submit" value="Añadir al carrito" class="button" />
+													</fieldset>
+												</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							`;
+							if ((index + 1) % 3 === 0 || index === filteredData.length - 1) {
+								sections += `
+									<div class="clearfix"></div>
+								</div>
+								`;
+
+								container.insertAdjacentHTML('beforeend', sections);
+
+								if(index !== filteredData.length - 1 ){
+									container = container.parentElement.appendChild(document.createElement('div'));
+									container.className = 'product-sec1';
+								}
+
+								sections = '';
+
+							}
+						});
+						if(sections !== ''){
+							sections += `
+								<div class="clearfix"></div>
+							</div>
+							`;
+							container.insertAdjacentHTML('beforeend', sections);
+						}
+										
+					})
+					.catch((error) => console.error("Error:", error));
+				}		
+			}
+
 			//<![CDATA[
 			$(window).load(function () {
 				let slider = $("#slider-range");
@@ -1745,7 +1890,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				fecthAndDisplayProducts(url);
 
 
-				$('.btn.btn-default').click(function(event){
+				$('.btn.btn-default.precio').click(function(event){
 					event.preventDefault();
 					priceFrom = slider.slider("values", 0);
 					priceTo = slider.slider("values", 1);
@@ -1755,6 +1900,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 					fecthAndDisplayProducts(url);
 				});
+				
+				let searchForm = $('.agileits_search form');
+
+				searchForm.on('submit', function(event){
+					event.preventDefault();
+					let searchTerm = $('input[name="Search"]').val();
+					searchAndDisplayResults(searchTerm);
+				});
+
+
 			}); //]]>
 		</script>
 
