@@ -122,4 +122,12 @@ public class UserService {
         }
         return false;
     }
+
+    public boolean logIn(String username, String password) {
+        for (User user : userList) {
+            if (user.getUsername().equals(username))
+                return user.getPassword().equals(password);
+        }
+        return false;
+    }
 }
