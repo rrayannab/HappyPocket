@@ -1556,7 +1556,7 @@ ul.w3_short {
 .map iframe {
     width: 100%;
     min-height: 400px;
-    border: 8px solid #FF5722;
+    border: 8px solid #000000;
     padding: 10px;
     display: inherit;
 }
