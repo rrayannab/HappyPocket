@@ -560,52 +560,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- Single Page -->
 	<div class="banner-bootom-w3-agileits">
 		<div class="container">
-			<!-- tittle heading -->
-			<h3 class="tittle-w3l">Single Page
-				<span class="heading-style">
-					<i></i>
-					<i></i>
-					<i></i>
-				</span>
-			</h3>
-			<!-- //tittle heading -->
 			<div class="col-md-5 single-right-left ">
-				<div class="grid images_3_of_2">
-					<div class="flexslider">
-						<ul class="slides">
-							<li data-thumb="images/si.jpg">
+							<div data-thumb="images/si.jpg">
 								<div class="thumb-image">
 									<img src="images/si.jpg" data-imagezoom="true" class="img-responsive" alt=""> </div>
-							</li>
-							<li data-thumb="images/si2.jpg">
-								<div class="thumb-image">
-									<img src="images/si2.jpg" data-imagezoom="true" class="img-responsive" alt=""> </div>
-							</li>
-							<li data-thumb="images/si3.jpg">
-								<div class="thumb-image">
-									<img src="images/si3.jpg" data-imagezoom="true" class="img-responsive" alt=""> </div>
-							</li>
-						</ul>
+							</div>
 						<div class="clearfix"></div>
-					</div>
-				</div>
 			</div>
 			<div class="col-md-7 single-right-left simpleCart_shelfItem">
 				<h3>Zeeba Premium Basmati Rice - 5 KG</h3>
-				<div class="rating1">
-					<span class="starRating">
-						<input id="rating5" type="radio" name="rating" value="5">
-						<label for="rating5">5</label>
-						<input id="rating4" type="radio" name="rating" value="4">
-						<label for="rating4">4</label>
-						<input id="rating3" type="radio" name="rating" value="3" checked="">
-						<label for="rating3">3</label>
-						<input id="rating2" type="radio" name="rating" value="2">
-						<label for="rating2">2</label>
-						<input id="rating1" type="radio" name="rating" value="1">
-						<label for="rating1">1</label>
-					</span>
-				</div>
 				<p>
 					<span class="item_price">$950.00</span>
 					<del>$1300.00</del>
@@ -1490,10 +1453,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 		});
 	</script>
-	
-	<script>
-	</script>
 	<!-- //flexisel (for special offers) -->
+	
+
+	<!--get params para single.html-->
+	<script>
+		let parameterName = window.location.search.substr(1).split("=")[1];
+		console.log(parameterName);
+
+
+
+
+	</script>
+	
 
 	<!-- for bootstrap working -->
 	<script src="js/bootstrap.js"></script>
