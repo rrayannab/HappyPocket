@@ -122,4 +122,23 @@ public class ProductService {
         }
         return productListIn;
     }
+
+    public List<String> getCategories(){
+        List<String> categories = new ArrayList<>();
+        for (Product product : productList) {
+            if (!categories.contains(product.getCat())){
+                categories.add(product.getCat());
+            }
+        }
+        return categories;
+    }
+    public List<String> getBrands(){
+        List<String> brands = new ArrayList<>();
+        for (Product product : productList) {
+            if (!brands.contains(product.getBrand())){
+                brands.add(product.getBrand());
+            }
+        }
+        return brands;
+    }
 }
