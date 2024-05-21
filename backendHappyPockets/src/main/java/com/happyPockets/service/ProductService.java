@@ -73,6 +73,8 @@ public class ProductService {
     }
 
     public static List<Product> getProductListOrder(List<Product> products, String order) {
+        if (products == null || order == null)
+            return null;
         if (order.equalsIgnoreCase("asc")) {
             products.sort(Comparator.comparing(Product::getName));
             return products;
@@ -108,7 +110,7 @@ public class ProductService {
     }
 
     public static List<Product> getProductCategory(List<Product> productListIn, @RequestParam Optional<String> category){
-        if (productListIn == null)
+        if (productListIn == null || category == null)
             return productListIn;
         if (category.isPresent()){
             productListIn = productListIn.stream().filter(product -> product.getCat().equalsIgnoreCase(category.get())).toList();
@@ -119,7 +121,7 @@ public class ProductService {
     public static List<Product> getProductSearch(List<Product> productListIn, @RequestParam Optional<String> product){
         if (productListIn == null)
             return productListIn;
-        if (product.isPresent()){
+        if (product != null && product.isPresent()){
             productListIn = productListIn.stream().filter(product1 -> product1.getName().toLowerCase().contains(product.get().toLowerCase())).toList();
         }
         return productListIn;
@@ -134,6 +136,7 @@ public class ProductService {
         }
         return categories;
     }
+
     public List<String> getBrands(){
         List<String> brands = new ArrayList<>();
         for (Product product : productList) {

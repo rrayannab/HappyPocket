@@ -94,7 +94,7 @@ public class BackendHappyPocketsApplicationTestsProductService {
 	void ProductCategory() {
 		assertNull(productService.getProductCategory(null, Optional.empty()));
 		assertNull(productService.getProductCategory(null, null));
-		assertNull(productService.getProductCategory(productService.getProductList(), null));
+		assertNotNull(productService.getProductCategory(productService.getProductList(), null));
 
 		Map<String, Set<String>> categorias = new HashMap<>();
 		List<Product> productList = productService.getProductList();
@@ -111,40 +111,41 @@ public class BackendHappyPocketsApplicationTestsProductService {
 		}
 	}
 
-	/*
 	@Test
-	void UserLogInFalseTest() {
-		List<User> userList = userService.getUserList();
-		if (userList.isEmpty()) {
-			assertFalse(userService.logIn("test", "test"));
-		} else {
-			for (User us : userService.getUserList()) {
-				assertFalse(userService.logIn(us.getUsername(), us.getPassword()+"test"));
-				assertFalse(userService.logIn(us.getUsername()+"test", us.getPassword()));
-			}
+	void ProductSearch() {
+		assertNull(productService.getProductSearch(null, null));
+		assertNotNull(productService.getProductSearch(productService.getProductList(), null));
+		assertNotNull(productService.getProductSearch(productService.getProductList(), Optional.empty()));
+
+		for (Product pr : productService.getProductList()) {
+			assertTrue(productService.getProductSearch(productService.getProductList(), Optional.of(pr.getName())).contains(pr));
 		}
+
+		assertNotNull(productService.getProductSearch(productService.getProductList(), Optional.of("")));
 	}
 
 	@Test
-	void AddUserFalse() {
-		for (User us : userService.getUserList()) {
-			assertFalse(userService.addUser(us.getUsername(), us.getPassword(), us.getEmail(), us.getName(), us.getSurname1(), us.getSurname2(), us.getPhone()));
+	void ProductListOrder() {
+		assertNull(productService.getProductListOrder(null, null));
+		assertNull(productService.getProductListOrder(null, ""));
+		assertNull(productService.getProductListOrder(productService.getProductList(), null));
+		assertNull(productService.getProductListOrder(productService.getProductList(), ""));
+		assertNull(productService.getProductListOrder(productService.getProductList(), "prueba"));
+
+		for (String ord : List.of("asc", "desc", "priceAsc", "priceDesc")) {
+			assertEquals(productService.getProductListOrder(productService.getProductList(), ord).size(), productService.getProductList().size());
 		}
+
 	}
 
-	// Para que la prueba sea mas concisa deberia de poder borrarse el usuario del test para que no se quede en la base de datos
-	// Si se queda en la base de datos para la siquiente iteracion fallará
 	@Test
-	void AddUserTrue() {
-		int num = new Random().nextInt();
-		if (num < 0)
-			num = num*(-1);
-		assertTrue(userService.addUser("test"+num, "test1234", "test"+num+"@gmail.com", "test", "test", "test", 123456));
-		Set<String> users = new HashSet<>();
-		for (User us : userService.getUserList()) {
-			users.add(us.getUsername());
+	void ProductCategories() {
+		Set<String> categorias = new HashSet<>();
+		for (Product pr : productService.getProductList()) {
+				categorias.add(pr.getCat());
 		}
-		assertTrue(users.contains("test"+num));
+		for (String cat : productService.getCategories()) {
+			assertTrue(categorias.contains(cat));
+		}
 	}
-	 */
 }
