@@ -59,9 +59,20 @@ label{
 /* //top-header */
 /* IMAGENES POTENTORRAS */
 .my_imagenes_potentorras {
-    width: 300px;
+    width: 350px;
+    height: 350px;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+    object-position: center;
+}
+.my_imagenes_potentorras_prod {
+    width: 200px;
     height: 200px;
     object-fit: contain;
+    display: block;
+    margin: auto;
+    object-position: center;
 }
 /*-- header-bottom --*/
 /*-- Header Lists --*/

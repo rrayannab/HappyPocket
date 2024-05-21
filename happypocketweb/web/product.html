@@ -554,27 +554,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</li>
 						</ul>
 					</div>
-					<div class="left-side">
-						<h3 class="agileits-sear-head">Marcas</h3>
-						<ul>
-							<li>
-								<input type="radio" name="sortOption" class="checked">
-								<span class="span">Precios más bajos primero</span>
-							</li>
-							<li>
-								<input type="radio" name="sortOption" class="checked">
-								<span class="span">Precios más altos primero</span>
-							</li>
-							<li>
-								<input type="radio" name="sortOption" class="checked">
-								<span class="span">De A -> Z</span>
-							</li>
-							<li>
-								<input type="radio" name="sortOption" class="checked">
-								<span class="span">De Z -> A</span>
-							</li>
-						</ul>
-					</div>
 					
 					<!-- price range -->
 					<div class="range">
@@ -744,31 +723,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</script> -->
 		<!-- //popup modal (for signin & signup)-->
 
-		<!-- cart-js -->
-		<script src="js/minicart.js"></script>
-		<script>
-			paypalm.minicartk.render(); //use only unique class names other than paypal1.minicart1.Also Replace same class name in css and minicart.min.js
-
-			paypalm.minicartk.cart.on("checkout", function (evt) {
-				var items = this.items(),
-					len = items.length,
-					total = 0,
-					i;
-
-				// Count the number of each item in the cart
-				for (i = 0; i < len; i++) {
-					total += items[i].get("quantity");
-				}
-
-				if (total < 3) {
-					alert(
-						"The minimum order quantity is 3. Please add more to your shopping cart before checking out"
-					);
-					evt.preventDefault();
-				}
-			});
-		</script>
-		<!-- //cart-js -->
+		
 
 		<!-- flexisel (for special offers) -->
 		<script src="js/jquery.flexisel.js"></script>
@@ -862,6 +817,32 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			});
 		</script>
 		<!-- //smooth-scrolling-of-move-up -->
+
+		<!-- cart-js -->
+		<script src="js/minicart.js"></script>
+		<script>
+			paypalm.minicartk.render(); //use only unique class names other than paypal1.minicart1.Also Replace same class name in css and minicart.min.js
+
+			paypalm.minicartk.cart.on("checkout", function (evt) {
+				var items = this.items(),
+					len = items.length,
+					total = 0,
+					i;
+
+				// Count the number of each item in the cart
+				for (i = 0; i < len; i++) {
+					total += items[i].get("quantity");
+				}
+
+				if (total < 3) {
+					alert(
+						"The minimum order quantity is 3. Please add more to your shopping cart before checking out"
+					);
+					evt.preventDefault();
+				}
+			});
+		</script>
+		<!-- //cart-js -->
 		<!--CARGA DINAMICA-->
 		<script src="js/jquery-ui.js"></script>
 		<script>
@@ -982,7 +963,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="col-md-4 product-men">
 								<div class="men-pro-item simpleCart_shelfItem">
 								<div class="men-thumb-item">
-									<img class="my_imagenes_potentorras" src="${item.imageLink}" alt="">
+									<img class="my_imagenes_potentorras_prod" src="${item.imageLink}" alt="">
 									<div class="men-cart-pro">
 										<div class="inner-men-cart-pro">
 											<a href="single.html?id=${item.id}" class="link-product-add-cart">MÁS</a>
@@ -991,11 +972,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</div>
 									<div class="item-info-product ">
 										<h4>
-											<a href="single.html?id=${item.id}">${item.name}</a>
+											<a href="single.html?id=${item.id}">${item.name.substring(0, 30)}</a>
 										</h4>
 										<div class="info-product-price">
-											<span class="item_price">$${bestPrice}</span>
-											<span>${item.shopPrices.bestStore}</span>
+											<span class="item_price">${bestPrice}€</span>
+											<span>    ${item.shopPrices.bestStore}</span>
 
 										</div>
 										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
@@ -1004,8 +985,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 													<input type="hidden" name="cmd" value="_cart" />
 													<input type="hidden" name="add" value="1" />
 													<input type="hidden" name="business" value=" " />
-													<input type="hidden" name="item_name" value="${item.name.slice(0, 10)}" />
-													<input type="hidden" name="amount" value="${bestPrice}" />
+													<input type="hidden" name="item_name" value="${item.name}" />
+													<input type="hidden" name="amount" value="${item.shopPrices.bestPrice}" />
 													<input type="hidden" name="currency_code" value="€" />
 													<input type="hidden" name="return" value=" " />
 													<input type="hidden" name="cancel_return" value=" " />
@@ -1026,6 +1007,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 							container.insertAdjacentHTML('beforeend', sections);
 
+
 							if(index !== data.length - 1 ){
 								container = container.parentElement.appendChild(document.createElement('div'));
 								container.className = 'product-sec1';
@@ -1035,16 +1017,39 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 						}
 					});
+					let forms = document.querySelectorAll('.snipcart-details form');
+					forms.forEach((form, index) => {
+						form.addEventListener('submit', createEventListener(data[index]));
+					});
 					if(sections !== ''){
 						sections += `
 							<div class="clearfix"></div>
 						</div>
 						`;
 						container.insertAdjacentHTML('beforeend', sections);
+
+						// Agrega un event listener al último botón "Add to cart" agregado
+						let forms = document.querySelectorAll('.snipcart-details form');
+						let lastForm = forms[forms.length - 1];
+						lastForm.addEventListener('submit', createEventListener(item));
 					}
 									
 				})
 				.catch((error) => console.error("Error:", error));
+			}
+
+			function createEventListener(item) {
+				return function(event) {
+					event.preventDefault();
+			
+					// Añade el artículo al carrito
+					paypalm.minicartk.cart.add({
+						item_name: item.name,
+						amount: item.shopPrices.bestPrice,
+						currency_code: 'EUR',
+						quantity: 1
+					});
+				};
 			}
 
 			function searchAndDisplayResults(searchTerm) {
@@ -1072,7 +1077,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="col-md-4 product-men">
 								<div class="men-pro-item simpleCart_shelfItem">
 								<div class="men-thumb-item">
-									<img class="my_imagenes_potentorras" src="${item.imageLink}" alt="">
+									<img class="my_imagenes_potentorras_prod" src="${item.imageLink}" alt="">
 									<div class="men-cart-pro">
 										<div class="inner-men-cart-pro">
 											<a href="single.html?id=${item.id}" class="link-product-add-cart">MÁS</a>
@@ -1081,11 +1086,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</div>
 									<div class="item-info-product ">
 										<h4>
-											<a href="single.html?id=${item.id}">${item.name.substring(0, 10)}</a>
+											<a href="single.html?id=${item.id}">${item.name.substring(0, 30)}</a>
 										</h4>
 										<div class="info-product-price">
-											<span class="item_price">$${bestPrice}</span>
-											<span>${item.shopPrices.bestStore}</span>
+											<span class="item_price">${bestPrice}€</span>
+											<span>    ${item.shopPrices.bestStore}</span>
 
 										</div>
 										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
@@ -1116,6 +1121,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 								container.insertAdjacentHTML('beforeend', sections);
 
+							
 								if(index !== filteredData.length - 1 ){
 									container = container.parentElement.appendChild(document.createElement('div'));
 									container.className = 'product-sec1';
@@ -1125,12 +1131,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 							}
 						});
+
+						let forms = document.querySelectorAll('.snipcart-details form');
+						forms.forEach((form, index) => {
+							form.addEventListener('submit', createEventListener(data[index]));
+						});
+
 						if(sections !== ''){
 							sections += `
 								<div class="clearfix"></div>
 							</div>
 							`;
 							container.insertAdjacentHTML('beforeend', sections);
+
+							// Agrega un event listener al último botón "Add to cart" agregado
+							let forms = document.querySelectorAll('.snipcart-details form');
+							let lastForm = forms[forms.length - 1];
+							lastForm.addEventListener('submit', createEventListener(item));
 						}
 										
 					})
