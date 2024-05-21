@@ -537,19 +537,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<h3 class="agileits-sear-head">Ordenar</h3>
 						<ul>
 							<li>
-								<input type="radio" name="sortOption" class="checked">
+								<input type="radio" name="sortOption" class="checked" value="priceAsc">
 								<span class="span">Precios más bajos primero</span>
 							</li>
 							<li>
-								<input type="radio" name="sortOption" class="checked">
+								<input type="radio" name="sortOption" class="checked" value="priceDesc">
 								<span class="span">Precios más altos primero</span>
 							</li>
 							<li>
-								<input type="radio" name="sortOption" class="checked">
+								<input type="radio" name="sortOption" class="checked" value="asc">
 								<span class="span">De A -> Z</span>
 							</li>
 							<li>
-								<input type="radio" name="sortOption" class="checked">
+								<input type="radio" name="sortOption" class="checked" value="desc">
 								<span class="span">De Z -> A</span>
 							</li>
 						</ul>
@@ -1166,13 +1166,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					fecthAndDisplayProducts(url2);
 				}
 
+				function checkOrder() { 
+					var checkRadio = document.querySelector(
+						'input[name="sortOption"]:checked');
+					
+					if(checkRadio != null) {
+						console.log("Selected Radio Button: "
+							+ checkRadio.value);
+							return checkRadio.value;
+					}
+					else {
+						console.log("No Radio Button Selected");
+						return 'asc';
+					}
+				}
 
 
 				$('.btn.btn-default.precio').click(function(event){
+					
 					event.preventDefault();
 					priceFrom = slider.slider("values", 0);
 					priceTo = slider.slider("values", 1);
-					order = 'priceDesc';
+					order = checkOrder();
 
 					url = generateUrl(order, priceFrom, priceTo);
 
