@@ -555,6 +555,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</ul>
 					</div>
 					<div class="left-side">
+						<h3 class="agileits-sear-head">Categoría</h3>
+    						<ul id="cat-list">
+								<li>
+									<input type="radio" name="catOption" class="checked" value="all">
+									<span class="span">Todos</span>
+								</li>
+							</ul>
+					</div>
+					<div class="left-side">
 						<h3 class="agileits-sear-head">Marcas</h3>
 						<ul>
 							<li>
@@ -962,7 +971,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					data.nombrecategoria2;
 			}
 			function generateUrl(order, priceFrom, priceTo) {
-				return `http://localhost:8080/products?order=${order}&priceFrom=${priceFrom}&priceTo=${priceTo}`;
+				return `http://localhost:8080/products?order=${order}&priceFrom=${priceFrom}&priceTo=${priceTo}&category=${category}`;
 			}
 			// para ordenar de menor a mayor o viceversa, añadir parametro que ordena data y luego ponerlo
 			function fecthAndDisplayProducts(url){
@@ -1158,7 +1167,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				let priceFrom = slider.slider("values", 0);
 				let priceTo = slider.slider("values", 1);
 				let order = 'priceDesc';
-				let url = generateUrl(order, priceFrom, priceTo);
+				let url = generateUrl(order, priceFrom, priceTo, "all");
 				if(category === "all"){
 					fecthAndDisplayProducts(url);
 				}else {
@@ -1171,15 +1180,32 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						'input[name="sortOption"]:checked');
 					
 					if(checkRadio != null) {
+						// console.log("Selected Radio Button: "
+						// 	+ checkRadio.value);
+							return checkRadio.value;
+					}
+					else {
+						// console.log("No Radio Button Selected");
+						return 'asc';
+					}
+				}
+				
+				function checkCategory() { 
+					var checkRadio = document.querySelector(
+						'input[name="catOption"]:checked');
+					
+					if(checkRadio != null) {
 						console.log("Selected Radio Button: "
 							+ checkRadio.value);
 							return checkRadio.value;
 					}
 					else {
 						console.log("No Radio Button Selected");
-						return 'asc';
+						return 'all';
 					}
 				}
+
+				
 
 
 				$('.btn.btn-default.precio').click(function(event){
@@ -1188,8 +1214,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					priceFrom = slider.slider("values", 0);
 					priceTo = slider.slider("values", 1);
 					order = checkOrder();
+					category = checkCategory();
 
-					url = generateUrl(order, priceFrom, priceTo);
+					url = generateUrl(order, priceFrom, priceTo, category);
 
 					fecthAndDisplayProducts(url);
 				});
@@ -1204,6 +1231,72 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 			}); //]]>
+
+			// Función para hacer la llamada al backend y obtener los datos
+			async function fetchItems() {
+				try {
+					const response = await fetch('http://localhost:8080/categories');
+					const data = await response.json();
+					return data;
+				} catch (error) {
+					console.error('Error al obtener los datos del backend:', error);
+					return [];
+				}
+			}
+
+			// Función para obtener el valor de un parámetro en la URL
+			function getQueryParam(param) {
+				const urlParams = new URLSearchParams(window.location.search);
+				return urlParams.get(param);
+			}
+
+			// Función para normalizar una cadena eliminando tildes y pasando a minúsculas
+			function normalizeString(str) {
+				return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+			}
+
+			// Función para generar el HTML dinámicamente
+			function generateList(items, selectedCategory) {
+				const itemList = document.getElementById('cat-list');
+				
+				// Ordenar los items alfabéticamente
+				const sortedItems = Array.from(items).sort();
+
+				// Normalizar la categoría seleccionada
+				const normalizedSelectedCategory = selectedCategory ? normalizeString(selectedCategory) : '';
+
+				// Crear un elemento <li> por cada item
+				sortedItems.forEach(item => {
+					const normalizedItem = normalizeString(item);
+					const li = document.createElement('li');
+					const input = document.createElement('input');
+					input.type = 'radio';
+					input.name = 'catOption';
+					input.value = item;
+					input.className = 'checked';
+					
+					// Marcar el item como seleccionado si coincide con el parámetro de la URL
+					if (normalizedItem === normalizedSelectedCategory) {
+						input.checked = true;
+					}
+					
+					const span = document.createElement('span');
+					span.className = 'span';
+					span.textContent = item;
+					
+					li.appendChild(input);
+					li.appendChild(span);
+					itemList.appendChild(li);
+				});
+			}
+
+			// Obtener la categoría seleccionada de la URL
+			const selectedCategory = getQueryParam('category');
+
+			// Llamar a la función fetchItems y generar la lista con la categoría seleccionada
+			fetchItems().then(items => {
+				generateList(items, selectedCategory);
+			});
 		</script>
 
 		<!-- for bootstrap working -->
