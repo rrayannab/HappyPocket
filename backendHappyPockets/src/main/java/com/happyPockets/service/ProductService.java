@@ -93,7 +93,9 @@ public class ProductService {
             List<Product> productListIn,
             @RequestParam Optional<Double> priceFrom,
             @RequestParam Optional<Double> priceTo){
-        if (productListIn == null || (priceFrom.isPresent() && priceFrom.get() < 0) || (priceFrom.isPresent() && priceTo.get() < 0))
+        if (productListIn == null || (priceFrom.isPresent() && priceFrom.get() < 0) || (priceTo.isPresent() && priceTo.get() < 0))
+            return null;
+        if (priceFrom.isPresent() && priceTo.isPresent() && priceFrom.get() > priceTo.get())
             return null;
         if (priceFrom.isPresent()){
             productListIn = productListIn.stream().filter(product -> product.getShopPrices().getBestPrice() >= priceFrom.get()).toList();

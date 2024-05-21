@@ -79,7 +79,7 @@ public class UserService {
 
 
     public boolean addUser(String username, String password, String email, String name, String surname1, String surname2, int phone) {
-        if (InUserList(username))
+        if (InUserList(username, email))
             return false;
         try (FileInputStream fis = new FileInputStream(new File(rutaArchivo)))
         {
@@ -115,9 +115,9 @@ public class UserService {
         }
     }
 
-    private boolean InUserList(String username) {
+    private boolean InUserList(String username, String email) {
         for (User user : userList) {
-            if (user.getUsername().equals(username))
+            if (user.getUsername().equals(username) || user.getEmail().equals(email))
                 return true;
         }
         return false;
