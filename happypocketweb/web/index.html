@@ -423,7 +423,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="side-bar col-md-3">
 				<!-- price range -->
 				<div class="range">
-					<h3 class="agileits-sear-head">Price range</h3>
+					<h3 class="agileits-sear-head">Rango de precios</h3>
 					<ul class="dropdown-menu6">
 						<li>
 
@@ -1472,9 +1472,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				range: true,
 				min: 0,
 				max: 9000,
-				values: [50, 6000],
+				values: [1, 50],
 				slide: function (event, ui) {
-					$("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+					$("#amount").val("€" + ui.values[0] + " - €" + ui.values[1]);
 				}
 			});
 			$("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
