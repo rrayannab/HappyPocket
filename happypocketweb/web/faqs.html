@@ -66,6 +66,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</li>
 					-->
 					<li>
+						<a class="play-icon popup-with-zoom-anim" href="#small-dialog1">
+							<span class="fa fa-map-marker" aria-hidden="true"></span> Selecciona tu ubicación</a>
+					</li>
+					<li>
 						<span class="fa fa-phone" aria-hidden="true"></span> +34 951 23 45 67
 					</li>
 					<li>
@@ -81,7 +85,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<!-- search -->
 				<div class="agileits_search">
 					<form action="#" method="post">
-						<input name="Search" type="search" placeholder="¿Que deseas buscar hoy?" required="">
+						<input name="Search" type="search" placeholder="¿Qué desea comprar hoy?" required="">
 						<button type="submit" class="btn btn-default" aria-label="Left Align">
 							<span class="fa fa-search" aria-hidden="true"> </span>
 						</button>
@@ -227,6 +231,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- navigation -->
 	<div class="ban-top">
 		<div class="container">
+			<!-- Ver categoría disponibles de la BD, NO FUNCIONA EL BOTÓN
 			<div class="agileits-navi_search">
 				<form action="#" method="post">
 					<select id="agileinfo-nav_search" name="agileinfo_search" required="">
@@ -245,6 +250,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</select>
 				</form>
 			</div>
+		-->
 			<div class="top_nav_left">
 				<nav class="navbar navbar-default">
 					<div class="container-fluid">
@@ -261,6 +267,80 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav menu__list">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle nav-stylehead" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categorías Productos
+										<span class="caret"></span>
+									</a>
+									<ul class="dropdown-menu multi-column columns-3">
+										<div class="agile_inner_drop_nav_info">
+											<div class="col-sm-4 multi-gd-img">
+												<ul class="multi-column-dropdown">
+													<li>
+														<a href="product.html?category=all">Todos los productos</a>
+													</li>
+													<li>
+														<a href="product.html?category=aceites">Aceites</a>
+													</li>
+													<li>
+														<a href="product.html?category=arroz">Arroz</a>
+													</li>
+													<li>
+														<a href="product.html?category=azucar">Azúcar</a>
+													</li>
+													<li>
+														<a href="product.html?category=batidos">Batidos</a>
+													</li>
+													<li>
+														<a href="product.html?category=cafes">Cafés</a>
+													</li>
+													<li>
+														<a href="product.html?category=caldo">Caldo</a>
+													</li>
+													
+												</ul>
+											</div>
+											<div class="col-sm-4 multi-gd-img">
+												<ul class="multi-column-dropdown">
+													<li>
+														<a href="product.html?category=cerealesygalletas">Cereales y galletas</a>
+													</li>
+													<li>
+														<a href="product.html?category=charcuteria">Charcuteria</a>
+													</li>
+													<li>
+														<a href="product.html?category=congelados">Congelados</a>
+													</li>
+													<li>
+														<a href="product.html?category=frutas">Frutas</a>
+													</li>
+													<li>
+														<a href="product.html?category=lacteos">Lácteos</a>
+													</li>
+													<li>
+														<a href="product.html?category=panaderia">Panadería</a>
+													</li>
+													<li>
+														<a href="product.html?category=pastas">Pastas</a>
+													</li>
+												</ul>
+											</div>
+											<div class="col-sm-4 multi-gd-img">
+												<ul class="multi-column-dropdown">
+													<li>
+														<a href="product.html?category=refrescos">Resfrescos</a>
+													</li>
+													<li>
+														<a href="product.html?category=snacks">Snacks</a>
+													</li>
+													<li>
+														<a href="product.html?category=zumos">Zumos</a>
+													</li>
+												</ul>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+									</ul>
+								</li>
 								<li>
 									<a class="nav-stylehead" href="index.html">Home
 										<span class="sr-only">(current)</span>
@@ -268,130 +348,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</li>
 								<li class="">
 									<a class="nav-stylehead" href="about.html"> Sobre Nosotros</a>
-								</li>
-								<!--li class="dropdown">
-									<a href="#" class="dropdown-toggle nav-stylehead" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kitchen
-										<span class="caret"></span>
-									</a>
-									<ul class="dropdown-menu multi-column columns-3">
-										<div class="agile_inner_drop_nav_info">
-											<div class="col-sm-4 multi-gd-img">
-												<ul class="multi-column-dropdown">
-													<li>
-														<a href="product.html">Bakery</a>
-													</li>
-													<li>
-														<a href="product.html">Baking Supplies</a>
-													</li>
-													<li>
-														<a href="product.html">Coffee, Tea & Beverages</a>
-													</li>
-													<li>
-														<a href="product.html">Dried Fruits, Nuts/a>
-													</li>
-													<li>
-														<a href="product.html">Sweets, Chocolate</a>
-													</li>
-													<li>
-														<a href="product.html">Spices & Masalas</a>
-													</li>
-													<li>
-														<a href="product.html">Jams, Honey & Spreads</a>
-													</li>
-												</ul>
-											</div>
-											<div class="col-sm-4 multi-gd-img">
-												<ul class="multi-column-dropdown">
-													<li>
-														<a href="product.html">Pickles</a>
-													</li>
-													<li>
-														<a href="product.html">Pasta & Noodles</a>
-													</li>
-													<li>
-														<a href="product.html">Rice, Flour & Pulses</a>
-													</li>
-													<li>
-														<a href="product.html">Sauces & Cooking Pastes</a>
-													</li>
-													<li>
-														<a href="product.html">Snack Foods</a>
-													</li>
-													<li>
-														<a href="product.html">Oils, Vinegars</a>
-													</li>
-													<li>
-														<a href="product.html">Meat, Poultry & Seafood</a>
-													</li>
-												</ul>
-											</div>
-											<div class="col-sm-4 multi-gd-img">
-												<img src="images/nav.png" alt="">
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</ul>
-								</li-->
-								<!--li class="dropdown">
-									<a href="#" class="dropdown-toggle nav-stylehead" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Household
-										<span class="caret"></span>
-									</a>
-									<ul class="dropdown-menu multi-column columns-3">
-										<div class="agile_inner_drop_nav_info">
-											<div class="col-sm-6 multi-gd-img">
-												<ul class="multi-column-dropdown">
-													<li>
-														<a href="product2.html">Kitchen & Dining</a>
-													</li>
-													<li>
-														<a href="product2.html">Detergents</a>
-													</li>
-													<li>
-														<a href="product2.html">Utensil Cleaners</a>
-													</li>
-													<li>
-														<a href="product2.html">Floor & Other Cleaners</a>
-													</li>
-													<li>
-														<a href="product2.html">Disposables, Garbage Bag</a>
-													</li>
-													<li>
-														<a href="product2.html">Repellents & Fresheners</a>
-													</li>
-													<li>
-														<a href="product2.html"> Dishwash</a>
-													</li>
-												</ul>
-											</div>
-											<div class="col-sm-6 multi-gd-img">
-												<ul class="multi-column-dropdown">
-													<li>
-														<a href="product2.html">Pet Care</a>
-													</li>
-													<li>
-														<a href="product2.html">Cleaning Accessories</a>
-													</li>
-													<li>
-														<a href="product2.html">Pooja Needs</a>
-													</li>
-													<li>
-														<a href="product2.html">Crackers</a>
-													</li>
-													<li>
-														<a href="product2.html">Festive Decoratives</a>
-													</li>
-													<li>
-														<a href="product2.html">Plasticware</a>
-													</li>
-													<li>
-														<a href="product2.html">Home Care</a>
-													</li>
-												</ul>
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</ul>
-								</li-->
 								<li class="active">
 									<a class="nav-stylehead" href="faqs.html">Preguntas frecuentes</a>
 								</li>
@@ -428,7 +384,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="services-breadcrumb">
 		<div class="agile_inner_breadcrumb">
 			<div class="container">
-				<!--ul class="w3_short">
+				<ul class="w3_short">
 					<li>
 						<a href="index.html">Home</a>
 						<i>|</i>
