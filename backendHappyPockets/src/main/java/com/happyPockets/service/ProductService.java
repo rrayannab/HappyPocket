@@ -106,7 +106,7 @@ public class ProductService {
     }
 
     public static List<Product> getProductCategory(List<Product> productListIn, @RequestParam Optional<String> category){
-        if (productListIn == null)
+        if (productListIn == null || (category.isPresent() && category.get().equals("all")))
             return productListIn;
         if (category.isPresent()){
             productListIn = productListIn.stream().filter(product -> product.getCat().equalsIgnoreCase(category.get())).toList();
