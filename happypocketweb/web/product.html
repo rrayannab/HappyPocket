@@ -1255,8 +1255,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					category = checkCategory();
 
 					url = generateUrl(order, priceFrom, priceTo, category);
-
+					// currentURL = window.location.href.split('?')[0];
+					// nextURL = currentURL + '?' + url.split('?')[1];
 					fecthAndDisplayProducts(url);
+
 				});
 				
 				let searchForm = $('.agileits_search form');
