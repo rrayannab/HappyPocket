@@ -6,232 +6,372 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
 <html lang="es">
+	<head>
+		<title>Happy Pocket</title>
+		<!--/tags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta
+			name="keywords"
+			content="Grocery Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"
+		/>
+		<script>
+			addEventListener(
+				"load",
+				function () {
+					setTimeout(hideURLbar, 0);
+				},
+				false
+			);
 
-<head>
-	<title>Happy Pocket</title>
-	<!--/tags -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="Grocery Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-	<script>
-		addEventListener("load", function () {
-			setTimeout(hideURLbar, 0);
-		}, false);
+			function hideURLbar() {
+				window.scrollTo(0, 1);
+			}
+		</script>
+		<!--//tags -->
+		<link
+			href="css/bootstrap.css"
+			rel="stylesheet"
+			type="text/css"
+			media="all"
+		/>
+		<link
+			href="css/style.css"
+			rel="stylesheet"
+			type="text/css"
+			media="all"
+		/>
+		<link href="css/font-awesome.css" rel="stylesheet" />
+		<!--pop-up-box-->
+		<link
+			href="css/popuo-box.css"
+			rel="stylesheet"
+			type="text/css"
+			media="all"
+		/>
+		<!--//pop-up-box-->
+		<!-- price range -->
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui1.css" />
+		<!-- fonts -->
+		<!-- Load Open Sans Font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Load Open Sans Font -->
+	</head>
 
-		function hideURLbar() {
-			window.scrollTo(0, 1);
-		}
-	</script>
-	<!--//tags -->
-	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="css/font-awesome.css" rel="stylesheet">
-	<!--pop-up-box-->
-	<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
-	<!--//pop-up-box-->
-	<!-- price range -->
-	<link rel="stylesheet" type="text/css" href="css/jquery-ui1.css">
-	<!-- fonts -->
-	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
-</head>
-
-<body>
-	<!-- top-header -->
-	<div class="header-most-top">
-		<p>Happy Pocket</p>
-	</div>
-	<!-- //top-header -->
-	<!-- header-bot-->
-	<div class="header-bot">
-		<div class="header-bot_inner_wthreeinfo_header_mid">
-			<!-- header-bot-->
-			<div class="col-md-4 logo_agile">
-				<h1>
-					<a href="index.html">
-						<span>H</span>appy
-						<span>P</span>ocket
-						<img src="images/logo2.png" alt=" ">
-					</a>
-				</h1>
-			</div>
-			<!-- header-bot -->
-			<div class="col-md-8 header">
-				<!-- header lists -->
-				<ul>
-					<!--
+	<body>
+		<!-- top-header -->
+		<div class="header-most-top">
+			<p>Happy Pocket</p>
+		</div>
+		<!-- //top-header -->
+		<!-- header-bot-->
+		<div class="header-bot">
+			<div class="header-bot_inner_wthreeinfo_header_mid">
+				<!-- header-bot-->
+				<div class="col-md-4 logo_agile">
+					<h1>
+						<a href="index.html">
+							<span>H</span>appy <span>P</span>ocket
+							<img src="images/logo2.png" alt=" " />
+						</a>
+					</h1>
+				</div>
+				<!-- header-bot -->
+				<div class="col-md-8 header">
+					<!-- header lists -->
+					<ul>
+						<!--
 					<li>
 						<a href="#" data-toggle="modal" data-target="#myModal1">
 							<span class="fa fa-truck" aria-hidden="true"></span>Track Order</a>
 					</li>
 					-->
-					<li>
-						<a class="play-icon popup-with-zoom-anim" href="#small-dialog1">
-							<span class="fa fa-map-marker" aria-hidden="true"></span> Selecciona tu ubicación</a>
-					</li>
-					<li>
-						<span class="fa fa-phone" aria-hidden="true"></span> +34 951 23 45 67
-					</li>
-					<li>
-						<a href="#" data-toggle="modal" data-target="#myModal1">
-							<span class="fa fa-unlock-alt" aria-hidden="true"></span> Iniciar Sesión </a>
-					</li>
-					<li>
-						<a href="#" data-toggle="modal" data-target="#myModal2">
-							<span class="fa fa-pencil-square-o" aria-hidden="true"></span> Registrarse </a>
-					</li>
-				</ul>
-				<!-- //header lists -->
-				<!-- search -->
-				<div class="agileits_search">
-					<form action="#" method="post">
-						<input name="Search" type="search" placeholder="¿Qué desea comprar hoy?" required="">
-						<button type="submit" class="btn btn-default" aria-label="Left Align">
-							<span class="fa fa-search" aria-hidden="true"> </span>
-						</button>
-					</form>
-				</div>
-				<!-- //search -->
-				<!-- cart details -->
-				<div class="top_nav_right">
-					<div class="wthreecartaits wthreecartaits2 cart cart box_1">
-						<form action="#" method="post" class="last">
-							<input type="hidden" name="cmd" value="_cart">
-							<input type="hidden" name="display" value="1">
-							<button class="w3view-cart" type="submit" name="submit" value="">
-								<i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+						<li>
+							<a
+								class="play-icon popup-with-zoom-anim"
+								href="#small-dialog1"
+							>
+								<span
+									class="fa fa-map-marker"
+									aria-hidden="true"
+								></span>
+								Selecciona tu ubicación</a
+							>
+						</li>
+						<li>
+							<span class="fa fa-phone" aria-hidden="true"></span>
+							+34 951 23 45 67
+						</li>
+						<li>
+							<a
+								href="#"
+								data-toggle="modal"
+								data-target="#myModal1"
+							>
+								<span
+									class="fa fa-unlock-alt"
+									aria-hidden="true"
+								></span>
+								Iniciar Sesión
+							</a>
+						</li>
+						<li>
+							<a
+								href="#"
+								data-toggle="modal"
+								data-target="#myModal2"
+							>
+								<span
+									class="fa fa-pencil-square-o"
+									aria-hidden="true"
+								></span>
+								Registrarse
+							</a>
+						</li>
+					</ul>
+					<!-- //header lists -->
+					<!-- search -->
+					<div class="agileits_search">
+						<form action="#" method="post">
+							<input
+								name="Search"
+								type="search"
+								placeholder="¿Qué desea comprar hoy?"
+								required=""
+							/>
+							<button
+								type="submit"
+								class="btn btn-default"
+								aria-label="Left Align"
+							>
+								<span class="fa fa-search" aria-hidden="true">
+								</span>
 							</button>
 						</form>
 					</div>
-				</div>
-				<!-- //cart details -->
-				<div class="clearfix"></div>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
-	<!-- shop locator (popup) -->
-	<!-- Button trigger modal(shop-locator) -->
-	<div id="small-dialog1" class="mfp-hide">
-														<!-- CAMBIAR TODAS LAS CIUDAD Y NOMBRES  *****INICIO***** -->
-		<div class="select-city">
-			<h3>Selecciona tu ubicación</h3>
-			<select class="list_of_cities">
-				<optgroup label="Málaga">
-					<option selected style="display:none;color:#eee;">Seleccione su ciudad</option>
-					<option>Málaga</option>
-					<option>Marbella</option>
-					<option>Estepona</option>
-					<option>Benalmádena</option>
-					<option>Antequera</option>
-					<option>Alhaurín de la Torre</option>
-					<option>Alhaurín el Grande</option>
-					<option>Coín</option>
-					<option>Álora</option>
-					<option>Vélez</option>
-					<option>Ronda</option>
-					<option>Algarrobo</option>
-					<option>Almáchar</option>
-					<option>Almargen</option>
-					<option>Almogía</option>
-					<option>Árchez</option>
-					<option>Archidona</option>
-					<option>Benahavís</option>
-				</optgroup>
-			</select>
-			<div class="clearfix"></div>
-		</div>
-														<!-- CAMBIAR TODAS LAS CIUDAD Y NOMBRES  *****FIN***** -->
-	</div>
-	<!-- //shop locator (popup) -->
-	<!-- signin Model -->
-	<!-- Modal1 -->
-	<div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
-		<div class="modal-dialog">
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-				</div>
-				<div class="modal-body modal-body-sub_agile">
-					<div class="main-mailposi">
-						<span class="fa fa-envelope-o" aria-hidden="true"></span>
+					<!-- //search -->
+					<!-- cart details -->
+					<div class="top_nav_right">
+						<div
+							class="wthreecartaits wthreecartaits2 cart cart box_1"
+						>
+							<form action="#" method="post" class="last">
+								<input type="hidden" name="cmd" value="_cart" />
+								<input type="hidden" name="display" value="1" />
+								<button
+									class="w3view-cart"
+									type="submit"
+									name="submit"
+									value=""
+								>
+									<i
+										class="fa fa-cart-arrow-down"
+										aria-hidden="true"
+									></i>
+								</button>
+							</form>
+						</div>
 					</div>
-					<div class="modal_body_left modal_body_left1">
-						<h3 class="agileinfo_sign">Iniciar Sesión</h3>
-						<p>
-							Inicia sesión, los mejores precios al alcance de tu mano. ¿No tienes una cuenta?
-							<a href="#" data-toggle="modal" data-target="#myModal2">
-								Regístrate ahora</a>
-						</p>
-						<form action="#" method="post">
-							<div class="styled-input agile-styled-input-top">
-								<input type="text" placeholder="Nombre de usuario" name="Name" required="">
-							</div>
-							<div class="styled-input">
-								<input type="password" placeholder="Contraseña" name="password" required="">
-							</div>
-							<input type="submit" value="Iniciar Sesión">
-						</form>
-						<div class="clearfix"></div>
-					</div>
+					<!-- //cart details -->
 					<div class="clearfix"></div>
 				</div>
+				<div class="clearfix"></div>
 			</div>
-			<!-- //Modal content-->
 		</div>
-	</div>
-	<!-- //Modal1 -->
-	<!-- //signin Model -->
-	<!-- signup Model -->
-	<!-- Modal2 -->
-	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
-		<div class="modal-dialog">
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-				</div>
-				<div class="modal-body modal-body-sub_agile">
-					<div class="main-mailposi">
-						<span class="fa fa-envelope-o" aria-hidden="true"></span>
-					</div>
-					<div class="modal_body_left modal_body_left1">
-						<h3 class="agileinfo_sign">Registrarse</h3>
-						<p>
-							¡Únete a Happy Pocket! Vamos a preparar algo genial para ti. 
-						</p>
-						<form action="#" method="post">
-							<div class="styled-input agile-styled-input-top">
-								<input type="text" placeholder="Nombre" name="Name" required="">
-							</div>
-							<div class="styled-input">
-								<input type="email" placeholder="Correo electrónico" name="Email" required="">
-							</div>
-							<div class="styled-input">
-								<input type="password" placeholder="Contraseña" name="password" id="password1" required="">
-							</div>
-							<div class="styled-input">
-								<input type="password" placeholder="Confirmar contraseña" name="Confirm Password" id="password2" required="">
-							</div>
-							<input type="submit" value="Registrarse">
-						</form>
-						<p>
-							<a href="#">Registrándote afirmas de que has leído y aceptas los términos y condiciones.</a>
-						</p>
-					</div>
-				</div>
+		<!-- shop locator (popup) -->
+		<!-- Button trigger modal(shop-locator) -->
+		<div id="small-dialog1" class="mfp-hide">
+			<!-- CAMBIAR TODAS LAS CIUDAD Y NOMBRES  *****INICIO***** -->
+			<div class="select-city">
+				<h3>Selecciona tu ubicación</h3>
+				<select class="list_of_cities">
+					<optgroup label="Málaga">
+						<option selected style="display: none; color: #eee">
+							Seleccione su ciudad
+						</option>
+						<option>Málaga</option>
+						<option>Marbella</option>
+						<option>Estepona</option>
+						<option>Benalmádena</option>
+						<option>Antequera</option>
+						<option>Alhaurín de la Torre</option>
+						<option>Alhaurín el Grande</option>
+						<option>Coín</option>
+						<option>Álora</option>
+						<option>Vélez</option>
+						<option>Ronda</option>
+						<option>Algarrobo</option>
+						<option>Almáchar</option>
+						<option>Almargen</option>
+						<option>Almogía</option>
+						<option>Árchez</option>
+						<option>Archidona</option>
+						<option>Benahavís</option>
+					</optgroup>
+				</select>
+				<div class="clearfix"></div>
 			</div>
-			<!-- //Modal content-->
+			<!-- CAMBIAR TODAS LAS CIUDAD Y NOMBRES  *****FIN***** -->
 		</div>
-	</div>
-	<!-- //Modal2 -->
-	<!-- //signup Model -->
-	<!-- //header-bot -->
-	<!-- navigation -->
-	<div class="ban-top">
-		<div class="container">
-			<!-- Ver categoría disponibles de la BD, NO FUNCIONA EL BOTÓN
+		<!-- //shop locator (popup) -->
+		<!-- signin Model -->
+		<!-- Modal1 -->
+		<div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button
+							type="button"
+							class="close"
+							data-dismiss="modal"
+						>
+							&times;
+						</button>
+					</div>
+					<div class="modal-body modal-body-sub_agile">
+						<div class="main-mailposi">
+							<span
+								class="fa fa-envelope-o"
+								aria-hidden="true"
+							></span>
+						</div>
+						<div class="modal_body_left modal_body_left1">
+							<h3 class="agileinfo_sign">Iniciar Sesión</h3>
+							<p>
+								Inicia sesión, los mejores precios al alcance de
+								tu mano. ¿No tienes una cuenta?
+								<a
+									href="#"
+									data-toggle="modal"
+									data-target="#myModal2"
+								>
+									Regístrate ahora</a
+								>
+							</p>
+							<form action="#" method="post">
+								<div
+									class="styled-input agile-styled-input-top"
+								>
+									<input
+										type="text"
+										placeholder="Nombre de usuario"
+										name="Name"
+										required=""
+									/>
+								</div>
+								<div class="styled-input">
+									<input
+										type="password"
+										placeholder="Contraseña"
+										name="password"
+										required=""
+									/>
+								</div>
+								<input type="submit" value="Iniciar Sesión" />
+							</form>
+							<div class="clearfix"></div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<!-- //Modal content-->
+			</div>
+		</div>
+		<!-- //Modal1 -->
+		<!-- //signin Model -->
+		<!-- signup Model -->
+		<!-- Modal2 -->
+		<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button
+							type="button"
+							class="close"
+							data-dismiss="modal"
+						>
+							&times;
+						</button>
+					</div>
+					<div class="modal-body modal-body-sub_agile">
+						<div class="main-mailposi">
+							<span
+								class="fa fa-envelope-o"
+								aria-hidden="true"
+							></span>
+						</div>
+						<div class="modal_body_left modal_body_left1">
+							<h3 class="agileinfo_sign">Registrarse</h3>
+							<p>
+								¡Únete a Happy Pocket! Vamos a preparar algo
+								genial para ti.
+							</p>
+							<form action="#" method="post">
+								<div
+									class="styled-input agile-styled-input-top"
+								>
+									<input
+										type="text"
+										placeholder="Nombre"
+										name="Name"
+										required=""
+									/>
+								</div>
+								<div class="styled-input">
+									<input
+										type="email"
+										placeholder="Correo electrónico"
+										name="Email"
+										required=""
+									/>
+								</div>
+								<div class="styled-input">
+									<input
+										type="password"
+										placeholder="Contraseña"
+										name="password"
+										id="password1"
+										required=""
+									/>
+								</div>
+								<div class="styled-input">
+									<input
+										type="password"
+										placeholder="Confirmar contraseña"
+										name="Confirm Password"
+										id="password2"
+										required=""
+									/>
+								</div>
+								<input type="submit" value="Registrarse" />
+							</form>
+							<p>
+								<a href="#"
+									>Registrándote afirmas de que has leído y
+									aceptas los términos y condiciones.</a
+								>
+							</p>
+						</div>
+					</div>
+				</div>
+				<!-- //Modal content-->
+			</div>
+		</div>
+		<!-- //Modal2 -->
+		<!-- //signup Model -->
+		<!-- //header-bot -->
+		<!-- navigation -->
+		<div class="ban-top">
+			<div class="container">
+				<!-- Ver categoría disponibles de la BD, NO FUNCIONA EL BOTÓN
 			<div class="agileits-navi_search">
 				<form action="#" method="post">
 					<select id="agileinfo-nav_search" name="agileinfo_search" required="">
@@ -251,216 +391,338 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</form>
 			</div>
 		-->
-			<div class="top_nav_left">
-				<nav class="navbar navbar-default">
-					<div class="container-fluid">
-						<!-- Brand and toggle get grouped for better mobile display -->
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-							    aria-expanded="false">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-						</div>
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
-							<ul class="nav navbar-nav menu__list">
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle nav-stylehead" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categorías Productos
-										<span class="caret"></span>
-									</a>
-									<ul class="dropdown-menu multi-column columns-3">
-										<div class="agile_inner_drop_nav_info">
-											<div class="col-sm-4 multi-gd-img">
-												<ul class="multi-column-dropdown">
-													<li>
-														<a href="product.html?category=all">Todos los productos</a>
-													</li>
-													<li>
-														<a href="product.html?category=aceites">Aceites</a>
-													</li>
-													<li>
-														<a href="product.html?category=arroz">Arroz</a>
-													</li>
-													<li>
-														<a href="product.html?category=azucar">Azúcar</a>
-													</li>
-													<li>
-														<a href="product.html?category=batidos">Batidos</a>
-													</li>
-													<li>
-														<a href="product.html?category=cafes">Cafés</a>
-													</li>
-													<li>
-														<a href="product.html?category=caldo">Caldo</a>
-													</li>
-													
-												</ul>
+				<div class="top_nav_left">
+					<nav class="navbar navbar-default">
+						<div class="container-fluid">
+							<!-- Brand and toggle get grouped for better mobile display -->
+							<div class="navbar-header">
+								<button
+									type="button"
+									class="navbar-toggle collapsed"
+									data-toggle="collapse"
+									data-target="#bs-example-navbar-collapse-1"
+									aria-expanded="false"
+								>
+									<span class="sr-only"
+										>Toggle navigation</span
+									>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+							</div>
+							<!-- Collect the nav links, forms, and other content for toggling -->
+							<div
+								class="collapse navbar-collapse menu--shylock"
+								id="bs-example-navbar-collapse-1"
+							>
+								<ul class="nav navbar-nav menu__list">
+									<li class="dropdown">
+										<a
+											href="#"
+											class="dropdown-toggle nav-stylehead"
+											data-toggle="dropdown"
+											role="button"
+											aria-haspopup="true"
+											aria-expanded="false"
+											>Categorías Productos
+											<span class="caret"></span>
+										</a>
+										<ul
+											class="dropdown-menu multi-column columns-3"
+										>
+											<div
+												class="agile_inner_drop_nav_info"
+											>
+												<div
+													class="col-sm-4 multi-gd-img"
+												>
+													<ul
+														class="multi-column-dropdown"
+													>
+														<li>
+															<a
+																href="product.html?category=all"
+																>Todos los
+																productos</a
+															>
+														</li>
+														<li>
+															<a
+																href="product.html?category=aceites"
+																>Aceites</a
+															>
+														</li>
+														<li>
+															<a
+																href="product.html?category=arroz"
+																>Arroz</a
+															>
+														</li>
+														<li>
+															<a
+																href="product.html?category=azucar"
+																>Azúcar</a
+															>
+														</li>
+														<li>
+															<a
+																href="product.html?category=batidos"
+																>Batidos</a
+															>
+														</li>
+														<li>
+															<a
+																href="product.html?category=cafes"
+																>Cafés</a
+															>
+														</li>
+														<li>
+															<a
+																href="product.html?category=caldo"
+																>Caldo</a
+															>
+														</li>
+													</ul>
+												</div>
+												<div
+													class="col-sm-4 multi-gd-img"
+												>
+													<ul
+														class="multi-column-dropdown"
+													>
+														<li>
+															<a
+																href="product.html?category=cerealesygalletas"
+																>Cereales y
+																galletas</a
+															>
+														</li>
+														<li>
+															<a
+																href="product.html?category=charcuteria"
+																>Charcuteria</a
+															>
+														</li>
+														<li>
+															<a
+																href="product.html?category=congelados"
+																>Congelados</a
+															>
+														</li>
+														<li>
+															<a
+																href="product.html?category=frutas"
+																>Frutas</a
+															>
+														</li>
+														<li>
+															<a
+																href="product.html?category=lacteos"
+																>Lácteos</a
+															>
+														</li>
+														<li>
+															<a
+																href="product.html?category=panaderia"
+																>Panadería</a
+															>
+														</li>
+														<li>
+															<a
+																href="product.html?category=pastas"
+																>Pastas</a
+															>
+														</li>
+													</ul>
+												</div>
+												<div
+													class="col-sm-4 multi-gd-img"
+												>
+													<ul
+														class="multi-column-dropdown"
+													>
+														<li>
+															<a
+																href="product.html?category=refrescos"
+																>Resfrescos</a
+															>
+														</li>
+														<li>
+															<a
+																href="product.html?category=snacks"
+																>Snacks</a
+															>
+														</li>
+														<li>
+															<a
+																href="product.html?category=zumos"
+																>Zumos</a
+															>
+														</li>
+													</ul>
+												</div>
+												<div class="clearfix"></div>
 											</div>
-											<div class="col-sm-4 multi-gd-img">
-												<ul class="multi-column-dropdown">
-													<li>
-														<a href="product.html?category=cerealesygalletas">Cereales y galletas</a>
-													</li>
-													<li>
-														<a href="product.html?category=charcuteria">Charcuteria</a>
-													</li>
-													<li>
-														<a href="product.html?category=congelados">Congelados>
-													</li>
-													<li>
-														<a href="product.html?category=frutas">Frutas</a>
-													</li>
-													<li>
-														<a href="product.html?category=lacteos">Lácteos</a>
-													</li>
-													<li>
-														<a href="product.html?category=panaderia">Panadería</a>
-													</li>
-													<li>
-														<a href="product.html?category=pastas">Pastas</a>
-													</li>
-												</ul>
-											</div>
-											<div class="col-sm-4 multi-gd-img">
-												<ul class="multi-column-dropdown">
-													<li>
-														<a href="product.html?category=refrescos">Resfrescos</a>
-													</li>
-													<li>
-														<a href="product.html?category=snacks">Snacks</a>
-													</li>
-													<li>
-														<a href="product.html?category=zumos">Zumos</a>
-													</li>
-												</ul>
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</ul>
-								</li>
-								<li class="active">
-								<li>
-									<a class="nav-stylehead" href="index.html">Home
-										<span class="sr-only"></span>
-									</a>
-								</li>
-								<li class="active">
-									<a class="nav-stylehead" href="about.html">Sobre nosotros
-									</a>
-								<li class="">
-									<a class="nav-stylehead" href="faqs.html">Preguntas frecuentes</a>
-								</li>
-							
-								<li>
-									<a class="" href="contact.html">Contacto</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</nav>
-			</div>
-		</div>
-	</div>
-	<!-- //navigation -->
-	<!-- banner-2 -->
-	<div class="page-head_agile_info_w3l">
+										</ul>
+									</li>
+									<li class="active"></li>
+									<li>
+										<a
+											class="nav-stylehead"
+											href="index.html"
+											>Home
+											<span class="sr-only"></span>
+										</a>
+									</li>
+									<li class="active">
+										<a
+											class="nav-stylehead"
+											href="about.html"
+											>Sobre Nosotros
+										</a>
+									</li>
 
-	</div>
-	<!-- //banner-2 -->
-	<!-- page -->
-	<div class="services-breadcrumb">
-		<div class="agile_inner_breadcrumb">
+									<li class="">
+										<a
+											class="nav-stylehead"
+											href="faqs.html"
+											>Preguntas frecuentes</a
+										>
+									</li>
+
+									<li>
+										<a class="" href="contact.html"
+											>Contacto</a
+										>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<!-- //navigation -->
+		<!-- banner-2 -->
+		<div class="page-head_agile_info_w3l"></div>
+		<!-- //banner-2 -->
+		<!-- page -->
+		<div class="services-breadcrumb">
+			<div class="agile_inner_breadcrumb">
+				<div class="container">
+					<ul class="w3_short">
+						<li>
+							<a href="index.html">Home</a>
+							<i>|</i>
+						</li>
+						<li>Sobre nosotros</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- //page -->
+		<!-- about page -->
+		<!-- welcome -->
+		<div class="welcome">
 			<div class="container">
-				<ul class="w3_short">
-					<li>
-						<a href="index.html">Home</a>
-						<i>|</i>
-					</li>
-					<li>Sobre nosotros</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<!-- //page -->
-	<!-- about page -->
-	<!-- welcome -->
-	<div class="welcome">
-		<div class="container">
-			<!-- tittle heading -->
-			<h3 class="tittle-w3l">Bienvenido a Happy Pocket
-				<span class="heading-style">
-					<i></i>
-					<i></i>
-					<i></i>
-				</span>
-			</h3>
-			<!-- //tittle heading -->
-			<div class="w3l-welcome-info">
-				<div class="col-sm-6 col-xs-6 welcome-grids">
-					<div class="welcome-img">
-						<img src="images/about3.jpg" class="img-responsive zoom-img" alt="">
+				<!-- tittle heading -->
+				<h3 class="tittle-w3l">
+					Bienvenido a Happy Pocket
+					<span class="heading-style">
+						<i></i>
+						<i></i>
+						<i></i>
+					</span>
+				</h3>
+				<!-- //tittle heading -->
+				<div class="w3l-welcome-info">
+					<div class="col-sm-6 col-xs-6 welcome-grids">
+						<div class="welcome-img">
+							<img
+								src="images/about3.jpg"
+								class="img-responsive zoom-img"
+								alt=""
+							/>
+						</div>
 					</div>
-				</div>
-				
-				<div class="col-sm-6 col-xs-6 welcome-grids">
-					<div class="welcome-img">
-						<img src="images/about4.jpg" class="img-responsive zoom-img" alt="">
+
+					<div class="col-sm-6 col-xs-6 welcome-grids">
+						<div class="welcome-img">
+							<img
+								src="images/about4.jpg"
+								class="img-responsive zoom-img"
+								alt=""
+							/>
+						</div>
 					</div>
+
+					<div class="clearfix"></div>
 				</div>
-				
-				<div class="clearfix"> </div>
-			</div>
-			<div class="w3l-welcome-text">
-				<p>
-				Happy Pocket surge con el propósito claro de simplificar 
-				y mejorar la experiencia de compra de alimentos y productos básicos, 
-				ofreciendo a nuestros usuarios una plataforma intuitiva y eficiente que reúne los mejores productos de supermercado. 
-				Nuestro objetivo es proporcionar comodidad y facilidad a cada cliente, 
-				permitiéndoles acceder fácilmente a una amplia gama de productos de alta calidad y a precios accesibles, 
-				para así hacer su vida diaria un poco más fácil y más feliz.
-			</div>
-		</div>
-	</div>
-	<!-- //welcome -->
-	<!-- video -->
-	<div class="about">
-		<div class="container">
-			<!-- tittle heading -->
-			<h3 class="tittle-w3l">¿Quiénes somos?
-				<span class="heading-style">
-					<i></i>
-					<i></i>
-					<i></i>
-				</span>
-			</h3>
-			<!-- //tittle heading -->
-			<div class="about-tp">
-				<div class="col-md-8 about-agileits-w3layouts-left">
-					<!--<iframe src="https://player.vimeo.com/video/15520702?color=ffffff&title=0&byline=0"></iframe>-->
-					<p>Somos un grupo de apasionados por la tecnología y el ahorro, con una visión clara:
-						<strong>las compras más fáciles y económicas para todos</strong>.<br>
-						Nos hemos unido para crear una plataforma que permita comparar precios de una amplia variedad de productos,
-						todo <strong>desde la comodidad de tu casa</strong> <br><br>
-						Nuestro objetivo es proporcionar una herramienta que permita el ahorro y <strong>reducir significativamente tu gasto</strong>
-						en las compras de supermercado <br><br>
-						Gracias por elegir HappyPocket. ¡Estamos aquí para ayudarte en cada compra!
+				<div class="w3l-welcome-text">
+					<p>
+						Happy Pocket surge con el propósito claro de simplificar
+						y mejorar la experiencia de compra de alimentos y
+						productos básicos, ofreciendo a nuestros usuarios una
+						plataforma intuitiva y eficiente que reúne los mejores
+						productos de supermercado. Nuestro objetivo es
+						proporcionar comodidad y facilidad a cada cliente,
+						permitiéndoles acceder fácilmente a una amplia gama de
+						productos de alta calidad y a precios accesibles, para
+						así hacer su vida diaria un poco más fácil y más feliz.
 					</p>
 				</div>
-				<div class="col-md-4 about-agileits-w3layouts-right">
-					<div class="img-video-about">
-						<img src="images/videoimg2.png" alt="">
-					</div>
-				</div>
-				<div class="clearfix"></div>
 			</div>
 		</div>
-	</div>
-	<!-- //video-->
-	<!-- //about page -->
-	<!-- newsletter 
+		<!-- //welcome -->
+		<!-- video -->
+		<div class="about">
+			<div class="container">
+				<!-- tittle heading -->
+				<h3 class="tittle-w3l">
+					¿Quiénes somos?
+					<span class="heading-style">
+						<i></i>
+						<i></i>
+						<i></i>
+					</span>
+				</h3>
+				<!-- //tittle heading -->
+				<div class="about-tp">
+					<div class="col-md-8 about-agileits-w3layouts-left">
+						<!--<iframe src="https://player.vimeo.com/video/15520702?color=ffffff&title=0&byline=0"></iframe>-->
+						<p>
+							Somos un grupo de apasionados por la tecnología y el
+							ahorro, con una visión clara:
+							<strong
+								>las compras más fáciles y económicas para
+								todos</strong
+							>.<br />
+							Nos hemos unido para crear una plataforma que
+							permita comparar precios de una amplia variedad de
+							productos, todo
+							<strong>desde la comodidad de tu casa</strong>
+							<br /><br />
+							Nuestro objetivo es proporcionar una herramienta que
+							permita el ahorro y
+							<strong>reducir significativamente tu gasto</strong>
+							en las compras de supermercado <br /><br />
+							Gracias por elegir HappyPocket. ¡Estamos aquí para
+							ayudarte en cada compra!
+						</p>
+					</div>
+					<div class="col-md-4 about-agileits-w3layouts-right">
+						<div class="img-video-about">
+							<img src="images/videoimg2.png" alt="" />
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<!-- //video-->
+		<!-- //about page -->
+		<!-- newsletter 
 	<div class="footer-top">
 		<div class="container-fluid">
 			<div class="col-xs-8 agile-leftmk">
@@ -481,15 +743,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 	 //newsletter -->
-	<!-- footer -->
-	<footer>
-		<div class="container">
-			<!-- footer first section -->
-			<p class="footer-main">
-				<span>"Happy Pocket"</span> el mejor comparador de precios de supermercados. Creado para 
-			facilitar tus compras, ayudándote a ahorrar tiempo y dinero</p>
-			<!-- //footer first section -->
-			<!-- footer second section 
+		<!-- footer -->
+		<footer>
+			<div class="container">
+				<!-- footer first section -->
+				<p class="footer-main">
+					<span>"Happy Pocket"</span> el mejor comparador de precios
+					de supermercados. Creado para facilitar tus compras,
+					ayudándote a ahorrar tiempo y dinero
+				</p>
+				<!-- //footer first section -->
+				<!-- footer second section 
 			<div class="w3l-grids-footer">
 				<div class="col-xs-4 offer-footer">
 					<div class="col-xs-4 icon-fot">
@@ -521,58 +785,65 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="clearfix"></div>
 			</div>
 			 //footer second section -->
-			<!-- footer third section -->
-			<div class="footer-info w3-agileits-info">
+				<!-- footer third section -->
+				<div class="footer-info w3-agileits-info">
+					<!-- quick links -->
+					<div class="col-sm-5 address-right">
+						<div class="col-xs-6 footer-grids">
+							<h3>Quick Links</h3>
+							<ul>
+								<li>
+									<a href="about.html">Sobre Nosotros</a>
+								</li>
+								<li>
+									<a href="contact.html">Contacto</a>
+								</li>
+								<li>
+									<a href="help.html">Ayuda</a>
+								</li>
+								<li>
+									<a href="faqs.html">Preguntas Frecuentes</a>
+								</li>
+								<li>
+									<a href="terms.html">Términos de uso</a>
+								</li>
+								<li>
+									<a href="privacy.html"
+										>Política de Privacidad</a
+									>
+								</li>
+							</ul>
+						</div>
+						<div class="col-xs-6 footer-grids">
+							<h3>Contáctenos</h3>
+							<ul>
+								<li>
+									<i class="fa fa-map-marker"></i> ETSI
+									Informática. Málaga, España
+								</li>
+								<li>
+									<i class="fa fa-mobile"></i> 612 34 56 78
+								</li>
+								<li>
+									<i class="fa fa-phone"></i> 951 23 45 67
+								</li>
+								<li>
+									<i class="fa fa-envelope-o"></i>
+									<a href="mailto:example@mail.com">
+										happypocket@gmail.com</a
+									>
+								</li>
+							</ul>
+						</div>
+					</div>
 
-				<!-- quick links -->
-				<div class="col-sm-5 address-right">
-					<div class="col-xs-6 footer-grids">
-						<h3>Quick Links</h3>
-						<ul>
-							<li>
-								<a href="about.html">Sobre Nosotros</a>
-							</li>
-							<li>
-								<a href="contact.html">Contacto</a>
-							</li>
-							<li>
-								<a href="help.html">Ayuda</a>
-							</li>
-							<li>
-								<a href="faqs.html">Preguntas Frecuentes</a>
-							</li>
-							<li>
-								<a href="terms.html">Términos de uso</a>
-							</li>
-							<li>
-								<a href="privacy.html">Política de Privacidad</a>
-							</li>
-						</ul>
-					</div>
-					<div class="col-xs-6 footer-grids">
-						<h3>Contáctenos</h3>
-						<ul>
-							<li>
-								<i class="fa fa-map-marker"></i> ETSI Informática. Málaga, España</li>
-							<li>
-								<i class="fa fa-mobile"></i> 612 34 56 78 </li>
-							<li>
-								<i class="fa fa-phone"></i> 951 23 45 67 </li>
-							<li>
-								<i class="fa fa-envelope-o"></i>
-								<a href="mailto:example@mail.com"> happypocket@gmail.com</a>
-							</li>
-						</ul>
-					</div>
+					<!-- //quick links -->
+					<div class="clearfix"></div>
 				</div>
-
-				<!-- //quick links -->
-				<div class="clearfix"></div>
-			</div>
-			<!-- //footer third section -->
-			<!-- footer fourth section (text) -->
-			<div class="agile-sometext">
-			<!-- 							NO BORRAR												PLATAFORMA DE PAGO 
+				<!-- //footer third section -->
+				<!-- footer fourth section (text) -->
+				<div class="agile-sometext">
+					<!-- 							NO BORRAR												PLATAFORMA DE PAGO 
 				<div class="sub-some child-momu">
 					<h5>Payment Method</h5>
 					<ul>
@@ -606,117 +877,122 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</ul>
 				</div>
 				 								NO BORRAR												PLATAFORMA DE PAGO -->
-
-
+				</div>
+				<!-- //footer fourth section (text) -->
 			</div>
-			<!-- //footer fourth section (text) -->
+		</footer>
+		<!-- //footer -->
+		<!-- copyright -->
+		<div class="copy-right">
+			<div class="container">
+				<p>© 2024 Happy Pocket. All rights reserved</p>
+			</div>
 		</div>
-	</footer>
-	<!-- //footer -->
-	<!-- copyright -->
-	<div class="copy-right">
-		<div class="container">
-			<p>© 2024 Happy Pocket. All rights reserved </p>
-		</div>
-	</div>
-	<!-- //copyright -->
+		<!-- //copyright -->
 
-	<!-- js-files -->
-	<!-- jquery -->
-	<script src="js/jquery-2.1.4.min.js"></script>
-	<!-- //jquery -->
+		<!-- js-files -->
+		<!-- jquery -->
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<!-- //jquery -->
 
-	<!-- popup modal (for signin & signup)-->
-	<script src="js/jquery.magnific-popup.js"></script>
-	<script>
-		$(document).ready(function () {
-			$('.popup-with-zoom-anim').magnificPopup({
-				type: 'inline',
-				fixedContentPos: false,
-				fixedBgPos: true,
-				overflowY: 'auto',
-				closeBtnInside: true,
-				preloader: false,
-				midClick: true,
-				removalDelay: 300,
-				mainClass: 'my-mfp-zoom-in'
+		<!-- popup modal (for signin & signup)-->
+		<script src="js/jquery.magnific-popup.js"></script>
+		<script>
+			$(document).ready(function () {
+				$(".popup-with-zoom-anim").magnificPopup({
+					type: "inline",
+					fixedContentPos: false,
+					fixedBgPos: true,
+					overflowY: "auto",
+					closeBtnInside: true,
+					preloader: false,
+					midClick: true,
+					removalDelay: 300,
+					mainClass: "my-mfp-zoom-in",
+				});
 			});
-
-		});
-	</script>
-	<!-- Large modal -->
-	<!-- <script>
+		</script>
+		<!-- Large modal -->
+		<!-- <script>
 		$('#').modal('show');
 	</script> -->
-	<!-- //popup modal (for signin & signup)-->
+		<!-- //popup modal (for signin & signup)-->
 
-	<!-- cart-js -->
-	<script src="js/minicart.js"></script>
-	<script>
-		paypalm.minicartk.render(); //use only unique class names other than paypal1.minicart1.Also Replace same class name in css and minicart.min.js
+		<!-- cart-js -->
+		<script src="js/minicart.js"></script>
+		<script>
+			paypalm.minicartk.render(); //use only unique class names other than paypal1.minicart1.Also Replace same class name in css and minicart.min.js
 
-		paypalm.minicartk.cart.on('checkout', function (evt) {
-			var items = this.items(),
-				len = items.length,
-				total = 0,
-				i;
+			paypalm.minicartk.cart.on("checkout", function (evt) {
+				var items = this.items(),
+					len = items.length,
+					total = 0,
+					i;
 
-			// Count the number of each item in the cart
-			for (i = 0; i < len; i++) {
-				total += items[i].get('quantity');
-			}
+				// Count the number of each item in the cart
+				for (i = 0; i < len; i++) {
+					total += items[i].get("quantity");
+				}
 
-			if (total < 3) {
-				alert('The minimum order quantity is 3. Please add more to your shopping cart before checking out');
-				evt.preventDefault();
-			}
-		});
-	</script>
-	<!-- //cart-js -->
-
-	<!-- password-script -->
-	<script>
-		window.onload = function () {
-			document.getElementById("password1").onchange = validatePassword;
-			document.getElementById("password2").onchange = validatePassword;
-		}
-
-		function validatePassword() {
-			var pass2 = document.getElementById("password2").value;
-			var pass1 = document.getElementById("password1").value;
-			if (pass1 != pass2)
-				document.getElementById("password2").setCustomValidity("Passwords Don't Match");
-			else
-				document.getElementById("password2").setCustomValidity('');
-			//empty string means no validation error
-		}
-	</script>
-	<!-- //password-script -->
-
-	<!-- smoothscroll -->
-	<script src="js/SmoothScroll.min.js"></script>
-	<!-- //smoothscroll -->
-
-	<!-- start-smooth-scrolling -->
-	<script src="js/move-top.js"></script>
-	<script src="js/easing.js"></script>
-	<script>
-		jQuery(document).ready(function ($) {
-			$(".scroll").click(function (event) {
-				event.preventDefault();
-
-				$('html,body').animate({
-					scrollTop: $(this.hash).offset().top
-				}, 1000);
+				if (total < 3) {
+					alert(
+						"The minimum order quantity is 3. Please add more to your shopping cart before checking out"
+					);
+					evt.preventDefault();
+				}
 			});
-		});
-	</script>
-	<!-- //end-smooth-scrolling -->
+		</script>
+		<!-- //cart-js -->
 
-	<!-- smooth-scrolling-of-move-up -->
-	<script>
-		$(document).ready(function () {
-			/*
+		<!-- password-script -->
+		<script>
+			window.onload = function () {
+				document.getElementById("password1").onchange =
+					validatePassword;
+				document.getElementById("password2").onchange =
+					validatePassword;
+			};
+
+			function validatePassword() {
+				var pass2 = document.getElementById("password2").value;
+				var pass1 = document.getElementById("password1").value;
+				if (pass1 != pass2)
+					document
+						.getElementById("password2")
+						.setCustomValidity("Passwords Don't Match");
+				else document.getElementById("password2").setCustomValidity("");
+				//empty string means no validation error
+			}
+		</script>
+		<!-- //password-script -->
+
+		<!-- smoothscroll -->
+		<script src="js/SmoothScroll.min.js"></script>
+		<!-- //smoothscroll -->
+
+		<!-- start-smooth-scrolling -->
+		<script src="js/move-top.js"></script>
+		<script src="js/easing.js"></script>
+		<script>
+			jQuery(document).ready(function ($) {
+				$(".scroll").click(function (event) {
+					event.preventDefault();
+
+					$("html,body").animate(
+						{
+							scrollTop: $(this.hash).offset().top,
+						},
+						1000
+					);
+				});
+			});
+		</script>
+		<!-- //end-smooth-scrolling -->
+
+		<!-- smooth-scrolling-of-move-up -->
+		<script>
+			$(document).ready(function () {
+				/*
 			var defaults = {
 				containerID: 'toTop', // fading element id
 				containerHoverID: 'toTopHover', // fading element hover id
@@ -724,19 +1000,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				easingType: 'linear' 
 			};
 			*/
-			$().UItoTop({
-				easingType: 'easeOutQuart'
+				$().UItoTop({
+					easingType: "easeOutQuart",
+				});
 			});
+		</script>
+		<!-- //smooth-scrolling-of-move-up -->
 
-		});
-	</script>
-	<!-- //smooth-scrolling-of-move-up -->
-
-	<!-- for bootstrap working -->
-	<script src="js/bootstrap.js"></script>
-	<!-- //for bootstrap working -->
-	<!-- //js-files -->
-
-</body>
-
+		<!-- for bootstrap working -->
+		<script src="js/bootstrap.js"></script>
+		<!-- //for bootstrap working -->
+		<!-- //js-files -->
+	</body>
 </html>

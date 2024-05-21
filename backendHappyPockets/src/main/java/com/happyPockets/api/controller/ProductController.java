@@ -58,5 +58,17 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
     }
 
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
+    @GetMapping("/categories")
+    public ResponseEntity<List<String>> getCategories(){
+        return ResponseEntity.ok(productService.getCategories());
+    }
+
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
+    @GetMapping("/brands")
+    public ResponseEntity<List<String>> getBrands(){
+        return ResponseEntity.ok(productService.getBrands());
+    }
+
 
 }
