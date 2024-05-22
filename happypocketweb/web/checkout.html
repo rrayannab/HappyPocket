@@ -1,3 +1,32 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!--NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR 
+NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR 
+NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR 
+NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR 
+NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR 
+NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR 
+NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR NO TOCAR -->
+
+
+
+
+
+
+
+
+
+
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -1572,6 +1601,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			});
 		</script>
 		<!-- //smooth-scrolling-of-move-up -->
+		<!--
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ" crossorigin="anonymous"></script>
+		<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+		<script>
+			function exportTableToPDF() {
+				var pdf = new jsPDF('p', 'pt', 'letter');
+				var source = document.getElementById('your-table-id'); // reemplaza 'your-table-id' con el id de tu tabla
+		
+				html2canvas(source, {
+					onrendered: function(canvas) {
+						var data = canvas.toDataURL();
+						var margins = {
+							top: 80,
+							bottom: 60,
+							left: 40,
+							width: 522
+						};
+		
+						pdf.addImage(data, 'JPEG', margins.left, margins.top, margins.width, 0);
+						pdf.save('table.pdf');
+					}
+				});
+			}
+		</script>
+		<button onclick="exportTableToPDF()">Exportar tabla a PDF</button>
+		-->
+
+
 
 		<!-- for bootstrap working -->
 		<script src="js/bootstrap.js"></script>
