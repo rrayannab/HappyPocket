@@ -1270,10 +1270,11 @@ p.footer-main span {
     padding: 50px 0;
 }
 .footer-info h3 {
-    color: #1accfd;
+    color: #d3875b;
     font-size: 22px;
     letter-spacing: 1px;
     margin-bottom:25px;
+    font-weight: bold;
 }
 .footer-grids ul li {
     display: block;
