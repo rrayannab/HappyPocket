@@ -925,6 +925,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				}
 
 				if (total < 3) {
+					console.log(items);
 					alert(
 						"The minimum order quantity is 3. Please add more to your shopping cart before checking out"
 					);
@@ -1077,6 +1078,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 													<input type="hidden" name="business" value=" " />
 													<input type="hidden" name="item_name" value="${item.name}" />
 													<input type="hidden" name="amount" value="${item.shopPrices.bestPrice}" />
+													<input type="hidden" name="supermarket" value="${item.shopPrices.bestStore}" />
 													<input type="hidden" name="currency_code" value="€" />
 													<input type="hidden" name="return" value=" " />
 													<input type="hidden" name="cancel_return" value=" " />
@@ -1191,6 +1193,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 													<input type="hidden" name="business" value=" " />
 													<input type="hidden" name="item_name" value="${item.name}" />
 													<input type="hidden" name="amount" value="${item.shopPrices.bestPrice}" />
+													<input type="hidden" name="supermarket" value="${item.shopPrices.bestStore}" />
 													<input type="hidden" name="currency_code" value="€" />
 													<input type="hidden" name="return" value=" " />
 													<input type="hidden" name="cancel_return" value=" " />
