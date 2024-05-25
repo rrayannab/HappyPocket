@@ -9,61 +9,36 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<head>
 		<title>Happy Pocket</title>
 		<!--/tags -->
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta
-			name="keywords"
-			content="Happy Pocket, Supermercado, Precios Baratos, Mercados, Compra"
-		/>
+		<meta name="keywords" content="Happy Pocket, Supermercado, Precios Baratos, Mercados, Compra" />
 		<script>
-			addEventListener(
-				"load",
-				function () {
-					setTimeout(hideURLbar, 0);
-				},
-				false
-			);
-
+			addEventListener("load", function () {
+				setTimeout(hideURLbar, 0);
+			}, false);
+	
 			function hideURLbar() {
 				window.scrollTo(0, 1);
 			}
 		</script>
+		<link rel="icon" href="Logo.ico" type="image/x-icon">
 		<!--//tags -->
-		<link
-			href="css/bootstrap.css"
-			rel="stylesheet"
-			type="text/css"
-			media="all"
-		/>
-		<link
-			href="css/style.css"
-			rel="stylesheet"
-			type="text/css"
-			media="all"
-		/>
-		<link href="css/font-awesome.css" rel="stylesheet" />
+		<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="css/font-awesome.css" rel="stylesheet">
 		<!--pop-up-box-->
-		<link
-			href="css/popuo-box.css"
-			rel="stylesheet"
-			type="text/css"
-			media="all"
-		/>
+		<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
 		<!--//pop-up-box-->
 		<!-- price range -->
-		<link rel="stylesheet" type="text/css" href="css/jquery-ui1.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui1.css">
 		<!-- fonts -->
-		
 		<!-- Load Open Sans Font -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-			rel="stylesheet"
-		/>
-		<!-- Load Open Sans Font -->
+			<link rel="preconnect" href="https://fonts.googleapis.com">
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+			<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+			<!-- Load Open Sans Font -->
 	</head>
-
+	
 	<body>
 		<!-- top-header -->
 		<div class="header-most-top">
@@ -77,9 +52,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-md-4 logo_agile">
 					<h1>
 						<a href="index.html">
-							<span>Happy</span>
+							<span>Happy</span> 
 							Pocket
-							<img src="images/Logo.png" height="100" alt=" " />
+							<img src="images/Logo.png" height="100" alt=" ">
 						</a>
 					</h1>
 				</div>
@@ -87,76 +62,47 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-md-8 header">
 					<!-- header lists -->
 					<ul>
+						<!--
 						<li>
-							<span class="fa fa-phone" aria-hidden="true"></span>
-							+34 951 23 45 67
+							<a href="#" data-toggle="modal" data-target="#myModal1">
+								<span class="fa fa-truck" aria-hidden="true"></span>Track Order</a>
+						</li>
+						-->
+						<li>
+							<a class="play-icon popup-with-zoom-anim" href="#small-dialog1">
+								<span class="fa fa-map-marker" aria-hidden="true"></span> Selecciona tu ubicación</a>
 						</li>
 						<li>
-							<a
-								href="#"
-								data-toggle="modal"
-								data-target="#myModal1"
-							>
-								<span
-									class="fa fa-unlock-alt"
-									aria-hidden="true"
-								></span>
-								Iniciar Sesión
-							</a>
+							<span class="fa fa-phone" aria-hidden="true"></span> +34 951 23 45 67
 						</li>
 						<li>
-							<a
-								href="#"
-								data-toggle="modal"
-								data-target="#myModal2"
-							>
-								<span
-									class="fa fa-pencil-square-o"
-									aria-hidden="true"
-								></span>
-								Registrarse
-							</a>
+							<a href="#" data-toggle="modal" data-target="#myModal1">
+								<span class="fa fa-unlock-alt" aria-hidden="true"></span> Iniciar Sesión </a>
+						</li>
+						<li>
+							<a href="#" data-toggle="modal" data-target="#myModal2">
+								<span class="fa fa-pencil-square-o" aria-hidden="true"></span> Registrarse </a>
 						</li>
 					</ul>
 					<!-- //header lists -->
 					<!-- search -->
 					<div class="agileits_search">
 						<form action="#" method="post">
-							<input
-								name="Search"
-								type="search"
-								placeholder="¿Qué desea comprar hoy?"
-								required=""
-							/>
-							<button
-								type="submit"
-								class="btn btn-default buscar"
-								aria-label="Left Align"
-							>
-								<span class="fa fa-search" aria-hidden="true">
-								</span>
+							<input name="Search" type="search" placeholder="¿Qué desea comprar hoy?" required="">
+							<button type="submit" class="btn btn-default" aria-label="Left Align">
+								<span class="fa fa-search" aria-hidden="true"> </span>
 							</button>
 						</form>
 					</div>
 					<!-- //search -->
 					<!-- cart details -->
 					<div class="top_nav_right">
-						<div
-							class="wthreecartaits wthreecartaits2 cart cart box_1"
-						>
+						<div class="wthreecartaits wthreecartaits2 cart cart box_1">
 							<form action="#" method="post" class="last">
-								<input type="hidden" name="cmd" value="_cart" />
-								<input type="hidden" name="display" value="1" />
-								<button
-									class="w3view-cart"
-									type="submit"
-									name="submit"
-									value=""
-								>
-									<i
-										class="fa fa-cart-arrow-down"
-										aria-hidden="true"
-									></i>
+								<input type="hidden" name="cmd" value="_cart">
+								<input type="hidden" name="display" value="1">
+								<button class="w3view-cart" type="submit" name="submit" value="">
+									<i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
 								</button>
 							</form>
 						</div>
@@ -170,14 +116,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!-- shop locator (popup) -->
 		<!-- Button trigger modal(shop-locator) -->
 		<div id="small-dialog1" class="mfp-hide">
-			<!-- CAMBIAR TODAS LAS CIUDAD Y NOMBRES  *****INICIO***** -->
+		<!-- *****INICIO***** -->
 			<div class="select-city">
 				<h3>Selecciona tu ubicación</h3>
 				<select class="list_of_cities">
 					<optgroup label="Málaga">
-						<option selected style="display: none; color: #eee">
-							Seleccione su ciudad
-						</option>
+						<option selected style="display:none;color:#eee;">Seleccione su ciudad</option>
 						<option>Algarrobo</option>
 						<option>Alhaurín de la Torre</option>
 						<option>Alhaurín el Grande</option>
@@ -185,9 +129,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<option>Almargen</option>
 						<option>Almogía</option>
 						<option>Álora</option>
-						<option>Antequera</option>
 						<option>Árchez</option>
 						<option>Archidona</option>
+						<option>Antequera</option>
 						<option>Benahavís</option>
 						<option>Benalmádena</option>
 						<option>Coín</option>
@@ -200,7 +144,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</select>
 				<div class="clearfix"></div>
 			</div>
-			<!-- CAMBIAR TODAS LAS CIUDAD Y NOMBRES  *****FIN***** -->
+															<!--*****FIN***** -->
 		</div>
 		<!-- //shop locator (popup) -->
 		<!-- signin Model -->
@@ -210,53 +154,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<!-- Modal content-->
 				<div class="modal-content">
 					<div class="modal-header">
-						<button
-							type="button"
-							class="close"
-							data-dismiss="modal"
-						>
-							&times;
-						</button>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
 					</div>
 					<div class="modal-body modal-body-sub_agile">
 						<div class="main-mailposi">
-							<span
-								class="fa fa-envelope-o"
-								aria-hidden="true"
-							></span>
+							<span class="fa fa-envelope-o" aria-hidden="true"></span>
 						</div>
 						<div class="modal_body_left modal_body_left1">
 							<h3 class="agileinfo_sign">Iniciar Sesión</h3>
 							<form action="#" method="post">
-								<div
-									class="styled-input agile-styled-input-top"
-								>
-									<input
-										type="text"
-										placeholder="Nombre de usuario"
-										name="Name"
-										required=""
-									/>
+								<div class="styled-input agile-styled-input-top">
+									<input type="text" placeholder="Nombre de usuario" name="Name" required="">
 								</div>
 								<div class="styled-input">
-									<input
-										type="password"
-										placeholder="Contraseña"
-										name="password"
-										required=""
-									/>
+									<input type="password" placeholder="Contraseña" name="password" required="">
 								</div>
-								<p style="text-align: center">
-									¿No tienes una cuenta?<br />
-									<a
-										href="#"
-										data-toggle="modal"
-										data-target="#myModal2"
-									>
+								<p style="text-align:center">
+									¿No tienes una cuenta?<br>
+									<a href="#" data-toggle="modal" data-target="#myModal2">
 										Regístrate ahora
 									</a>
 								</p>
-								<input type="submit" value="Iniciar Sesión" />
+								<input type="submit" value="Iniciar Sesión">
 							</form>
 							<div class="clearfix"></div>
 						</div>
@@ -275,71 +194,40 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<!-- Modal content-->
 				<div class="modal-content">
 					<div class="modal-header">
-						<button
-							type="button"
-							class="close"
-							data-dismiss="modal"
-						>
-							&times;
-						</button>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
 					</div>
 					<div class="modal-body modal-body-sub_agile">
 						<div class="main-mailposi">
-							<span
-								class="fa fa-envelope-o"
-								aria-hidden="true"
-							></span>
+							<span class="fa fa-envelope-o" aria-hidden="true"></span>
 						</div>
 						<div class="modal_body_left modal_body_left1">
 							<h3 class="agileinfo_sign">Registrarse</h3>
-							<p style="text-align: center">
-								<strong>¡Únete a Happy Pocket!</strong><br />
-								Vamos a preparar algo genial para ti.
+							<p style="text-align: center;">
+								<strong>¡Únete a Happy Pocket!</strong><br> 
+								Vamos a preparar algo genial para ti. 
 							</p>
 							<form action="#" method="post">
-								<div
-									class="styled-input agile-styled-input-top"
-								>
-									<input
-										type="text"
-										placeholder="Nombre"
-										name="Name"
-										required=""
-									/>
+								<div class="styled-input agile-styled-input-top">
+									<input type="text" placeholder="Nombre" name="Name" required="">
 								</div>
 								<div class="styled-input">
-									<input
-										type="email"
-										placeholder="Correo electrónico"
-										name="Email"
-										required=""
-									/>
+									<input type="email" placeholder="Correo electrónico" name="Email" required="">
 								</div>
 								<div class="styled-input">
-									<input
-										type="password"
-										placeholder="Contraseña"
-										name="password"
-										id="password1"
-										required=""
-									/>
+									<input type="password" placeholder="Contraseña" name="password" id="password1" required="">
 								</div>
 								<div class="styled-input">
-									<input
-										type="password"
-										placeholder="Confirmar contraseña"
-										name="Confirm Password"
-										id="password2"
-										required=""
-									/>
+									<input type="password" placeholder="Confirmar contraseña" name="Confirm Password" id="password2" required="">
 								</div>
-								<input type="submit" value="Registrarse" />
+								<input type="submit" value="Registrarse">
 							</form>
 							<p>
-								<a href="#"
-									>Registrándose afirma que ha leído y acepta
-									los términos y condiciones</a
-								><!--Poner botón para términos y condiciones-->
+								<form>
+									<label href="terms.html">
+										<input type="checkbox" name="check" value="yes"> Registrándose afirma que ha leído y acepta los términos y condiciones
+									</label>
+								</form>
+								<!--<a href="#">Registrándose afirma que ha leído y acepta los términos y condiciones</a>Poner botón para términos y condiciones-->
 							</p>
 						</div>
 					</div>
@@ -353,194 +241,89 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!-- navigation -->
 		<div class="ban-top">
 			<div class="container">
-				<!-- Ver categoría disponibles de la BD, NO FUNCIONA EL BOTÓN
-					<div class="agileits-navi_search">
-					<form action="#" method="post">
-						<select id="agileinfo-nav_search" name="agileinfo_search" required="">
-							<option value="">Categorías Productos</option>   
-							<option value="Kitchen">Cocina</option>
-							<option value="Household">Hogar</option>
-							<option value="Snacks &amp; Beverages">Snacks & Beverages</option>
-							<option value="Personal Care">Cuidado personal</option>
-							<option value="Gift Hampers">Gift Hampers</option>
-							<option value="Fruits &amp; Vegetables">Frutas y Verduras</option>
-							<option value="Baby Care">Baby Care</option>
-							<option value="Soft Drinks &amp; Juices">Soft Drinks & Juices</option>
-							<option value="Frozen Food">Congelados</option>
-							<option value="Bread &amp; Bakery">Panadería y pastelería</option>
-							<option value="Sweets">Dulces</option>
-						</select>
-					</form>
-				</div>
-				-->
 				<div class="top_nav_left">
 					<nav class="navbar navbar-default">
 						<div class="container-fluid">
 							<!-- Brand and toggle get grouped for better mobile display -->
 							<div class="navbar-header">
-								<button
-									type="button"
-									class="navbar-toggle collapsed"
-									data-toggle="collapse"
-									data-target="#bs-example-navbar-collapse-1"
-									aria-expanded="false"
-								>
-									<span class="sr-only"
-										>Toggle navigation</span
-									>
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+									aria-expanded="false">
+									<span class="sr-only">Toggle navigation</span>
 									<span class="icon-bar"></span>
 									<span class="icon-bar"></span>
 									<span class="icon-bar"></span>
 								</button>
 							</div>
 							<!-- Collect the nav links, forms, and other content for toggling -->
-							<div
-								class="collapse navbar-collapse menu--shylock"
-								id="bs-example-navbar-collapse-1"
-							>
+							<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
 								<ul class="nav navbar-nav menu__list">
 									<li class="dropdown">
-										<a
-											href="#"
-											class="dropdown-toggle nav-stylehead"
-											data-toggle="dropdown"
-											role="button"
-											aria-haspopup="true"
-											aria-expanded="false"
-											>Categorías Productos
+										<a href="#" class="dropdown-toggle nav-stylehead" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categorías Productos
 											<span class="caret"></span>
 										</a>
-										<ul
-											class="dropdown-menu multi-column columns-3"
-										>
-											<div
-												class="agile_inner_drop_nav_info"
-											>
-												<div
-													class="col-sm-4 multi-gd-img"
-												>
-													<ul
-														class="multi-column-dropdown"
-													>
+										<ul class="dropdown-menu multi-column columns-3">
+											<div class="agile_inner_drop_nav_info">
+												<div class="col-sm-4 multi-gd-img">
+													<ul class="multi-column-dropdown">
 														<li>
-															<a
-																href="product.html?category=all"
-																>Todos los
-																productos</a
-															>
+															<a href="product.html?category=all">Todos los productos</a>
 														</li>
 														<li>
-															<a
-																href="product.html?category=aceites"
-																>Aceites</a
-															>
+															<a href="product.html?category=aceites">Aceites</a>
 														</li>
 														<li>
-															<a
-																href="product.html?category=arroz"
-																>Arroz</a
-															>
+															<a href="product.html?category=arroz">Arroz</a>
 														</li>
 														<li>
-															<a
-																href="product.html?category=azucar"
-																>Azúcar</a
-															>
+															<a href="product.html?category=azucar">Azúcar</a>
 														</li>
 														<li>
-															<a
-																href="product.html?category=batidos"
-																>Batidos</a
-															>
+															<a href="product.html?category=batidos">Batidos</a>
 														</li>
 														<li>
-															<a
-																href="product.html?category=cafes"
-																>Cafés</a
-															>
+															<a href="product.html?category=cafes">Cafés</a>
 														</li>
 														<li>
-															<a
-																href="product.html?category=caldo"
-																>Caldo</a
-															>
+															<a href="product.html?category=caldo">Caldo</a>
+														</li>
+														
+													</ul>
+												</div>
+												<div class="col-sm-4 multi-gd-img">
+													<ul class="multi-column-dropdown">
+														<li>
+															<a href="product.html?category=cerealesygalletas">Cereales y galletas</a>
+														</li>
+														<li>
+															<a href="product.html?category=charcuteria">Charcuteria</a>
+														</li>
+														<li>
+															<a href="product.html?category=congelados">Congelados
+														</li>
+														<li>
+															<a href="product.html?category=frutas">Frutas</a>
+														</li>
+														<li>
+															<a href="product.html?category=lacteos">Lácteos</a>
+														</li>
+														<li>
+															<a href="product.html?category=panaderia">Panadería</a>
+														</li>
+														<li>
+															<a href="product.html?category=pastas">Pastas</a>
 														</li>
 													</ul>
 												</div>
-												<div
-													class="col-sm-4 multi-gd-img"
-												>
-													<ul
-														class="multi-column-dropdown"
-													>
+												<div class="col-sm-4 multi-gd-img">
+													<ul class="multi-column-dropdown">
 														<li>
-															<a
-																href="product.html?category=cerealesygalletas"
-																>Cereales y
-																galletas</a
-															>
+															<a href="product.html?category=refrescos">Resfrescos</a>
 														</li>
 														<li>
-															<a
-																href="product.html?category=charcuteria"
-																>Charcuteria</a
-															>
+															<a href="product.html?category=snacks">Snacks</a>
 														</li>
 														<li>
-															<a
-																href="product.html?category=congelados"
-																>Congelados</a
-															>
-														</li>
-														<li>
-															<a
-																href="product.html?category=frutas"
-																>Frutas</a
-															>
-														</li>
-														<li>
-															<a
-																href="product.html?category=lacteos"
-																>Lácteos</a
-															>
-														</li>
-														<li>
-															<a
-																href="product.html?category=panaderia"
-																>Panadería</a
-															>
-														</li>
-														<li>
-															<a
-																href="product.html?category=pastas"
-																>Pastas</a
-															>
-														</li>
-													</ul>
-												</div>
-												<div
-													class="col-sm-4 multi-gd-img"
-												>
-													<ul
-														class="multi-column-dropdown"
-													>
-														<li>
-															<a
-																href="product.html?category=refrescos"
-																>Resfrescos</a
-															>
-														</li>
-														<li>
-															<a
-																href="product.html?category=snacks"
-																>Snacks</a
-															>
-														</li>
-														<li>
-															<a
-																href="product.html?category=zumos"
-																>Zumos</a
-															>
+															<a href="product.html?category=zumos">Zumos</a>
 														</li>
 													</ul>
 												</div>
@@ -548,36 +331,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											</div>
 										</ul>
 									</li>
-									<li class="active">
-										<a
-											class="nav-stylehead"
-											href="index.html"
-											>Home</a
-										>
-									</li>
 									<li class="">
-										<a
-											class="nav-stylehead"
-											href="about.html"
-											>Sobre Nosotros</a
-										>
-									</li>
-									<li class="">
-										<a
-											class="nav-stylehead"
-											href="faqs.html"
-											>Preguntas frecuentes</a
-										>
-									</li>
-									<li class="">
-										<a
-											class="nav-stylehead"
-											href="contact.html"
-											>Contacto
-											<span class="sr-only"
-												>(current)</span
-											>
+										<a class="nav-stylehead" href="index.html">Home
+											<span class="sr-only">(current)</span>
 										</a>
+									</li>
+									<li class="">
+										<a class="nav-stylehead" href="about.html">Sobre Nosotros</a>
+									</li>
+									<li class="">
+										<a class="nav-stylehead" href="faqs.html">Preguntas frecuentes</a>
+									</li>
+									<li class="active">
+										<a class="nav-stylehead" href="contact.html">Contacto</a>
 									</li>
 								</ul>
 							</div>
@@ -611,7 +377,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="contact-w3l">
 		<div class="container">
 			<!-- tittle heading -->
-			<h3 class="tittle-w3l">Contáctanos
+			<h3 class="tittle-w3l">Contacta con nosotros
 				<span class="heading-style">
 					<i></i>
 					<i></i>

@@ -46,59 +46,39 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="es">
 
 <head>
 	<title>Happy Pocket</title>
 	<!--/tags -->
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta
-		name="keywords"
-		content="Happy Pocket, Supermercado, Precios Baratos, Mercados, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Compra"
-	/>
+	<meta name="keywords" content="Happy Pocket, Supermercado, Precios Baratos, Mercados, Compra" />
 	<script>
-		addEventListener(
-			"load",
-			function () {
-				setTimeout(hideURLbar, 0);
-			},
-			false
-		);
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
 
 		function hideURLbar() {
 			window.scrollTo(0, 1);
 		}
 	</script>
+	<link rel="icon" href="Logo.ico" type="image/x-icon">
 	<!--//tags -->
-	<link
-		href="css/bootstrap.css"
-		rel="stylesheet"
-		type="text/css"
-		media="all"
-	/>
-	<link
-		href="css/style.css"
-		rel="stylesheet"
-		type="text/css"
-		media="all"
-	/>
-	<link href="css/font-awesome.css" rel="stylesheet" />
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/font-awesome.css" rel="stylesheet">
 	<!--pop-up-box-->
-	<link
-		href="css/popuo-box.css"
-		rel="stylesheet"
-		type="text/css"
-		media="all"
-	/>
+	<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
 	<!--//pop-up-box-->
 	<!-- price range -->
-	<link rel="stylesheet" type="text/css" href="css/jquery-ui1.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui1.css">
 	<!-- fonts -->
-	<link
-		href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800"
-		rel="stylesheet"
-	/>
+	<!-- Load Open Sans Font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+		<!-- Load Open Sans Font -->
 </head>
 
 <body>
@@ -114,8 +94,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="col-md-4 logo_agile">
 				<h1>
 					<a href="index.html">
-						Happy Pocket
-						<img src="images/logo2.png" alt=" " />
+						<span>Happy</span> 
+						Pocket
+						<img src="images/Logo.png" height="100" alt=" ">
 					</a>
 				</h1>
 			</div>
@@ -124,93 +105,46 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<!-- header lists -->
 				<ul>
 					<!--
-				<li>
-					<a href="#" data-toggle="modal" data-target="#myModal1">
-						<span class="fa fa-truck" aria-hidden="true"></span>Track Order</a>
-				</li>
-				-->
 					<li>
-						<a
-							class="play-icon popup-with-zoom-anim"
-							href="#small-dialog1"
-						>
-							<span
-								class="fa fa-map-marker"
-								aria-hidden="true"
-							></span>
-							Selecciona tu ubicación</a
-						>
+						<a href="#" data-toggle="modal" data-target="#myModal1">
+							<span class="fa fa-truck" aria-hidden="true"></span>Track Order</a>
+					</li>
+					-->
+					<li>
+						<a class="play-icon popup-with-zoom-anim" href="#small-dialog1">
+							<span class="fa fa-map-marker" aria-hidden="true"></span> Selecciona tu ubicación</a>
 					</li>
 					<li>
-						<span class="fa fa-phone" aria-hidden="true"></span>
-						+34 951 23 45 67
+						<span class="fa fa-phone" aria-hidden="true"></span> +34 951 23 45 67
 					</li>
 					<li>
-						<a
-							href="#"
-							data-toggle="modal"
-							data-target="#myModal1"
-						>
-							<span
-								class="fa fa-unlock-alt"
-								aria-hidden="true"
-							></span>
-							Iniciar Sesión
-						</a>
+						<a href="#" data-toggle="modal" data-target="#myModal1">
+							<span class="fa fa-unlock-alt" aria-hidden="true"></span> Iniciar Sesión </a>
 					</li>
 					<li>
-						<a
-							href="#"
-							data-toggle="modal"
-							data-target="#myModal2"
-						>
-							<span
-								class="fa fa-pencil-square-o"
-								aria-hidden="true"
-							></span>
-							Registrarse
-						</a>
+						<a href="#" data-toggle="modal" data-target="#myModal2">
+							<span class="fa fa-pencil-square-o" aria-hidden="true"></span> Registrarse </a>
 					</li>
 				</ul>
 				<!-- //header lists -->
 				<!-- search -->
 				<div class="agileits_search">
 					<form action="#" method="post">
-						<input
-							name="Search"
-							type="search"
-							placeholder="¿Qué desea comprar hoy?"
-							required=""
-						/>
-						<button
-							type="submit"
-							class="btn btn-default buscar"
-							aria-label="Left Align"
-						>
-							<span class="fa fa-search" aria-hidden="true">
-							</span>
+						<input name="Search" type="search" placeholder="¿Qué desea comprar hoy?" required="">
+						<button type="submit" class="btn btn-default" aria-label="Left Align">
+							<span class="fa fa-search" aria-hidden="true"> </span>
 						</button>
 					</form>
 				</div>
 				<!-- //search -->
 				<!-- cart details -->
 				<div class="top_nav_right">
-					<div
-						class="wthreecartaits wthreecartaits2 cart cart box_1"
-					>
+					<div class="wthreecartaits wthreecartaits2 cart cart box_1">
 						<form action="#" method="post" class="last">
-							<input type="hidden" name="cmd" value="_cart" />
-							<input type="hidden" name="display" value="1" />
-							<button
-								class="w3view-cart"
-								type="submit"
-								name="submit"
-								value=""
-							>
-								<i
-									class="fa fa-cart-arrow-down"
-									aria-hidden="true"
-								></i>
+							<input type="hidden" name="cmd" value="_cart">
+							<input type="hidden" name="display" value="1">
+							<button class="w3view-cart" type="submit" name="submit" value="">
+								<i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
 							</button>
 						</form>
 					</div>
@@ -224,37 +158,35 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- shop locator (popup) -->
 	<!-- Button trigger modal(shop-locator) -->
 	<div id="small-dialog1" class="mfp-hide">
-		<!-- CAMBIAR TODAS LAS CIUDAD Y NOMBRES  *****INICIO***** -->
+	<!-- *****INICIO***** -->
 		<div class="select-city">
 			<h3>Selecciona tu ubicación</h3>
 			<select class="list_of_cities">
 				<optgroup label="Málaga">
-					<option selected style="display: none; color: #eee">
-						Seleccione su ciudad
-					</option>
-					<option>Málaga</option>
-					<option>Marbella</option>
-					<option>Estepona</option>
-					<option>Benalmádena</option>
-					<option>Antequera</option>
+					<option selected style="display:none;color:#eee;">Seleccione su ciudad</option>
+					<option>Algarrobo</option>
 					<option>Alhaurín de la Torre</option>
 					<option>Alhaurín el Grande</option>
-					<option>Coín</option>
-					<option>Álora</option>
-					<option>Vélez</option>
-					<option>Ronda</option>
-					<option>Algarrobo</option>
 					<option>Almáchar</option>
 					<option>Almargen</option>
 					<option>Almogía</option>
+					<option>Álora</option>
 					<option>Árchez</option>
 					<option>Archidona</option>
+					<option>Antequera</option>
 					<option>Benahavís</option>
+					<option>Benalmádena</option>
+					<option>Coín</option>
+					<option>Estepona</option>
+					<option>Málaga</option>
+					<option>Marbella</option>
+					<option>Ronda</option>
+					<option>Vélez</option>
 				</optgroup>
 			</select>
 			<div class="clearfix"></div>
 		</div>
-		<!-- CAMBIAR TODAS LAS CIUDAD Y NOMBRES  *****FIN***** -->
+														<!--*****FIN***** -->
 	</div>
 	<!-- //shop locator (popup) -->
 	<!-- signin Model -->
@@ -264,53 +196,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
-					<button
-						type="button"
-						class="close"
-						data-dismiss="modal"
-					>
-						&times;
-					</button>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
 				</div>
 				<div class="modal-body modal-body-sub_agile">
 					<div class="main-mailposi">
-						<span
-							class="fa fa-envelope-o"
-							aria-hidden="true"
-						></span>
+						<span class="fa fa-envelope-o" aria-hidden="true"></span>
 					</div>
 					<div class="modal_body_left modal_body_left1">
 						<h3 class="agileinfo_sign">Iniciar Sesión</h3>
 						<form action="#" method="post">
-							<div
-								class="styled-input agile-styled-input-top"
-							>
-								<input
-									type="text"
-									placeholder="Nombre de usuario"
-									name="Name"
-									required=""
-								/>
+							<div class="styled-input agile-styled-input-top">
+								<input type="text" placeholder="Nombre de usuario" name="Name" required="">
 							</div>
 							<div class="styled-input">
-								<input
-									type="password"
-									placeholder="Contraseña"
-									name="password"
-									required=""
-								/>
+								<input type="password" placeholder="Contraseña" name="password" required="">
 							</div>
-							<p style="text-align: center">
-								¿No tienes una cuenta?<br />
-								<a
-									href="#"
-									data-toggle="modal"
-									data-target="#myModal2"
-								>
+							<p style="text-align:center">
+								¿No tienes una cuenta?<br>
+								<a href="#" data-toggle="modal" data-target="#myModal2">
 									Regístrate ahora
 								</a>
 							</p>
-							<input type="submit" value="Iniciar Sesión" />
+							<input type="submit" value="Iniciar Sesión">
 						</form>
 						<div class="clearfix"></div>
 					</div>
@@ -329,71 +236,40 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
-					<button
-						type="button"
-						class="close"
-						data-dismiss="modal"
-					>
-						&times;
-					</button>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
 				</div>
 				<div class="modal-body modal-body-sub_agile">
 					<div class="main-mailposi">
-						<span
-							class="fa fa-envelope-o"
-							aria-hidden="true"
-						></span>
+						<span class="fa fa-envelope-o" aria-hidden="true"></span>
 					</div>
 					<div class="modal_body_left modal_body_left1">
 						<h3 class="agileinfo_sign">Registrarse</h3>
-						<p style="text-align: center">
-							<strong>¡Únete a Happy Pocket!</strong><br />
-							Vamos a preparar algo genial para ti.
+						<p style="text-align: center;">
+							<strong>¡Únete a Happy Pocket!</strong><br> 
+							Vamos a preparar algo genial para ti. 
 						</p>
 						<form action="#" method="post">
-							<div
-								class="styled-input agile-styled-input-top"
-							>
-								<input
-									type="text"
-									placeholder="Nombre"
-									name="Name"
-									required=""
-								/>
+							<div class="styled-input agile-styled-input-top">
+								<input type="text" placeholder="Nombre" name="Name" required="">
 							</div>
 							<div class="styled-input">
-								<input
-									type="email"
-									placeholder="Correo electrónico"
-									name="Email"
-									required=""
-								/>
+								<input type="email" placeholder="Correo electrónico" name="Email" required="">
 							</div>
 							<div class="styled-input">
-								<input
-									type="password"
-									placeholder="Contraseña"
-									name="password"
-									id="password1"
-									required=""
-								/>
+								<input type="password" placeholder="Contraseña" name="password" id="password1" required="">
 							</div>
 							<div class="styled-input">
-								<input
-									type="password"
-									placeholder="Confirmar contraseña"
-									name="Confirm Password"
-									id="password2"
-									required=""
-								/>
+								<input type="password" placeholder="Confirmar contraseña" name="Confirm Password" id="password2" required="">
 							</div>
-							<input type="submit" value="Registrarse" />
+							<input type="submit" value="Registrarse">
 						</form>
 						<p>
-							<a href="terms.html"
-								>Registrándose afirma que ha leído y acepta
-								los términos y condiciones</a
-							>
+							<form>
+								<label href="terms.html">
+									<input type="checkbox" name="check" value="yes"> Registrándose afirma que ha leído y acepta los términos y condiciones
+								</label>
+							</form>
+							<!--<a href="#">Registrándose afirma que ha leído y acepta los términos y condiciones</a>Poner botón para términos y condiciones-->
 						</p>
 					</div>
 				</div>
@@ -464,7 +340,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 														<a href="product.html?category=charcuteria">Charcuteria</a>
 													</li>
 													<li>
-														<a href="product.html?category=congelados">Congelados>
+														<a href="product.html?category=congelados">Congelados
 													</li>
 													<li>
 														<a href="product.html?category=frutas">Frutas</a>

@@ -12,8 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!--/tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="Grocery Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<meta name="keywords" content="Happy Pocket, Supermercado, Precios Baratos, Mercados, Compra" />
 	<script>
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
@@ -23,6 +22,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			window.scrollTo(0, 1);
 		}
 	</script>
+	<link rel="icon" href="Logo.ico" type="image/x-icon">
 	<!--//tags -->
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -53,9 +53,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-4 logo_agile">
 				<h1>
 					<a href="index.html">
-						<span>H</span>appy
-						<span>P</span>ocket
-						<img src="images/logo2.png" alt=" ">
+						<span>Happy</span> 
+						Pocket
+						<img src="images/Logo.png" height="100" alt=" ">
 					</a>
 				</h1>
 			</div>
@@ -117,7 +117,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- shop locator (popup) -->
 	<!-- Button trigger modal(shop-locator) -->
 	<div id="small-dialog1" class="mfp-hide">
-														<!-- CAMBIAR TODAS LAS CIUDAD Y NOMBRES  *****INICIO***** -->
+	<!-- *****INICIO***** -->
 		<div class="select-city">
 			<h3>Selecciona tu ubicación</h3>
 			<select class="list_of_cities">
@@ -130,9 +130,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<option>Almargen</option>
 					<option>Almogía</option>
 					<option>Álora</option>
-					<option>Antequera</option>
 					<option>Árchez</option>
 					<option>Archidona</option>
+					<option>Antequera</option>
 					<option>Benahavís</option>
 					<option>Benalmádena</option>
 					<option>Coín</option>
@@ -145,7 +145,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</select>
 			<div class="clearfix"></div>
 		</div>
-														<!-- CAMBIAR TODAS LAS CIUDAD Y NOMBRES  *****FIN***** -->
+														<!--*****FIN***** -->
 	</div>
 	<!-- //shop locator (popup) -->
 	<!-- signin Model -->
@@ -163,11 +163,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="modal_body_left modal_body_left1">
 						<h3 class="agileinfo_sign">Iniciar Sesión</h3>
-						<p>
-							Inicia sesión, los mejores precios al alcance de tu mano. ¿No tienes una cuenta?
-							<a href="#" data-toggle="modal" data-target="#myModal2">
-								Regístrate ahora</a>
-						</p>
 						<form action="#" method="post">
 							<div class="styled-input agile-styled-input-top">
 								<input type="text" placeholder="Nombre de usuario" name="Name" required="">
@@ -175,6 +170,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="styled-input">
 								<input type="password" placeholder="Contraseña" name="password" required="">
 							</div>
+							<p style="text-align:center">
+								¿No tienes una cuenta?<br>
+								<a href="#" data-toggle="modal" data-target="#myModal2">
+									Regístrate ahora
+								</a>
+							</p>
 							<input type="submit" value="Iniciar Sesión">
 						</form>
 						<div class="clearfix"></div>
@@ -202,8 +203,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="modal_body_left modal_body_left1">
 						<h3 class="agileinfo_sign">Registrarse</h3>
-						<p>
-							¡Únete a Happy Pocket! Vamos a preparar algo genial para ti. 
+						<p style="text-align: center;">
+							<strong>¡Únete a Happy Pocket!</strong><br> 
+							Vamos a preparar algo genial para ti. 
 						</p>
 						<form action="#" method="post">
 							<div class="styled-input agile-styled-input-top">
@@ -221,7 +223,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<input type="submit" value="Registrarse">
 						</form>
 						<p>
-							<a href="#">Registrándote afirmas que has leído y aceptas los términos y condiciones.</a>
+							<form>
+								<label href="terms.html">
+									<input type="checkbox" name="check" value="yes"> Registrándose afirma que ha leído y acepta los términos y condiciones
+								</label>
+							</form>
+							<!--<a href="#">Registrándose afirma que ha leído y acepta los términos y condiciones</a>Poner botón para términos y condiciones-->
 						</p>
 					</div>
 				</div>
@@ -235,26 +242,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- navigation -->
 	<div class="ban-top">
 		<div class="container">
-			<!-- Ver categoría disponibles de la BD, NO FUNCIONA EL BOTÓN
-			<div class="agileits-navi_search">
-				<form action="#" method="post">
-					<select id="agileinfo-nav_search" name="agileinfo_search" required="">
-						<option value="">All Categories</option>
-						<option value="Kitchen">Kitchen</option>
-						<option value="Household">Household</option>
-						<option value="Snacks &amp; Beverages">Snacks & Beverages</option>
-						<option value="Personal Care">Personal Care</option>
-						<option value="Gift Hampers">Gift Hampers</option>
-						<option value="Fruits &amp; Vegetables">Fruits & Vegetables</option>
-						<option value="Baby Care">Baby Care</option>
-						<option value="Soft Drinks &amp; Juices">Soft Drinks & Juices</option>
-						<option value="Frozen Food">Frozen Food</option>
-						<option value="Bread &amp; Bakery">Bread & Bakery</option>
-						<option value="Sweets">Sweets</option>
-					</select>
-				</form>
-			</div>
-		-->
 			<div class="top_nav_left">
 				<nav class="navbar navbar-default">
 					<div class="container-fluid">
@@ -312,7 +299,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 														<a href="product.html?category=charcuteria">Charcuteria</a>
 													</li>
 													<li>
-														<a href="product.html?category=congelados">Congelados</a>
+														<a href="product.html?category=congelados">Congelados
 													</li>
 													<li>
 														<a href="product.html?category=frutas">Frutas</a>
@@ -345,31 +332,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										</div>
 									</ul>
 								</li>
-								<li>
+								<li class="">
 									<a class="nav-stylehead" href="index.html">Home
 										<span class="sr-only">(current)</span>
 									</a>
 								</li>
 								<li class="">
-									<a class="nav-stylehead" href="about.html"> Sobre Nosotros</a>
+									<a class="nav-stylehead" href="about.html">Sobre Nosotros</a>
+								</li>
 								<li class="active">
 									<a class="nav-stylehead" href="faqs.html">Preguntas frecuentes</a>
 								</li>
-								<!--li class="dropdown">
-									<a class="nav-stylehead dropdown-toggle" href="#" data-toggle="dropdown">Pages
-										<b class="caret"></b>
-									</a>
-									<ul class="dropdown-menu agile_short_dropdown">
-										<li>
-											<a href="icons.html">Web Icons</a>
-										</li>
-										<li>
-											<a href="typography.html">Typography</a>
-										</li>
-									</ul>
-								</li-->
-								<li>
-									<a class="" href="contact.html">Contacto</a>
+								<li class="">
+									<a class="nav-stylehead" href="contact.html">Contacto</a>
 								</li>
 							</ul>
 						</div>

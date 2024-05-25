@@ -9,61 +9,36 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<head>
 		<title>Happy Pocket</title>
 		<!--/tags -->
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta
-			name="keywords"
-			content="Grocery Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"
-		/>
+		<meta name="keywords" content="Happy Pocket, Supermercado, Precios Baratos, Mercados, Compra" />
 		<script>
-			addEventListener(
-				"load",
-				function () {
-					setTimeout(hideURLbar, 0);
-				},
-				false
-			);
-
+			addEventListener("load", function () {
+				setTimeout(hideURLbar, 0);
+			}, false);
+	
 			function hideURLbar() {
 				window.scrollTo(0, 1);
 			}
 		</script>
+		<link rel="icon" href="Logo.ico" type="image/x-icon">
 		<!--//tags -->
-		<link
-			href="css/bootstrap.css"
-			rel="stylesheet"
-			type="text/css"
-			media="all"
-		/>
-		<link
-			href="css/style.css"
-			rel="stylesheet"
-			type="text/css"
-			media="all"
-		/>
-		<link href="css/font-awesome.css" rel="stylesheet" />
+		<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="css/font-awesome.css" rel="stylesheet">
 		<!--pop-up-box-->
-		<link
-			href="css/popuo-box.css"
-			rel="stylesheet"
-			type="text/css"
-			media="all"
-		/>
+		<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
 		<!--//pop-up-box-->
 		<!-- price range -->
-		<link rel="stylesheet" type="text/css" href="css/jquery-ui1.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui1.css">
 		<!-- fonts -->
 		<!-- Load Open Sans Font -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-			rel="stylesheet"
-		/>
-		<!-- Load Open Sans Font -->
+			<link rel="preconnect" href="https://fonts.googleapis.com">
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+			<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+			<!-- Load Open Sans Font -->
 	</head>
-
+	
 	<body>
 		<!-- top-header -->
 		<div class="header-most-top">
@@ -77,8 +52,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-md-4 logo_agile">
 					<h1>
 						<a href="index.html">
-							<span>H</span>appy <span>P</span>ocket
-							<img src="images/logo2.png" alt=" " />
+							<span>Happy</span> 
+							Pocket
+							<img src="images/Logo.png" height="100" alt=" ">
 						</a>
 					</h1>
 				</div>
@@ -87,81 +63,46 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<!-- header lists -->
 					<ul>
 						<!--
-					<li>
-						<a href="#" data-toggle="modal" data-target="#myModal1">
-							<span class="fa fa-truck" aria-hidden="true"></span>Track Order</a>
-					</li>
-					-->
 						<li>
-							<span class="fa fa-phone" aria-hidden="true"></span>
-							+34 951 23 45 67
+							<a href="#" data-toggle="modal" data-target="#myModal1">
+								<span class="fa fa-truck" aria-hidden="true"></span>Track Order</a>
+						</li>
+						-->
+						<li>
+							<a class="play-icon popup-with-zoom-anim" href="#small-dialog1">
+								<span class="fa fa-map-marker" aria-hidden="true"></span> Selecciona tu ubicación</a>
 						</li>
 						<li>
-							<a
-								href="#"
-								data-toggle="modal"
-								data-target="#myModal1"
-							>
-								<span
-									class="fa fa-unlock-alt"
-									aria-hidden="true"
-								></span>
-								Iniciar Sesión
-							</a>
+							<span class="fa fa-phone" aria-hidden="true"></span> +34 951 23 45 67
 						</li>
 						<li>
-							<a
-								href="#"
-								data-toggle="modal"
-								data-target="#myModal2"
-							>
-								<span
-									class="fa fa-pencil-square-o"
-									aria-hidden="true"
-								></span>
-								Registrarse
-							</a>
+							<a href="#" data-toggle="modal" data-target="#myModal1">
+								<span class="fa fa-unlock-alt" aria-hidden="true"></span> Iniciar Sesión </a>
+						</li>
+						<li>
+							<a href="#" data-toggle="modal" data-target="#myModal2">
+								<span class="fa fa-pencil-square-o" aria-hidden="true"></span> Registrarse </a>
 						</li>
 					</ul>
 					<!-- //header lists -->
 					<!-- search -->
 					<div class="agileits_search">
 						<form action="#" method="post">
-							<input
-								name="Search"
-								type="search"
-								placeholder="¿Que deseas buscar hoy?"
-								required=""
-							/>
-							<button
-								type="submit"
-								class="btn btn-default"
-								aria-label="Left Align"
-							>
-								<span class="fa fa-search" aria-hidden="true">
-								</span>
+							<input name="Search" type="search" placeholder="¿Qué desea comprar hoy?" required="">
+							<button type="submit" class="btn btn-default" aria-label="Left Align">
+								<span class="fa fa-search" aria-hidden="true"> </span>
 							</button>
 						</form>
 					</div>
 					<!-- //search -->
 					<!-- cart details -->
 					<div class="top_nav_right">
-						<div
-							class="wthreecartaits wthreecartaits2 cart cart box_1"
-						>
+						<div class="wthreecartaits wthreecartaits2 cart cart box_1">
 							<form action="#" method="post" class="last">
-								<input type="hidden" name="cmd" value="_cart" />
-								<input type="hidden" name="display" value="1" />
-								<button
-									class="w3view-cart"
-									type="submit"
-									name="submit"
-									value=""
-								>
-									<i
-										class="fa fa-cart-arrow-down"
-										aria-hidden="true"
-									></i>
+								<input type="hidden" name="cmd" value="_cart">
+								<input type="hidden" name="display" value="1">
+								<button class="w3view-cart" type="submit" name="submit" value="">
+									<i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
 								</button>
 							</form>
 						</div>
@@ -175,37 +116,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!-- shop locator (popup) -->
 		<!-- Button trigger modal(shop-locator) -->
 		<div id="small-dialog1" class="mfp-hide">
-			<!-- CAMBIAR TODAS LAS CIUDAD Y NOMBRES  *****INICIO***** -->
+		<!-- *****INICIO***** -->
 			<div class="select-city">
 				<h3>Selecciona tu ubicación</h3>
 				<select class="list_of_cities">
 					<optgroup label="Málaga">
-						<option selected style="display: none; color: #eee">
-							Seleccione su ciudad
-						</option>
-						<option>Málaga</option>
-						<option>Marbella</option>
-						<option>Estepona</option>
-						<option>Benalmádena</option>
-						<option>Antequera</option>
+						<option selected style="display:none;color:#eee;">Seleccione su ciudad</option>
+						<option>Algarrobo</option>
 						<option>Alhaurín de la Torre</option>
 						<option>Alhaurín el Grande</option>
-						<option>Coín</option>
-						<option>Álora</option>
-						<option>Vélez</option>
-						<option>Ronda</option>
-						<option>Algarrobo</option>
 						<option>Almáchar</option>
 						<option>Almargen</option>
 						<option>Almogía</option>
+						<option>Álora</option>
 						<option>Árchez</option>
 						<option>Archidona</option>
+						<option>Antequera</option>
 						<option>Benahavís</option>
+						<option>Benalmádena</option>
+						<option>Coín</option>
+						<option>Estepona</option>
+						<option>Málaga</option>
+						<option>Marbella</option>
+						<option>Ronda</option>
+						<option>Vélez</option>
 					</optgroup>
 				</select>
 				<div class="clearfix"></div>
 			</div>
-			<!-- CAMBIAR TODAS LAS CIUDAD Y NOMBRES  *****FIN***** -->
+															<!--*****FIN***** -->
 		</div>
 		<!-- //shop locator (popup) -->
 		<!-- signin Model -->
@@ -215,54 +154,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<!-- Modal content-->
 				<div class="modal-content">
 					<div class="modal-header">
-						<button
-							type="button"
-							class="close"
-							data-dismiss="modal"
-						>
-							&times;
-						</button>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
 					</div>
 					<div class="modal-body modal-body-sub_agile">
 						<div class="main-mailposi">
-							<span
-								class="fa fa-envelope-o"
-								aria-hidden="true"
-							></span>
+							<span class="fa fa-envelope-o" aria-hidden="true"></span>
 						</div>
 						<div class="modal_body_left modal_body_left1">
 							<h3 class="agileinfo_sign">Iniciar Sesión</h3>
-							<p>
-								Inicia sesión, los mejores precios al alcance de
-								tu mano. ¿No tienes una cuenta?
-								<a
-									href="#"
-									data-toggle="modal"
-									data-target="#myModal2"
-								>
-									Regístrate ahora</a
-								>
-							</p>
 							<form action="#" method="post">
-								<div
-									class="styled-input agile-styled-input-top"
-								>
-									<input
-										type="text"
-										placeholder="Nombre de usuario"
-										name="Name"
-										required=""
-									/>
+								<div class="styled-input agile-styled-input-top">
+									<input type="text" placeholder="Nombre de usuario" name="Name" required="">
 								</div>
 								<div class="styled-input">
-									<input
-										type="password"
-										placeholder="Contraseña"
-										name="password"
-										required=""
-									/>
+									<input type="password" placeholder="Contraseña" name="password" required="">
 								</div>
-								<input type="submit" value="Iniciar Sesión" />
+								<p style="text-align:center">
+									¿No tienes una cuenta?<br>
+									<a href="#" data-toggle="modal" data-target="#myModal2">
+										Regístrate ahora
+									</a>
+								</p>
+								<input type="submit" value="Iniciar Sesión">
 							</form>
 							<div class="clearfix"></div>
 						</div>
@@ -281,71 +194,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<!-- Modal content-->
 				<div class="modal-content">
 					<div class="modal-header">
-						<button
-							type="button"
-							class="close"
-							data-dismiss="modal"
-						>
-							&times;
-						</button>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
 					</div>
 					<div class="modal-body modal-body-sub_agile">
 						<div class="main-mailposi">
-							<span
-								class="fa fa-envelope-o"
-								aria-hidden="true"
-							></span>
+							<span class="fa fa-envelope-o" aria-hidden="true"></span>
 						</div>
 						<div class="modal_body_left modal_body_left1">
 							<h3 class="agileinfo_sign">Registrarse</h3>
-							<p>
-								¡Únete a Happy Pocket! Vamos a preparar algo
-								genial para ti.
+							<p style="text-align: center;">
+								<strong>¡Únete a Happy Pocket!</strong><br> 
+								Vamos a preparar algo genial para ti. 
 							</p>
 							<form action="#" method="post">
-								<div
-									class="styled-input agile-styled-input-top"
-								>
-									<input
-										type="text"
-										placeholder="Nombre"
-										name="Name"
-										required=""
-									/>
+								<div class="styled-input agile-styled-input-top">
+									<input type="text" placeholder="Nombre" name="Name" required="">
 								</div>
 								<div class="styled-input">
-									<input
-										type="email"
-										placeholder="Correo electrónico"
-										name="Email"
-										required=""
-									/>
+									<input type="email" placeholder="Correo electrónico" name="Email" required="">
 								</div>
 								<div class="styled-input">
-									<input
-										type="password"
-										placeholder="Contraseña"
-										name="password"
-										id="password1"
-										required=""
-									/>
+									<input type="password" placeholder="Contraseña" name="password" id="password1" required="">
 								</div>
 								<div class="styled-input">
-									<input
-										type="password"
-										placeholder="Confirmar contraseña"
-										name="Confirm Password"
-										id="password2"
-										required=""
-									/>
+									<input type="password" placeholder="Confirmar contraseña" name="Confirm Password" id="password2" required="">
 								</div>
-								<input type="submit" value="Registrarse" />
+								<input type="submit" value="Registrarse">
 							</form>
 							<p>
-								<a href="#"
-									>Registrándote afirmas de que has leído y
-									aceptas los términos y condiciones.</a
-								>
+								<form>
+									<label href="terms.html">
+										<input type="checkbox" name="check" value="yes"> Registrándose afirma que ha leído y acepta los términos y condiciones
+									</label>
+								</form>
+								<!--<a href="#">Registrándose afirma que ha leído y acepta los términos y condiciones</a>Poner botón para términos y condiciones-->
 							</p>
 						</div>
 					</div>
@@ -359,383 +241,109 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!-- navigation -->
 		<div class="ban-top">
 			<div class="container">
-				<div class="agileits-navi_search">
-					<form action="#" method="post">
-						<select
-							id="agileinfo-nav_search"
-							name="agileinfo_search"
-							required=""
-						>
-							<option value="">All Categories</option>
-							<option value="Kitchen">Kitchen</option>
-							<option value="Household">Household</option>
-							<option value="Snacks &amp; Beverages">
-								Snacks & Beverages
-							</option>
-							<option value="Personal Care">Personal Care</option>
-							<option value="Gift Hampers">Gift Hampers</option>
-							<option value="Fruits &amp; Vegetables">
-								Fruits & Vegetables
-							</option>
-							<option value="Baby Care">Baby Care</option>
-							<option value="Soft Drinks &amp; Juices">
-								Soft Drinks & Juices
-							</option>
-							<option value="Frozen Food">Frozen Food</option>
-							<option value="Bread &amp; Bakery">
-								Bread & Bakery
-							</option>
-							<option value="Sweets">Sweets</option>
-						</select>
-					</form>
-				</div>
 				<div class="top_nav_left">
 					<nav class="navbar navbar-default">
 						<div class="container-fluid">
 							<!-- Brand and toggle get grouped for better mobile display -->
 							<div class="navbar-header">
-								<button
-									type="button"
-									class="navbar-toggle collapsed"
-									data-toggle="collapse"
-									data-target="#bs-example-navbar-collapse-1"
-									aria-expanded="false"
-								>
-									<span class="sr-only"
-										>Toggle navigation</span
-									>
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+									aria-expanded="false">
+									<span class="sr-only">Toggle navigation</span>
 									<span class="icon-bar"></span>
 									<span class="icon-bar"></span>
 									<span class="icon-bar"></span>
 								</button>
 							</div>
 							<!-- Collect the nav links, forms, and other content for toggling -->
-							<div
-								class="collapse navbar-collapse menu--shylock"
-								id="bs-example-navbar-collapse-1"
-							>
+							<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
 								<ul class="nav navbar-nav menu__list">
-									<li>
-										<a
-											class="nav-stylehead"
-											href="index.html"
-											>Home
-											<span class="sr-only"
-												>(current)</span
-											>
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle nav-stylehead" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categorías Productos
+											<span class="caret"></span>
+										</a>
+										<ul class="dropdown-menu multi-column columns-3">
+											<div class="agile_inner_drop_nav_info">
+												<div class="col-sm-4 multi-gd-img">
+													<ul class="multi-column-dropdown">
+														<li>
+															<a href="product.html?category=all">Todos los productos</a>
+														</li>
+														<li>
+															<a href="product.html?category=aceites">Aceites</a>
+														</li>
+														<li>
+															<a href="product.html?category=arroz">Arroz</a>
+														</li>
+														<li>
+															<a href="product.html?category=azucar">Azúcar</a>
+														</li>
+														<li>
+															<a href="product.html?category=batidos">Batidos</a>
+														</li>
+														<li>
+															<a href="product.html?category=cafes">Cafés</a>
+														</li>
+														<li>
+															<a href="product.html?category=caldo">Caldo</a>
+														</li>
+														
+													</ul>
+												</div>
+												<div class="col-sm-4 multi-gd-img">
+													<ul class="multi-column-dropdown">
+														<li>
+															<a href="product.html?category=cerealesygalletas">Cereales y galletas</a>
+														</li>
+														<li>
+															<a href="product.html?category=charcuteria">Charcuteria</a>
+														</li>
+														<li>
+															<a href="product.html?category=congelados">Congelados
+														</li>
+														<li>
+															<a href="product.html?category=frutas">Frutas</a>
+														</li>
+														<li>
+															<a href="product.html?category=lacteos">Lácteos</a>
+														</li>
+														<li>
+															<a href="product.html?category=panaderia">Panadería</a>
+														</li>
+														<li>
+															<a href="product.html?category=pastas">Pastas</a>
+														</li>
+													</ul>
+												</div>
+												<div class="col-sm-4 multi-gd-img">
+													<ul class="multi-column-dropdown">
+														<li>
+															<a href="product.html?category=refrescos">Resfrescos</a>
+														</li>
+														<li>
+															<a href="product.html?category=snacks">Snacks</a>
+														</li>
+														<li>
+															<a href="product.html?category=zumos">Zumos</a>
+														</li>
+													</ul>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</ul>
+									</li>
+									<li class="active">
+										<a class="nav-stylehead" href="index.html">Home
+											<span class="sr-only">(current)</span>
 										</a>
 									</li>
 									<li class="">
-										<a
-											class="nav-stylehead"
-											href="about.html"
-											>About Us</a
-										>
+										<a class="nav-stylehead" href="about.html">Sobre Nosotros</a>
 									</li>
-									<li class="dropdown">
-										<a
-											href="#"
-											class="dropdown-toggle nav-stylehead"
-											data-toggle="dropdown"
-											role="button"
-											aria-haspopup="true"
-											aria-expanded="false"
-											>Kitchen
-											<span class="caret"></span>
-										</a>
-										<ul
-											class="dropdown-menu multi-column columns-3"
-										>
-											<div
-												class="agile_inner_drop_nav_info"
-											>
-												<div
-													class="col-sm-4 multi-gd-img"
-												>
-													<ul
-														class="multi-column-dropdown"
-													>
-														<li>
-															<a
-																href="product.html"
-																>Bakery</a
-															>
-														</li>
-														<li>
-															<a
-																href="product.html"
-																>Baking
-																Supplies</a
-															>
-														</li>
-														<li>
-															<a
-																href="product.html"
-																>Coffee, Tea &
-																Beverages</a
-															>
-														</li>
-														<li>
-															<a
-																href="product.html"
-																>Dried Fruits,
-																Nuts</a
-															>
-														</li>
-														<li>
-															<a
-																href="product.html"
-																>Sweets,
-																Chocolate</a
-															>
-														</li>
-														<li>
-															<a
-																href="product.html"
-																>Spices &
-																Masalas</a
-															>
-														</li>
-														<li>
-															<a
-																href="product.html"
-																>Jams, Honey &
-																Spreads</a
-															>
-														</li>
-													</ul>
-												</div>
-												<div
-													class="col-sm-4 multi-gd-img"
-												>
-													<ul
-														class="multi-column-dropdown"
-													>
-														<li>
-															<a
-																href="product.html"
-																>Pickles</a
-															>
-														</li>
-														<li>
-															<a
-																href="product.html"
-																>Pasta &
-																Noodles</a
-															>
-														</li>
-														<li>
-															<a
-																href="product.html"
-																>Rice, Flour &
-																Pulses</a
-															>
-														</li>
-														<li>
-															<a
-																href="product.html"
-																>Sauces &
-																Cooking
-																Pastes</a
-															>
-														</li>
-														<li>
-															<a
-																href="product.html"
-																>Snack Foods</a
-															>
-														</li>
-														<li>
-															<a
-																href="product.html"
-																>Oils,
-																Vinegars</a
-															>
-														</li>
-														<li>
-															<a
-																href="product.html"
-																>Meat, Poultry &
-																Seafood</a
-															>
-														</li>
-													</ul>
-												</div>
-												<div
-													class="col-sm-4 multi-gd-img"
-												>
-													<img
-														src="images/nav.png"
-														alt=""
-													/>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-										</ul>
+									<li class="">
+										<a class="nav-stylehead" href="faqs.html">Preguntas frecuentes</a>
 									</li>
-									<li class="dropdown">
-										<a
-											href="#"
-											class="dropdown-toggle nav-stylehead"
-											data-toggle="dropdown"
-											role="button"
-											aria-haspopup="true"
-											aria-expanded="false"
-											>Household
-											<span class="caret"></span>
-										</a>
-										<ul
-											class="dropdown-menu multi-column columns-3"
-										>
-											<div
-												class="agile_inner_drop_nav_info"
-											>
-												<div
-													class="col-sm-6 multi-gd-img"
-												>
-													<ul
-														class="multi-column-dropdown"
-													>
-														<li>
-															<a
-																href="product2.html"
-																>Kitchen &
-																Dining</a
-															>
-														</li>
-														<li>
-															<a
-																href="product2.html"
-																>Detergents</a
-															>
-														</li>
-														<li>
-															<a
-																href="product2.html"
-																>Utensil
-																Cleaners</a
-															>
-														</li>
-														<li>
-															<a
-																href="product2.html"
-																>Floor & Other
-																Cleaners</a
-															>
-														</li>
-														<li>
-															<a
-																href="product2.html"
-																>Disposables,
-																Garbage Bag</a
-															>
-														</li>
-														<li>
-															<a
-																href="product2.html"
-																>Repellents &
-																Fresheners</a
-															>
-														</li>
-														<li>
-															<a
-																href="product2.html"
-															>
-																Dishwash</a
-															>
-														</li>
-													</ul>
-												</div>
-												<div
-													class="col-sm-6 multi-gd-img"
-												>
-													<ul
-														class="multi-column-dropdown"
-													>
-														<li>
-															<a
-																href="product2.html"
-																>Pet Care</a
-															>
-														</li>
-														<li>
-															<a
-																href="product2.html"
-																>Cleaning
-																Accessories</a
-															>
-														</li>
-														<li>
-															<a
-																href="product2.html"
-																>Pooja Needs</a
-															>
-														</li>
-														<li>
-															<a
-																href="product2.html"
-																>Crackers</a
-															>
-														</li>
-														<li>
-															<a
-																href="product2.html"
-																>Festive
-																Decoratives</a
-															>
-														</li>
-														<li>
-															<a
-																href="product2.html"
-																>Plasticware</a
-															>
-														</li>
-														<li>
-															<a
-																href="product2.html"
-																>Home Care</a
-															>
-														</li>
-													</ul>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-										</ul>
-									</li>
-									<li>
-										<a
-											class="nav-stylehead"
-											href="faqs.html"
-											>Faqs</a
-										>
-									</li>
-									<li class="dropdown">
-										<a
-											class="nav-stylehead dropdown-toggle"
-											href="#"
-											data-toggle="dropdown"
-											>Pages
-											<b class="caret"></b>
-										</a>
-										<ul
-											class="dropdown-menu agile_short_dropdown"
-										>
-											<li>
-												<a href="icons.html"
-													>Web Icons</a
-												>
-											</li>
-											<li>
-												<a href="typography.html"
-													>Typography</a
-												>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<a class="" href="contact.html"
-											>Contact</a
-										>
+									<li class="">
+										<a class="nav-stylehead" href="contact.html">Contacto</a>
 									</li>
 								</ul>
 							</div>
