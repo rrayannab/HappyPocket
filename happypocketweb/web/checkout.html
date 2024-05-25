@@ -423,8 +423,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<th>Producto</th>
 									<th>Cantidad</th>
 									<th>Nombre</th>
+									<th>Supermercado</th>
 
-									<th>Precio</th>
+									<th>Precio/u</th>
 									
 								</tr>
 							</thead>
@@ -894,6 +895,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				var items = paypalm.minicartk.cart.items();
 				return items;
 			}
+			function elementosCarrito() {
+				var total2 = paypal.minicartk.cart.items();
+				total2 = total2.length;
+
+				var carritoElemento = document.getElementById("#carrito");
+
+				carritoElemento.textContent = 'Tu carrito contiene ' + total2 + ' productos';
+			}
+
 			console.log(getCartItems());
 		
 			function generateTableRows() {
@@ -924,30 +934,80 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			
 							var quantityCell = document.createElement('td');
 							quantityCell.className = 'invert';
-							quantityCell.textContent = item.get('quantity');
+							
+							quantityCell.style.justifyContent = 'center';
+							quantityCell.style.alignItems = 'center';
+
+							var quantityDiv = document.createElement('div');
+							quantityDiv.className = 'quantity';
+
+							var quantitySelect = document.createElement('div');
+							quantitySelect.className = 'quantity-select';
+							quantityDiv.appendChild(quantitySelect);
+
+							var quantityMinus = document.createElement('div');
+							quantityMinus.className = 'entry value-minus';
+							quantityMinus.innerHTML = '&nbsp;';
+							quantitySelect.appendChild(quantityMinus);
+							quantityMinus.addEventListener('click', function() {
+								var currentQuantity = parseInt(quantityValue.textContent, 10);
+								if (currentQuantity > 1) { // Prevent quantity from going below 1
+									quantityValue.textContent = currentQuantity - 1;
+								}
+							});
+
+							var quantityValue = document.createElement('div');
+							quantityValue.className = 'entry value';
+							quantityValue.innerHTML = '<span>' + item.get('quantity') + '</span>';
+							quantitySelect.appendChild(quantityValue);
+
+							var quantityPlus = document.createElement('div');
+							quantityPlus.className = 'entry value-plus active';
+							quantityPlus.innerHTML = '&nbsp;';
+							quantitySelect.appendChild(quantityPlus);
+							quantityPlus.addEventListener('click', function() {
+								var currentQuantity = parseInt(quantityValue.textContent, 10);
+								quantityValue.textContent = currentQuantity + 1;
+							});
+
+							quantityCell.appendChild(quantityDiv);
 							row.appendChild(quantityCell);
 			
 							var nameCell = document.createElement('td');
 							nameCell.className = 'invert';
-							nameCell.textContent = itemName;
+							if (itemName.length > 50) {
+								nameCell.textContent = itemName.substring(0, 50) + '...';
+							} else {
+								nameCell.textContent = itemName;
+							}
 							row.appendChild(nameCell);
+
+							var storeCell = document.createElement('td');
+							storeCell.className = 'invert';
+							row.appendChild(storeCell);
 			
 							var priceCell = document.createElement('td');
 							priceCell.className = 'invert';
 							priceCell.textContent = item.get('amount') + '€';
 							row.appendChild(priceCell);
+
 			
 							// Find the product in the data from the server
 							var product = data.find(p => p.name === itemName);
 			
-							// If the product was found and it has an imageLink, add an img element
-							if (product && product.imageLink) {
-								var img = document.createElement('img');
-								img.src = product.imageLink;
-								img.width = 100;
-								img.height = 100;
-								productCell.appendChild(img);
+							if(product) {
+							storeCell.textContent = product.shopPrices.bestStore;
+							
+								// If the product was found and it has an imageLink, add an img element
+								if (product.imageLink) {
+									var img = document.createElement('img');
+									img.src = product.imageLink;
+									img.width = 100;
+									img.height = 100;
+									productCell.appendChild(img);
+								}
 							}
+							
 			
 			
 							tableBody.appendChild(row);
@@ -956,6 +1016,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					.catch(error => console.error('Error:', error));
 			}
 			generateTableRows();
+			elementosCarrito();
+
 			
 			var lastCartItemCount = getCartItems().length;
 
@@ -963,6 +1025,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				var currentCartItemCount = getCartItems().length;
 				if (currentCartItemCount !== lastCartItemCount) {
 					generateTableRows();
+					elementosCarrito();
 					lastCartItemCount = currentCartItemCount;
 				}
 			}, 1000); // Check every second
