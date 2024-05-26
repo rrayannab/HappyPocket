@@ -53,7 +53,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			align-items: center;
 			flex-direction: column;
 			opacity: 1;
-			transition: opacity 1s ease-out;
+			transition: opacity 1s ease-out, visibility 1s;
 		}
 	
 		.loading-title {
@@ -88,6 +88,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			visibility: hidden;
 		}
 	</style>
+		
 		
 		
 		
@@ -1115,9 +1116,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<script>
 		window.addEventListener("load", function() {
 			const loader = document.getElementById("loader");
-			loader.classList.add("hidden");
+			loader.style.opacity = '0';
+			setTimeout(function() {
+				loader.classList.add("hidden");
+			}, 1000); // Espera 1 segundo para la transición de opacidad
 		});
 	</script>
+	
 	
 	
 	
