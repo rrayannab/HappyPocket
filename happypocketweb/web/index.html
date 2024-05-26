@@ -38,9 +38,70 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 		<!-- Load Open Sans Font -->
+
+	<style>
+		.loader {
+			position: fixed;
+			z-index: 999;
+			height: 100%;
+			width: 100%;
+			overflow: show;
+			margin: auto;
+			background: #fff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			opacity: 1;
+			transition: opacity 1s ease-out;
+		}
+	
+		.loading-title {
+			font-size: 2em;
+			margin-bottom: 20px;
+			font-family: 'M PLUS Rounded 1c', sans-serif;
+		}
+	
+		.loader .loading-image {
+			width: 150px;
+			height: auto;
+		}
+	
+		.spinner {
+			margin: 20px;
+			width: 40px;
+			height: 40px;
+			border: 4px solid rgba(0, 0, 0, .3);
+			border-radius: 50%;
+			border-top-color: #000;
+			animation: spin 1s ease-in-out infinite;
+		}
+	
+		@keyframes spin {
+			to {
+				transform: rotate(360deg);
+			}
+		}
+	
+		.loader.hidden {
+			opacity: 0;
+			visibility: hidden;
+		}
+	</style>
+		
+		
+		
 </head>
 
 <body>
+	<div id="loader" class="loader">
+		<h1 class="loading-title">Happy Pocket</h1>
+		<img src="images/Logo.png" alt="Loading" class="loading-image">
+		<div class="spinner"></div>
+	</div>
+	
+	
+	
 	<!-- top-header -->
 	<div class="header-most-top">
 		<p>Happy Pocket</p>
@@ -1051,6 +1112,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</li>
 		*/
 	</script>
+	<script>
+		window.addEventListener("load", function() {
+			const loader = document.getElementById("loader");
+			loader.classList.add("hidden");
+		});
+	</script>
+	
+	
+	
 	
 	
 
