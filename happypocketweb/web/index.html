@@ -14,14 +14,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="Happy Pocket, Supermercado, Precios Baratos, Mercados, Compra" />
 	<script>
-		addEventListener("load", function () {
-			setTimeout(hideURLbar, 0);
-		}, false);
-
-		function hideURLbar() {
-			window.scrollTo(0, 1);
-		}
-	</script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Update your event listeners here
+            document.addEventListener("touchstart", function(event) {
+                event.preventDefault();
+                // Your code here
+            }, { passive: false });
+            
+            // Example: Updating the load event listener
+            addEventListener("load", function () {
+                setTimeout(hideURLbar, 0);
+            }, { passive: false });
+            
+            function hideURLbar() {
+                window.scrollTo(0, 1);
+            }
+        });
+    </script>
 	<link rel="icon" href="Logo.ico" type="image/x-icon">
 	<!--//tags -->
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
@@ -57,15 +66,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		}
 	
 		.loading-title {
-			font-size: 2em;
-			margin-bottom: 20px;
-			font-family: 'M PLUS Rounded 1c', sans-serif;
-		}
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            transition: transform 1s ease-out;
+        }
 	
 		.loader .loading-image {
-			width: 150px;
-			height: auto;
-		}
+            width: 150px;
+            height: auto;
+            transition: transform 1s ease-out;
+        }
 	
 		.spinner {
 			margin: 20px;
@@ -87,6 +98,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			opacity: 0;
 			visibility: hidden;
 		}
+
+		.move-to-header {
+            transform: translateY(-100px);
+        }
+		
 	</style>
 		
 		
@@ -1074,44 +1090,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 
-
-
-		/*
-		<li>
-			<div class="w3l-specilamk">
-				<div class="speioffer-agile">
-					<a href="single2.html">
-						<img src="images/s9.jpg" alt="">
-					</a>
-				</div>
-				<div class="product-name-w3l">
-					<h4>
-						<a href="single2.html">Lakme Eyeconic Kajal, 0.35 g</a>
-					</h4>
-					<div class="w3l-pricehkj">
-						<h6>$153.00</h6>
-						<p>Save $40.00</p>
-					</div>
-					<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-						<form action="#" method="post">
-							<fieldset>
-								<input type="hidden" name="cmd" value="_cart" />
-								<input type="hidden" name="add" value="1" />
-								<input type="hidden" name="business" value=" " />
-								<input type="hidden" name="item_name" value="Lakme Eyeconic Kajal, 0.35 g" />
-								<input type="hidden" name="amount" value="153.00" />
-								<input type="hidden" name="discount_amount" value="1.00" />
-								<input type="hidden" name="currency_code" value="USD" />
-								<input type="hidden" name="return" value=" " />
-								<input type="hidden" name="cancel_return" value=" " />
-								<input type="submit" name="submit" value="Add to cart" class="button" />
-							</fieldset>
-						</form>
-					</div>
-				</div>
-			</div>
-		</li>
-		*/
 	</script>
 	<script>
 		window.addEventListener("load", function() {
