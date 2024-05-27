@@ -483,7 +483,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li><a href="#" onclick="mostrarFormulario('editarPerfil')">Editar perfil</a></li>
 						<li><a href="#" onclick="mostrarFormulario('cambiarContraseña')">Cambiar contraseña</a></li>
 						<li><a href="#" onclick="mostrarFormulario('historialPedidos')">Historial de pedidos</a></li>
-						<li><a href="#" onclick="mostrarFormulario('cerrarSesion')">Cerrar sesión</a></li>
+						<li><a href="#" onclick="cerrarSesion()">Cerrar sesión</a></li>
 					</ul>
 				</div>
 				<!-- //account actions -->
@@ -891,6 +891,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				}
 			}, 1000); // Comprueba cada segundo
 		};
+		function cerrarSesion() {
+			localStorage.removeItem('user');
+			window.location.href = 'index.html';
+		}
 
 	</script>
 
