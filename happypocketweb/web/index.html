@@ -1092,9 +1092,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<script>
 		console.log(localStorage.getItem('user'));
 		window.onload = function() {
-			
-
 			var intervalId = setInterval(function() {
+				// Comprobar si el usuario ha iniciado sesión como invitado
+				if (localStorage.getItem('isGuest') === 'true') {
+					// El usuario ha iniciado sesión como invitado, detener el intervalo
+					clearInterval(intervalId);
+					return;
+				}
+
 				var userItem = localStorage.getItem('user');
 				console.log(userItem);
 				if (userItem) {
@@ -1123,10 +1128,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					$('#myModal1').modal({backdrop: 'static', keyboard: false});
 				}
 			}, 1000); // Comprueba cada segundo
-			
+
 			document.getElementById('loader').classList.remove('hidden');
 		};
-
 	
 		function login(form) {
 			var formData = {
@@ -1206,10 +1210,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				var guestLoginMessage = document.getElementById('guestLoginMessage');
 				guestLoginMessage.textContent = "Ingresado como invitado";
 				guestLoginMessage.style.color = "green";
+				localStorage.setItem('isGuest', 'true');
+
 				$('#myModal1').modal('hide');
 				document.getElementById('loader').classList.add('hidden');
-				// Show username in login form
-				document.getElementById('usernameDisplay').textContent = "Bienvenido, invitado";
+
 			}, 1000);
 		}
 	</script>
