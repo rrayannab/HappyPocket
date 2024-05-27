@@ -99,9 +99,44 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			visibility: hidden;
 		}
 
-		.move-to-header {
-            transform: translateY(-100px);
-        }
+		
+
+		.btn {
+			display: inline-block;
+			padding: 10px 20px;
+			font-size: 16px;
+			cursor: pointer;
+			text-align: center;
+			text-decoration: none;
+			outline: none;
+			color: #fff;
+			background-color: #4CAF50;
+			border: none;
+			border-radius: 15px;
+		}
+	
+		.btn:hover {background-color: #3e8e41}
+	
+		.btn:active {
+			background-color: #3e8e41;
+			transform: translateY(4px);
+		}
+
+		#myModal1 .modal-dialog {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: calc(100vh - 20px);
+		}
+		#myModal2 .modal-dialog {
+			display: flex;
+			align-items: center;
+			min-height: calc(100% - (1.75rem * 2));
+		}
+		#guestLoginMessage, #loginMessage {
+			text-align: center;
+			width: 100%;
+		}
 		
 	</style>
 		
@@ -227,95 +262,81 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<!-- //shop locator (popup) -->
 	<!-- signin Model -->
-	<!-- Modal1 -->
-	<div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
-		<div class="modal-dialog">
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-				</div>
-				<div class="modal-body modal-body-sub_agile">
-					<div class="main-mailposi">
-						<span class="fa fa-envelope-o" aria-hidden="true"></span>
-					</div>
-					<div class="modal_body_left modal_body_left1">
+	<!-- Login Modal -->
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body modal-body-sub_agile">
+                    <div class="main-mailposi">
+                        <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                    </div>
+                    <div class="modal_body_left modal_body_left1">
+						<div id="guestLoginMessage"></div>
+                        <div id="loginMessage"></div>
 						<h3 class="agileinfo_sign">Iniciar Sesión</h3>
-						<form action="javascript:void(0);" onsubmit="login(this)">
-							<div class="styled-input agile-styled-input-top">
-								<input type="text" placeholder="Nombre de usuario" name="Name" required="">
-							</div>
-							<div class="styled-input">
-								<input type="password" placeholder="Contraseña" name="password" required="">
-							</div>
-							<p style="text-align:center">
-								¿No tienes una cuenta?<br>
-								<a href="#" data-toggle="modal" data-target="#myModal2">
-									Regístrate ahora
-								</a>
-							</p>
-							<input type="submit" value="Iniciar Sesión">
-						</form>
-						<div class="clearfix"></div>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-			<!-- //Modal content-->
-		</div>
-	</div>
-	<!-- //Modal1 -->
+                        <form id="loginForm" onsubmit="login(this); return false;">
+                            <div class="styled-input agile-styled-input-top">
+                                <input type="text" placeholder="Nombre de usuario" name="Name" required="">
+                            </div>
+                            <div class="styled-input">
+                                <input type="password" placeholder="Contraseña" name="password" required="">
+                            </div>
+                            <p style="text-align:center">
+                                ¿No tienes una cuenta?<br>
+                                <a href="#" data-toggle="modal" data-target="#myModal2">Regístrate ahora</a>
+                            </p>
+                            <input type="submit" value="Iniciar Sesión" class="btn">
+							<button type="button" onclick="guestLogin()" class="btn">Entrar como Invitado</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 	
 	<!-- //signin Model -->
 	<!-- signup Model -->
-	<!-- Modal2 -->
-	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
-		<div class="modal-dialog">
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-				</div>
-				<div class="modal-body modal-body-sub_agile">
-					<div class="main-mailposi">
-						<span class="fa fa-envelope-o" aria-hidden="true"></span>
-					</div>
-					<div class="modal_body_left modal_body_left1">
-						<h3 class="agileinfo_sign">Registrarse</h3>
-						<p style="text-align: center;">
-							<strong>¡Únete a Happy Pocket!</strong><br> 
-							Vamos a preparar algo genial para ti. 
-						</p>
-						<form action="#" method="post">
-							<div class="styled-input agile-styled-input-top">
-								<input type="text" placeholder="Nombre" name="Name" required="">
-							</div>
-							<div class="styled-input">
-								<input type="email" placeholder="Correo electrónico" name="Email" required="">
-							</div>
-							<div class="styled-input">
-								<input type="password" placeholder="Contraseña" name="password" id="password1" required="">
-							</div>
-							<div class="styled-input">
-								<input type="password" placeholder="Confirmar contraseña" name="Confirm Password" id="password2" required="">
-							</div>
-							<input type="submit" value="Registrarse">
-						</form>
-						<p>
-							<form>
-								<label href="terms.html">
-									<input type="checkbox" name="check" value="yes"> Registrándose afirma que ha leído y acepta los términos y condiciones
-								</label>
-							</form>
-							<!--<a href="#">Registrándose afirma que ha leído y acepta los términos y condiciones</a>Poner botón para términos y condiciones-->
-						</p>
-					</div>
-				</div>
-			</div>
-			<!-- //Modal content-->
-		</div>
-	</div>
-	<!-- //Modal2 -->
+	<!-- Registration Modal (if not present) -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body modal-body-sub_agile">
+                    <div class="main-mailposi">
+                        <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                    </div>
+                    <div class="modal_body_left modal_body_left1">
+                        <h3 class="agileinfo_sign">Registrarse</h3>
+                        <form id="registerForm" onsubmit="register(this); return false;">
+                            <div class="styled-input agile-styled-input-top">
+                                <input type="text" placeholder="Nombre" name="Name" required="">
+                            </div>
+                            <div class="styled-input">
+                                <input type="email" placeholder="Correo electrónico" name="Email" required="">
+                            </div>
+                            <div class="styled-input">
+                                <input type="password" placeholder="Contraseña" name="password" required="">
+                            </div>
+                            <div class="styled-input">
+                                <input type="password" placeholder="Confirmar contraseña" name="Confirm Password" required="">
+                            </div>
+                            <input type="submit" value="Registrarse" class="btn">
+                        </form>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="check" value="yes"> Registrándose afirma que ha leído y acepta los términos y condiciones
+                            </label>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 	<!-- //signup Model -->
 	<!-- //header-bot -->
 	<!-- navigation -->
@@ -938,34 +959,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		});
 	</script>
 	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script>
-		function login(form) {
-			var formData = {
-				username: form.Name.value,
-				password: form.password.value
-			};
-		
-			$.ajax({
-				type: "GET",
-				url: "http://localhost:8080/users",
-				success: function(response){
-					var user = response.find(user => user.username === formData.username && user.password === formData.password);
-					if (user) {
-						// El usuario existe y la contraseña es correcta
-						alert("Inicio de sesión exitoso");
-						window.location.href = "cuenta.html?id=" + user.id; // Cambia esto a la URL de la página a la que quieres redirigir
-					} else {
-						// El usuario no existe o la contraseña es incorrecta
-						alert("Error de inicio de sesión");
-					}
-				},
-				error: function(jqXHR, textStatus, errorThrown){
-					console.log(textStatus, errorThrown);
-				}
-			});
-		}
-	</script>
+	
 	<script>
 		var headings = document.querySelectorAll('.heading-tittle');
 		console.log(headings);
@@ -1091,14 +1085,133 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 	</script>
+	<!-- Include necessary scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script>
-		window.addEventListener("load", function() {
-			const loader = document.getElementById("loader");
-			loader.style.opacity = '0';
-			setTimeout(function() {
-				loader.classList.add("hidden");
-			}, 1000); // Espera 1 segundo para la transición de opacidad
-		});
+		console.log(localStorage.getItem('user'));
+		window.onload = function() {
+			
+
+			var intervalId = setInterval(function() {
+				var userItem = localStorage.getItem('user');
+				console.log(userItem);
+				if (userItem) {
+					try {
+						var user = JSON.parse(userItem);
+						if (user) {
+							console.log(user);
+							clearInterval(intervalId);
+
+							// El usuario ha iniciado sesión y la sesión sigue activa
+							document.querySelector('[data-target="#myModal2"]').style.display = 'none';
+
+							var loginLink = document.querySelector('[data-target="#myModal1"]');
+							loginLink.textContent = "Bienvenido, " + user.username;
+							loginLink.href = "cuenta.html?id=" + user.id;
+							loginLink.removeAttribute('data-toggle');
+							loginLink.removeAttribute('data-target');
+							document.getElementById('loader').style.display = 'none';
+						}
+					} catch (e) {
+						// Error al parsear userItem, se intentará de nuevo en el próximo intervalo
+						console.error("Error parsing userItem: ", e);
+					}
+				} else {
+					// No hay información de usuario en localStorage
+					$('#myModal1').modal({backdrop: 'static', keyboard: false});
+				}
+			}, 1000); // Comprueba cada segundo
+			
+			document.getElementById('loader').classList.remove('hidden');
+		};
+
+	
+		function login(form) {
+			var formData = {
+				username: form.Name.value,
+				password: form.password.value
+			};
+
+			$.ajax({
+				type: "GET",
+				url: "http://localhost:8080/users",
+				success: function(response){
+					var user = response.find(user => user.username === formData.username && user.password === formData.password);
+					var loginMessage = document.getElementById('loginMessage');
+					if (user) {
+						// El usuario existe y la contraseña es correcta
+						loginMessage.textContent = "Inicio de sesión exitoso";
+						loginMessage.style.color = "green";
+						$('#myModal1').modal('hide');
+						document.getElementById('loader').classList.add('hidden');
+						// Hide register form
+						document.querySelector('[data-target="#myModal2"]').style.display = 'none';
+						// Change login link to user link
+						var loginLink = document.querySelector('[data-target="#myModal1"]');
+						loginLink.textContent = "Bienvenido, " + user.username;
+						loginLink.href = "cuenta.html?id=" + user.id;
+						loginLink.removeAttribute('data-toggle');
+						loginLink.removeAttribute('data-target');
+
+						// Guardar información de inicio de sesión en localStorage
+						localStorage.setItem('user', JSON.stringify(user));
+
+						// Establecer cookie de sesión para rastrear el tiempo de inactividad
+						document.cookie = "session=active; max-age=600"; // 600 segundos = 10 minutos
+						console.log(localStorage.getItem('user'));
+						console.log(document.cookie);
+					} else {
+						// El usuario no existe o la contraseña es incorrecta
+						loginMessage.textContent = "Error de inicio de sesión";
+						loginMessage.style.color = "red";
+					}
+				},
+				error: function(jqXHR, textStatus, errorThrown){
+					console.log(textStatus, errorThrown);
+				}
+			});
+		}
+	
+		function register(form) {
+			var formData = {
+				username: form.Name.value,
+				email: form.email.value,
+				password: form.password.value
+			};
+		
+			$.ajax({
+				type: "GET",
+				url: "http://localhost:8080/users",
+				success: function(response){
+					var user = response.find(user => user.username === formData.username || user.email === formData.email);
+					if (!user) {
+						// El usuario no existe, por lo que podemos proceder con el registro
+						alert('Usuario registrado');
+						$('#myModal2').modal('hide');
+						document.getElementById('loader').classList.add('hidden');
+						// Show username in login form
+						document.getElementById('usernameDisplay').textContent = "Bienvenido, " + formData.username;
+					}
+				},
+				error: function(jqXHR, textStatus, errorThrown){
+					console.log(textStatus, errorThrown);
+				}
+			});
+		}
+	
+		function guestLogin() {
+			setTimeout(() => {
+				var guestLoginMessage = document.getElementById('guestLoginMessage');
+				guestLoginMessage.textContent = "Ingresado como invitado";
+				guestLoginMessage.style.color = "green";
+				$('#myModal1').modal('hide');
+				document.getElementById('loader').classList.add('hidden');
+				// Show username in login form
+				document.getElementById('usernameDisplay').textContent = "Bienvenido, invitado";
+			}, 1000);
+		}
 	</script>
 	
 	

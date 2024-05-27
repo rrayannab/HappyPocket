@@ -37,10 +37,107 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 			<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 			<!-- Load Open Sans Font -->
+
+		<style>
+		.loader {
+			position: fixed;
+			z-index: 999;
+			height: 100%;
+			width: 100%;
+			overflow: show;
+			margin: auto;
+			background: #fff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			opacity: 1;
+			transition: opacity 1s ease-out, visibility 1s;
+		}
+	
+		.loading-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            transition: transform 1s ease-out;
+        }
+	
+		.loader .loading-image {
+            width: 150px;
+            height: auto;
+            transition: transform 1s ease-out;
+        }
+	
+		.spinner {
+			margin: 20px;
+			width: 40px;
+			height: 40px;
+			border: 4px solid rgba(0, 0, 0, .3);
+			border-radius: 50%;
+			border-top-color: #000;
+			animation: spin 1s ease-in-out infinite;
+		}
+	
+		@keyframes spin {
+			to {
+				transform: rotate(360deg);
+			}
+		}
+	
+		.loader.hidden {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		
+
+		.btn {
+			display: inline-block;
+			padding: 10px 20px;
+			font-size: 16px;
+			cursor: pointer;
+			text-align: center;
+			text-decoration: none;
+			outline: none;
+			color: #fff;
+			background-color: #4CAF50;
+			border: none;
+			border-radius: 15px;
+		}
+	
+		.btn:hover {background-color: #3e8e41}
+	
+		.btn:active {
+			background-color: #3e8e41;
+			transform: translateY(4px);
+		}
+
+		#myModal1 .modal-dialog {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: calc(100vh - 20px);
+		}
+		#myModal2 .modal-dialog {
+			display: flex;
+			align-items: center;
+			min-height: calc(100% - (1.75rem * 2));
+		}
+		#guestLoginMessage, #loginMessage {
+			text-align: center;
+			width: 100%;
+		}
+		
+	</style>
 	</head>
 	
 	<body>
 		<!-- top-header -->
+		<div id="loader" class="loader">
+			<h1 class="loading-title">Happy Pocket</h1>
+			<img src="images/Logo.png" alt="Loading" class="loading-image">
+			<div class="spinner"></div>
+		</div>
 		<div class="header-most-top">
 			<p>Happy Pocket</p>
 		</div>
@@ -148,10 +245,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 		<!-- //shop locator (popup) -->
 		<!-- signin Model -->
-		<!-- Modal1 -->
+		<!-- Login Modal -->
 		<div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
 			<div class="modal-dialog">
-				<!-- Modal content-->
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -161,8 +257,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<span class="fa fa-envelope-o" aria-hidden="true"></span>
 						</div>
 						<div class="modal_body_left modal_body_left1">
+							<div id="guestLoginMessage"></div>
+							<div id="loginMessage"></div>
 							<h3 class="agileinfo_sign">Iniciar Sesión</h3>
-							<form action="#" method="post">
+							<form id="loginForm" onsubmit="login(this); return false;">
 								<div class="styled-input agile-styled-input-top">
 									<input type="text" placeholder="Nombre de usuario" name="Name" required="">
 								</div>
@@ -171,27 +269,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</div>
 								<p style="text-align:center">
 									¿No tienes una cuenta?<br>
-									<a href="#" data-toggle="modal" data-target="#myModal2">
-										Regístrate ahora
-									</a>
+									<a href="#" data-toggle="modal" data-target="#myModal2">Regístrate ahora</a>
 								</p>
-								<input type="submit" value="Iniciar Sesión">
+								<input type="submit" value="Iniciar Sesión" class="btn">
+								<button type="button" onclick="guestLogin()" class="btn">Entrar como Invitado</button>
 							</form>
-							<div class="clearfix"></div>
 						</div>
-						<div class="clearfix"></div>
 					</div>
 				</div>
-				<!-- //Modal content-->
 			</div>
 		</div>
-		<!-- //Modal1 -->
+		
 		<!-- //signin Model -->
 		<!-- signup Model -->
-		<!-- Modal2 -->
+		<!-- Registration Modal (if not present) -->
 		<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
 			<div class="modal-dialog">
-				<!-- Modal content-->
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -202,11 +295,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>
 						<div class="modal_body_left modal_body_left1">
 							<h3 class="agileinfo_sign">Registrarse</h3>
-							<p style="text-align: center;">
-								<strong>¡Únete a Happy Pocket!</strong><br> 
-								Vamos a preparar algo genial para ti. 
-							</p>
-							<form action="#" method="post">
+							<form id="registerForm" onsubmit="register(this); return false;">
 								<div class="styled-input agile-styled-input-top">
 									<input type="text" placeholder="Nombre" name="Name" required="">
 								</div>
@@ -214,27 +303,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<input type="email" placeholder="Correo electrónico" name="Email" required="">
 								</div>
 								<div class="styled-input">
-									<input type="password" placeholder="Contraseña" name="password" id="password1" required="">
+									<input type="password" placeholder="Contraseña" name="password" required="">
 								</div>
 								<div class="styled-input">
-									<input type="password" placeholder="Confirmar contraseña" name="Confirm Password" id="password2" required="">
+									<input type="password" placeholder="Confirmar contraseña" name="Confirm Password" required="">
 								</div>
-								<input type="submit" value="Registrarse">
+								<input type="submit" value="Registrarse" class="btn">
 							</form>
 							<p>
-								<form>
-									<label href="terms.html">
-										<input type="checkbox" name="check" value="yes"> Registrándose afirma que ha leído y acepta los términos y condiciones
-									</label>
-								</form>
-								<!--<a href="#">Registrándose afirma que ha leído y acepta los términos y condiciones</a>Poner botón para términos y condiciones-->
+								<label>
+									<input type="checkbox" name="check" value="yes"> Registrándose afirma que ha leído y acepta los términos y condiciones
+								</label>
 							</p>
 						</div>
 					</div>
 				</div>
-				<!-- //Modal content-->
 			</div>
 		</div>
+		<!-- //signup Model -->
 		<!-- //Modal2 -->
 		<!-- //signup Model -->
 		<!-- //header-bot -->
@@ -721,6 +807,37 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			});
 		</script>
 		<!-- //smooth-scrolling-of-move-up -->
+		<script>
+			console.log(localStorage.getItem('user'));
+			window.onload = function() {
+				document.getElementById('loader').style.display = 'none';
+				var user;
+				var intervalId = setInterval(function() {
+					var userItem = localStorage.getItem('user');
+					if (userItem) {
+						user = JSON.parse(userItem);
+						console.log(user);
+						clearInterval(intervalId);
+
+						if (user) {
+							// El usuario ha iniciado sesión y la sesión sigue activa
+							document.querySelector('[data-target="#myModal2"]').style.display = 'none';
+							var loginLink = document.querySelector('[data-target="#myModal1"]');
+							loginLink.textContent = "Bienvenido, " + user.username;
+							loginLink.href = "cuenta.html?id=" + user.id;
+							loginLink.removeAttribute('data-toggle');
+							loginLink.removeAttribute('data-target');
+						} else {
+							// El usuario no ha iniciado sesión o la sesión ha expirado
+							$('#myModal1').modal({backdrop: 'static', keyboard: false});
+						}
+
+						document.getElementById('loader').classList.remove('hidden');
+					}
+				}, 1000); // Comprueba cada segundo
+			};
+
+		</script>
 
 		<!-- for bootstrap working -->
 		<script src="js/bootstrap.js"></script>
