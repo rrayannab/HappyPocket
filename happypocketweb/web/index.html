@@ -1095,9 +1095,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			var intervalId = setInterval(function() {
 				// Comprobar si el usuario ha iniciado sesión como invitado
 				if (localStorage.getItem('isGuest') === 'true') {
-					// El usuario ha iniciado sesión como invitado, detener el intervalo
-					clearInterval(intervalId);
-					return;
+					var guestExpiry = parseInt(localStorage.getItem('guestExpiry'), 10);
+					if (new Date().getTime() > guestExpiry) {
+						// La sesión de invitado ha expirado
+						localStorage.setItem('isGuest', 'false');
+					} else {
+						// El usuario ha iniciado sesión como invitado, detener el intervalo
+						clearInterval(intervalId);
+						return;
+					}
 				}
 
 				var userItem = localStorage.getItem('user');
@@ -1210,7 +1216,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				var guestLoginMessage = document.getElementById('guestLoginMessage');
 				guestLoginMessage.textContent = "Ingresado como invitado";
 				guestLoginMessage.style.color = "green";
+				var guestExpiry = new Date().getTime() + 5 * 60 * 1000; // 5 minutos a partir de ahora
 				localStorage.setItem('isGuest', 'true');
+				localStorage.setItem('guestExpiry', guestExpiry.toString());
 
 				$('#myModal1').modal('hide');
 				document.getElementById('loader').classList.add('hidden');
