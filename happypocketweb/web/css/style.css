@@ -489,7 +489,7 @@ button.w3view-cart {
     transform: perspective(1px) translateZ(0);
     box-shadow: 0 0 1px transparent;
     background: #1accfd;
-    border-radius: 4px;
+    border-radius: 20px;
     color: #fff;
     letter-spacing: 2px;
     padding: 11px 27px;
