@@ -1947,13 +1947,15 @@ var defaults = module.exports = {
                         </ul>
                     </div>
                     <div class="minicartk-details-quantity">
+                        <button type="button" class="minicartk-quantity-decrease" data-minicartk-idx="<%= i %>">-</button>
                         <input class="minicartk-quantity" data-minicartk-idx="<%= i %>" name="quantity_<%= idx %>" type="text" pattern="[0-9]*" value="<%= items[i].get("quantity") %>" autocomplete="off" />
-                    </div>
-                    <div class="minicartk-details-remove">
-                        <button type="button" class="minicartk-remove" data-minicartk-idx="<%= i %>">&times;</button>
+                        <button type="button" class="minicartk-quantity-increase" data-minicartk-idx="<%= i %>">+</button>
                     </div>
                     <div class="minicartk-details-price">
                         <span class="minicartk-price"><%= items[i].total(priceFormat) %></span>
+                    </div>
+                    <div class="minicartk-details-remove">
+                        <button type="button" class="minicartk-remove" data-minicartk-idx="<%= i %>">&times;</button>
                     </div>
                     <input type="hidden" name="item_name_<%= idx %>" value="<%= items[i].get("item_name") %>" />
                     <input type="hidden" name="amount_<%= idx %>" value="<%= items[i].amount() %>" />
