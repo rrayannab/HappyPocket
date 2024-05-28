@@ -1001,19 +1001,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					len = items.length,
 					total = 0,
 					i;
-
-				// Count the number of each item in the cart
-				for (i = 0; i < len; i++) {
-					total += items[i].get("quantity");
-				}
-
-				if (total < 3) {
-					console.log(items);
-					alert(
-						"The minimum order quantity is 3. Please add more to your shopping cart before checking out"
-					);
-					evt.preventDefault();
-				}
 			});
 			document.addEventListener('DOMContentLoaded', function() {
 				document.addEventListener('click', function(event) {
