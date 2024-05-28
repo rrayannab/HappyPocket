@@ -1,20 +1,17 @@
 package com.happyPockets;
 
 import com.happyPockets.api.model.Product;
-import com.happyPockets.api.model.User;
 import com.happyPockets.service.ProductService;
-import com.happyPockets.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.swing.text.html.Option;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-public class BackendHappyPocketsApplicationTestsProductService {
+public class BackendHappyPocketsApplicationProductServiceTest {
 	ProductService productService = null;
 
 	@BeforeEach
