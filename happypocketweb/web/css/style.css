@@ -837,10 +837,14 @@ button.w3view-cart {
   padding: 15px;
   background:#f5f4f0;
 }
-  h3.agileits-sear-head {
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap');
+
+h3.agileits-sear-head {
     color: #FF5722;
     margin-bottom: 20px;
     font-size: 21px;
+    font-weight: bold; /* Hace que el texto sea negrita */
+    font-family: 'M PLUS Rounded 1c', sans-serif; /* Cambia la fuente a "M PLUS Rounded 1c" */
 }
 .search-hotel{
     padding: 15px 0;

@@ -40,96 +40,138 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!-- Load Open Sans Font -->
 
 	<style>
-	.loader {
-		position: fixed;
-		z-index: 999;
-		height: 100%;
-		width: 100%;
-		overflow: show;
-		margin: auto;
-		background: #fff;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		opacity: 1;
-		transition: opacity 1s ease-out, visibility 1s;
-	}
-
-	.loading-title {
-		font-size: 2em;
-		margin-bottom: 20px;
-		font-family: 'M PLUS Rounded 1c', sans-serif;
-		transition: transform 1s ease-out;
-	}
-
-	.loader .loading-image {
-		width: 150px;
-		height: auto;
-		transition: transform 1s ease-out;
-	}
-
-	.spinner {
-		margin: 20px;
-		width: 40px;
-		height: 40px;
-		border: 4px solid rgba(0, 0, 0, .3);
-		border-radius: 50%;
-		border-top-color: #000;
-		animation: spin 1s ease-in-out infinite;
-	}
-
-	@keyframes spin {
-		to {
-			transform: rotate(360deg);
+		.loader {
+			position: fixed;
+			z-index: 999;
+			height: 100%;
+			width: 100%;
+			overflow: show;
+			margin: auto;
+			background: #fff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			opacity: 1;
+			transition: opacity 1s ease-out, visibility 1s;
 		}
-	}
-
-	.loader.hidden {
-		opacity: 0;
-		visibility: hidden;
-	}
-
 	
-
-	.btn {
-		display: inline-block;
-		padding: 10px 20px;
-		font-size: 16px;
-		cursor: pointer;
-		text-align: center;
-		text-decoration: none;
-		outline: none;
-		color: #fff;
-		background-color: #4CAF50;
-		border: none;
-		border-radius: 15px;
-	}
-
-	.btn:hover {background-color: #3e8e41}
-
-	.btn:active {
-		background-color: #3e8e41;
-		transform: translateY(4px);
-	}
-
-	#myModal1 .modal-dialog {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		min-height: calc(100vh - 20px);
-	}
-	#myModal2 .modal-dialog {
-		display: flex;
-		align-items: center;
-		min-height: calc(100% - (1.75rem * 2));
-	}
-	#guestLoginMessage, #loginMessage {
-		text-align: center;
-		width: 100%;
-	}
+		.loading-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            transition: transform 1s ease-out;
+        }
 	
-</style>
+		.loader .loading-image {
+            width: 150px;
+            height: auto;
+            transition: transform 1s ease-out;
+        }
+	
+		.spinner {
+			margin: 20px;
+			width: 40px;
+			height: 40px;
+			border: 4px solid rgba(0, 0, 0, .3);
+			border-radius: 50%;
+			border-top-color: #000;
+			animation: spin 1s ease-in-out infinite;
+		}
+	
+		@keyframes spin {
+			to {
+				transform: rotate(360deg);
+			}
+		}
+	
+		.loader.hidden {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		.btn {
+			display: inline-block;
+			padding: 10px 20px;
+			font-size: 16px;
+			cursor: pointer;
+			text-align: center;
+			text-decoration: none;
+			outline: none;
+			color: #fff;
+			background-color: #4CAF50;
+			border: none;
+			border-radius: 15px;
+		}
+	
+		.btn:hover {background-color: #3e8e41}
+	
+		.btn:active {
+			background-color: #3e8e41;
+			transform: translateY(4px);
+		}
+
+		#myModal1 .modal-dialog {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: calc(100vh - 20px);
+		}
+		#myModal2 .modal-dialog {
+			display: flex;
+			align-items: center;
+			min-height: calc(100% - (1.75rem * 2));
+		}
+		#guestLoginMessage, #loginMessage {
+			text-align: center;
+			width: 100%;
+		}
+
+		.minicartk-details-quantity {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		
+		.minicartk-quantity-decrease,
+		.minicartk-quantity-increase {
+			background-color: #007BFF;
+			color: white;
+			border: none;
+			padding: 5px 10px; /* Ajusta el padding para cambiar el tamaño de los botones */
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 0 5px; /* Ajusta el margen para cambiar el espacio entre los botones y el input */
+			cursor: pointer;
+			border-radius: 5px;
+			flex: 1; /* Asegura que los botones tengan el mismo tamaño */
+		}
+		
+		.minicartk-quantity-decrease:hover,
+		.minicartk-quantity-increase:hover {
+			background-color: #0069D9;
+		}
+		
+		.minicartk-quantity {
+			margin: 0 10px; /* Ajusta el margen para cambiar el espacio entre el input y los botones */
+			text-align: center; /* Centra el texto dentro del input */
+		}
+		.minicartk-details-remove {
+			position: absolute;
+			right: 0;
+		}
+		.minicartk-details {
+			position: relative;
+		}
+		.minicartk-details-name {
+			display: flex;
+			flex-direction: column; /* Organiza los elementos hijos en una columna */
+			gap: 1em; /* Añade un espacio entre los elementos hijos */
+		}
+		
+	</style>
 </head>
 
 <body>
@@ -711,6 +753,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				alert('The minimum order quantity is 3. Please add more to your shopping cart before checking out');
 				evt.preventDefault();
 			}
+		});
+		document.addEventListener('DOMContentLoaded', function() {
+			document.addEventListener('click', function(event) {
+				var button = event.target;
+				if (button.classList.contains('minicartk-quantity-decrease')) {
+					var idx = button.getAttribute('data-minicartk-idx');
+					var input = document.querySelector('.minicartk-quantity[data-minicartk-idx="' + idx + '"]');
+					var currentQuantity = parseInt(input.value, 10);
+					if (currentQuantity > 1) { // Asegúrate de que la cantidad nunca sea menor que 1
+						input.value = currentQuantity - 1;
+						paypalm.minicartk.cart.items()[idx].set('quantity', currentQuantity - 1); // Actualiza la cantidad en el carrito
+					}
+				} else if (button.classList.contains('minicartk-quantity-increase')) {
+					var idx = button.getAttribute('data-minicartk-idx');
+					var input = document.querySelector('.minicartk-quantity[data-minicartk-idx="' + idx + '"]');
+					var currentQuantity = parseInt(input.value, 10);
+					input.value = currentQuantity + 1;
+					paypalm.minicartk.cart.items()[idx].set('quantity', currentQuantity + 1); // Actualiza la cantidad en el carrito
+				}
+			});
 		});
 	</script>
 	<!-- //cart-js -->

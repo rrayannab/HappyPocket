@@ -89,8 +89,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			visibility: hidden;
 		}
 
-		
-
 		.btn {
 			display: inline-block;
 			padding: 10px 20px;
@@ -126,6 +124,50 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		#guestLoginMessage, #loginMessage {
 			text-align: center;
 			width: 100%;
+		}
+
+		.minicartk-details-quantity {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		
+		.minicartk-quantity-decrease,
+		.minicartk-quantity-increase {
+			background-color: #007BFF;
+			color: white;
+			border: none;
+			padding: 5px 10px; /* Ajusta el padding para cambiar el tamaño de los botones */
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 0 5px; /* Ajusta el margen para cambiar el espacio entre los botones y el input */
+			cursor: pointer;
+			border-radius: 5px;
+			flex: 1; /* Asegura que los botones tengan el mismo tamaño */
+		}
+		
+		.minicartk-quantity-decrease:hover,
+		.minicartk-quantity-increase:hover {
+			background-color: #0069D9;
+		}
+		
+		.minicartk-quantity {
+			margin: 0 10px; /* Ajusta el margen para cambiar el espacio entre el input y los botones */
+			text-align: center; /* Centra el texto dentro del input */
+		}
+		.minicartk-details-remove {
+			position: absolute;
+			right: 0;
+		}
+		.minicartk-details {
+			position: relative;
+		}
+		.minicartk-details-name {
+			display: flex;
+			flex-direction: column; /* Organiza los elementos hijos en una columna */
+			gap: 1em; /* Añade un espacio entre los elementos hijos */
 		}
 		
 	</style>
@@ -775,6 +817,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					);
 					evt.preventDefault();
 				}
+			});
+			document.addEventListener('DOMContentLoaded', function() {
+				document.addEventListener('click', function(event) {
+					var button = event.target;
+					if (button.classList.contains('minicartk-quantity-decrease')) {
+						var idx = button.getAttribute('data-minicartk-idx');
+						var input = document.querySelector('.minicartk-quantity[data-minicartk-idx="' + idx + '"]');
+						var currentQuantity = parseInt(input.value, 10);
+						if (currentQuantity > 1) { // Asegúrate de que la cantidad nunca sea menor que 1
+							input.value = currentQuantity - 1;
+							paypalm.minicartk.cart.items()[idx].set('quantity', currentQuantity - 1); // Actualiza la cantidad en el carrito
+						}
+					} else if (button.classList.contains('minicartk-quantity-increase')) {
+						var idx = button.getAttribute('data-minicartk-idx');
+						var input = document.querySelector('.minicartk-quantity[data-minicartk-idx="' + idx + '"]');
+						var currentQuantity = parseInt(input.value, 10);
+						input.value = currentQuantity + 1;
+						paypalm.minicartk.cart.items()[idx].set('quantity', currentQuantity + 1); // Actualiza la cantidad en el carrito
+					}
+				});
 			});
 		</script>
 		<!-- //cart-js -->

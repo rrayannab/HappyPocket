@@ -40,96 +40,149 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!-- Load Open Sans Font -->
 
 	<style>
-	.loader {
-		position: fixed;
-		z-index: 999;
-		height: 100%;
-		width: 100%;
-		overflow: show;
-		margin: auto;
-		background: #fff;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		opacity: 1;
-		transition: opacity 1s ease-out, visibility 1s;
-	}
-
-	.loading-title {
-		font-size: 2em;
-		margin-bottom: 20px;
-		font-family: 'M PLUS Rounded 1c', sans-serif;
-		transition: transform 1s ease-out;
-	}
-
-	.loader .loading-image {
-		width: 150px;
-		height: auto;
-		transition: transform 1s ease-out;
-	}
-
-	.spinner {
-		margin: 20px;
-		width: 40px;
-		height: 40px;
-		border: 4px solid rgba(0, 0, 0, .3);
-		border-radius: 50%;
-		border-top-color: #000;
-		animation: spin 1s ease-in-out infinite;
-	}
-
-	@keyframes spin {
-		to {
-			transform: rotate(360deg);
+		.loader {
+			position: fixed;
+			z-index: 999;
+			height: 100%;
+			width: 100%;
+			overflow: show;
+			margin: auto;
+			background: #fff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			opacity: 1;
+			transition: opacity 1s ease-out, visibility 1s;
 		}
-	}
-
-	.loader.hidden {
-		opacity: 0;
-		visibility: hidden;
-	}
-
 	
-
-	.btn {
-		display: inline-block;
-		padding: 10px 20px;
-		font-size: 16px;
-		cursor: pointer;
-		text-align: center;
-		text-decoration: none;
-		outline: none;
-		color: #fff;
-		background-color: #4CAF50;
-		border: none;
-		border-radius: 15px;
-	}
-
-	.btn:hover {background-color: #3e8e41}
-
-	.btn:active {
-		background-color: #3e8e41;
-		transform: translateY(4px);
-	}
-
-	#myModal1 .modal-dialog {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		min-height: calc(100vh - 20px);
-	}
-	#myModal2 .modal-dialog {
-		display: flex;
-		align-items: center;
-		min-height: calc(100% - (1.75rem * 2));
-	}
-	#guestLoginMessage, #loginMessage {
-		text-align: center;
-		width: 100%;
-	}
+		.loading-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            transition: transform 1s ease-out;
+        }
 	
-</style>
+		.loader .loading-image {
+            width: 150px;
+            height: auto;
+            transition: transform 1s ease-out;
+        }
+	
+		.spinner {
+			margin: 20px;
+			width: 40px;
+			height: 40px;
+			border: 4px solid rgba(0, 0, 0, .3);
+			border-radius: 50%;
+			border-top-color: #000;
+			animation: spin 1s ease-in-out infinite;
+		}
+	
+		@keyframes spin {
+			to {
+				transform: rotate(360deg);
+			}
+		}
+	
+		.loader.hidden {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		.btn {
+			display: inline-block;
+			padding: 10px 20px;
+			font-size: 16px;
+			cursor: pointer;
+			text-align: center;
+			text-decoration: none;
+			outline: none;
+			color: #fff;
+			background-color: #4CAF50;
+			border: none;
+			border-radius: 15px;
+		}
+	
+		.btn:hover {background-color: #3e8e41}
+	
+		.btn:active {
+			background-color: #3e8e41;
+			transform: translateY(4px);
+		}
+
+		#myModal1 .modal-dialog {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: calc(100vh - 20px);
+		}
+		#myModal2 .modal-dialog {
+			display: flex;
+			align-items: center;
+			min-height: calc(100% - (1.75rem * 2));
+		}
+		#guestLoginMessage, #loginMessage {
+			text-align: center;
+			width: 100%;
+		}
+
+		.minicartk-details-quantity {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		
+		.minicartk-quantity-decrease,
+		.minicartk-quantity-increase {
+			background-color: #007BFF;
+			color: white;
+			border: none;
+			padding: 5px 10px; /* Ajusta el padding para cambiar el tamaño de los botones */
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 0 5px; /* Ajusta el margen para cambiar el espacio entre los botones y el input */
+			cursor: pointer;
+			border-radius: 5px;
+			flex: 1; /* Asegura que los botones tengan el mismo tamaño */
+		}
+		
+		.minicartk-quantity-decrease:hover,
+		.minicartk-quantity-increase:hover {
+			background-color: #0069D9;
+		}
+		
+		.minicartk-quantity {
+			margin: 0 10px; /* Ajusta el margen para cambiar el espacio entre el input y los botones */
+			text-align: center; /* Centra el texto dentro del input */
+		}
+		.minicartk-details-remove {
+			position: absolute;
+			right: 0;
+		}
+		.minicartk-details {
+			position: relative;
+		}
+		.minicartk-details-name {
+			display: flex;
+			flex-direction: column; /* Organiza los elementos hijos en una columna */
+			gap: 1em; /* Añade un espacio entre los elementos hijos */
+		}
+		
+	</style>
+	<style>
+		#editarPerfilModal {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: white;
+			padding: 20px;
+			border: 1px solid black;
+		}
+	</style>
 </head>
 
 <body>
@@ -489,28 +542,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<!-- //account actions -->
 
 				<!-- Formularios -->
-				<div id="editarPerfil" style="display: none;">
-					<h2>Editar perfil</h2>
+				<div id="editarPerfilModal" style="display: none;">
 					<form id="editarPerfilForm">
-						<label for="username">Nombre de usuario:</label>
-						<input type="text" id="username" name="username">
-						
+						<label for="nombre">Nombre:</label>
+						<input type="text" id="nombre" name="nombre">
 						<label for="email">Email:</label>
 						<input type="email" id="email" name="email">
-						
-						<label for="name">Nombre:</label>
-						<input type="text" id="name" name="name">
-						
-						<label for="surname1">Primer apellido:</label>
-						<input type="text" id="surname1" name="surname1">
-						
-						<label for="surname2">Segundo apellido:</label>
-						<input type="text" id="surname2" name="surname2">
-						
-						<label for="phone">Teléfono:</label>
-						<input type="tel" id="phone" name="phone">
-						
-						<input type="submit" value="Guardar cambios">
+						<button type="submit">Guardar cambios</button>
 					</form>
 				</div>
 
@@ -758,6 +796,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				evt.preventDefault();
 			}
 		});
+		document.addEventListener('DOMContentLoaded', function() {
+			document.addEventListener('click', function(event) {
+				var button = event.target;
+				if (button.classList.contains('minicartk-quantity-decrease')) {
+					var idx = button.getAttribute('data-minicartk-idx');
+					var input = document.querySelector('.minicartk-quantity[data-minicartk-idx="' + idx + '"]');
+					var currentQuantity = parseInt(input.value, 10);
+					if (currentQuantity > 1) { // Asegúrate de que la cantidad nunca sea menor que 1
+						input.value = currentQuantity - 1;
+						paypalm.minicartk.cart.items()[idx].set('quantity', currentQuantity - 1); // Actualiza la cantidad en el carrito
+					}
+				} else if (button.classList.contains('minicartk-quantity-increase')) {
+					var idx = button.getAttribute('data-minicartk-idx');
+					var input = document.querySelector('.minicartk-quantity[data-minicartk-idx="' + idx + '"]');
+					var currentQuantity = parseInt(input.value, 10);
+					input.value = currentQuantity + 1;
+					paypalm.minicartk.cart.items()[idx].set('quantity', currentQuantity + 1); // Actualiza la cantidad en el carrito
+				}
+			});
+		});
 	</script>
 	<!-- //cart-js -->
 
@@ -800,48 +858,55 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</script>
 	<!-- //end-smooth-scrolling -->
 	<script>
-		function mostrarFormulario(id) {
-			// Lista de todos los formularios
-			var formularios = ['editarPerfil', 'cambiarContraseña', 'historialPedidos', 'cerrarSesion'];
-	
-			// Oculta todos los formularios
-			for (var i = 0; i < formularios.length; i++) {
-				document.getElementById(formularios[i]).style.display = 'none';
-			}
-	
-			// Muestra el formulario seleccionado
-			document.getElementById(id).style.display = 'block';
-	
-			// Si el formulario seleccionado es el de editar perfil, llena el formulario con los datos del usuario
-			if (id === 'editarPerfil') {
-				// Aquí debes reemplazar esto con el código para obtener los datos del usuario actual
-				var usuario = {
-					id: 1,
-					username: "test",
-					password: "test",
-					email: "test@gmail.com",
-					name: "test",
-					surname1: "test",
-					surname2: "test",
-					phone: 651274927
-				};
-	
-				document.getElementById('username').value = usuario.username;
-				document.getElementById('email').value = usuario.email;
-				document.getElementById('name').value = usuario.name;
-				document.getElementById('surname1').value = usuario.surname1;
-				document.getElementById('surname2').value = usuario.surname2;
-				document.getElementById('phone').value = usuario.phone;
-	
-				// Controlador de eventos para la presentación del formulario de edición de perfil
-				document.getElementById('editarPerfilForm').addEventListener('submit', function(event) {
-					event.preventDefault();
-	
-					// Aquí debes reemplazar esto con el código para enviar los datos del formulario al servidor
-					console.log('Formulario de edición de perfil enviado');
-				});
-			}
+		function mostrarFormulario(formId) {
+			var modal = document.getElementById(formId + 'Modal');
+			modal.style.display = 'block';
 		}
+
+		window.addEventListener('DOMContentLoaded', (event) => {
+			document.getElementById('editarPerfil').addEventListener('click', function(e) {
+				e.preventDefault(); // Previene el comportamiento predeterminado del enlace
+				mostrarFormulario('editarPerfil');
+			});
+
+			document.getElementById('editarPerfilForm').addEventListener('submit', function(e) {
+				e.preventDefault();
+
+				var nombre = document.getElementById('nombre').value;
+				var email = document.getElementById('email').value;
+
+				fetch(url, {
+					method: 'PUT',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({
+						username: nombre,
+						email: email,
+					}),
+				})
+				.then(response => response.json())
+				.then(data => {
+					console.log('Success:', data);
+				})
+				.catch((error) => {
+					console.error('Error:', error);
+				});
+			});
+
+			let identificador = window.location.search.substr(1).split("=")[1];
+			url = "http://localhost:8080/user?id=" + identificador;
+
+			fetch(url)
+				.then(response => response.json())
+				.then(data => {
+					document.getElementById('nombre').value = data.username;
+					document.getElementById('email').value = data.email;
+				})
+				.catch(error => console.error('Error:', error));
+		});
+
+
 	</script>
 
 	<!-- smooth-scrolling-of-move-up -->

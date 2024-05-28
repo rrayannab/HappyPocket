@@ -98,7 +98,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			opacity: 0;
 			visibility: hidden;
 		}
-		
+
 		.btn {
 			display: inline-block;
 			padding: 10px 20px;
@@ -1232,6 +1232,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 						// Guardar información de inicio de sesión en localStorage
 						localStorage.setItem('user', JSON.stringify(user));
+						localStorage.setItem('isGuest', 'false');
 
 						// Establecer cookie de sesión para rastrear el tiempo de inactividad
 						document.cookie = "session=active; max-age=600"; // 600 segundos = 10 minutos
