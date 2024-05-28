@@ -1196,7 +1196,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					}
 				} else {
 					// No hay información de usuario en localStorage
-					$('#myModal1').modal({backdrop: 'static', keyboard: false});
+					
+					
+					clearInterval(intervalId);		
+					document.getElementById('loader').style.display = 'none';
 				}
 			}, 1000); // Comprueba cada segundo
 
