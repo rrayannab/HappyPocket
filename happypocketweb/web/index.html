@@ -856,37 +856,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- cart-js -->
 	<script src="js/minicart.js"></script>
 	<script>
+
+		
 		paypalm.minicartk.render(); //use only unique class names other than paypalm.minicartk.Also Replace same class name in css and minicart.min.js
-	
+
 		paypalm.minicartk.cart.on('checkout', function (evt) {
 			var items = this.items(),
 				len = items.length,
 				total = 0,
 				i;
-	
 		});
-	
+		
 		// Aquí es donde puedes agregar tu código
 		// Asegúrate de que el DOM esté completamente cargado antes de agregar los controladores de eventos
 		document.addEventListener('DOMContentLoaded', function() {
-			document.addEventListener('click', function(event) {
-				var button = event.target;
-				if (button.classList.contains('minicartk-quantity-decrease')) {
-					var idx = button.getAttribute('data-minicartk-idx');
-					var input = document.querySelector('.minicartk-quantity[data-minicartk-idx="' + idx + '"]');
-					var currentQuantity = parseInt(input.value, 10);
-					if (currentQuantity > 1) { // Asegúrate de que la cantidad nunca sea menor que 1
-						input.value = currentQuantity - 1;
-						paypalm.minicartk.cart.items()[idx].set('quantity', currentQuantity - 1); // Actualiza la cantidad en el carrito
-					}
-				} else if (button.classList.contains('minicartk-quantity-increase')) {
-					var idx = button.getAttribute('data-minicartk-idx');
-					var input = document.querySelector('.minicartk-quantity[data-minicartk-idx="' + idx + '"]');
-					var currentQuantity = parseInt(input.value, 10);
-					input.value = currentQuantity + 1;
-					paypalm.minicartk.cart.items()[idx].set('quantity', currentQuantity + 1); // Actualiza la cantidad en el carrito
-				}
-			});
+			window.setupEventListeners();
 		});
 	</script>
 	<!-- //cart-js -->

@@ -832,6 +832,13 @@ function reduceToSingleString(output, base, braces) {
 }
 
 
+/*
+PRUEBAS DE FUNCIONES
+*/
+
+
+
+
 // NOTE: These type checking functions intentionally don't use `instanceof`
 // because it is fragile and can be easily faked with `Object.create()`.
 function isArray(ar) {
@@ -3085,6 +3092,49 @@ module.exports = viewevents = {
     }
 
 };
+function decreaseQuantity(idx) {
+  var input = document.querySelector('.minicartk-quantity[data-minicartk-idx="' + idx + '"]');
+  var currentQuantity = parseInt(input.value, 10);
+  if (currentQuantity > 1) { // Asegúrate de que la cantidad nunca sea menor que 1
+      input.value = currentQuantity - 1;
+      paypalm.minicartk.cart.items()[idx].set('quantity', currentQuantity - 1); // Actualiza la cantidad en el carrito
+  }
+}
+
+function increaseQuantity(idx) {
+  var input = document.querySelector('.minicartk-quantity[data-minicartk-idx="' + idx + '"]');
+  var currentQuantity = parseInt(input.value, 10);
+  input.value = currentQuantity + 1;
+  paypalm.minicartk.cart.items()[idx].set('quantity', currentQuantity + 1); // Actualiza la cantidad en el carrito
+}
+
+function setupEventListeners() {
+  document.addEventListener('click', function(event) {
+      var button = event.target;
+      if (button.classList.contains('minicartk-quantity-decrease')) {
+          var idx = button.getAttribute('data-minicartk-idx');
+          decreaseQuantity(idx);
+      } else if (button.classList.contains('minicartk-quantity-increase')) {
+          var idx = button.getAttribute('data-minicartk-idx');
+          increaseQuantity(idx);
+      }
+  });
+}
+function initialize() {
+    window.decreaseQuantity = decreaseQuantity;
+    window.increaseQuantity = increaseQuantity;
+    window.setupEventListeners = setupEventListeners;
+}
+
+if (typeof window !== 'undefined') {
+    window.onload = initialize;
+}
+module.exports = {
+  decreaseQuantity: decreaseQuantity,
+  increaseQuantity: increaseQuantity,
+  setupEventListeners: setupEventListeners
+};
+
 
 },{"./constants":11,"./util/events":16}]},{},[9,10,11,12,13,14,15,16,17,18,19,20,21,22,23])
 ;
