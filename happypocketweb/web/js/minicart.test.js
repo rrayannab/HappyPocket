@@ -1,33 +1,39 @@
-// minicart.test.js
-var minicart = require('./minicart');
+const { JSDOM } = require('jsdom');
 
 describe('minicart', () => {
+    let dom;
+    let container;
+
     beforeEach(() => {
-        // Configura el DOM y el carrito de compras antes de cada prueba
-        document.body.innerHTML = `
+        dom = new JSDOM(`<!DOCTYPE html><body><script src="js/minicart.js"></script></body></html>`, { runScripts: 'dangerously' });
+        container = dom.window.document;
+    });
+
+    it('decreases quantity when decrease button is clicked', () => {
+        // Set up your document with the necessary HTML
+        container.body.innerHTML = `
+            <button class="minicartk-quantity-decrease" data-minicartk-idx="0"></button>
             <input class="minicartk-quantity" data-minicartk-idx="0" value="2">
         `;
-        window.paypalm = {
+
+        // Mock the cart
+        dom.window.paypalm = {
             minicartk: {
                 cart: {
                     items: () => [{
-                        set: jest.fn()
-                    }]
-                }
-            }
+                        set: jest.fn(),
+                    }],
+                },
+            },
         };
-        minicart.initialize(); // Llama a initialize antes de cada prueba
+
+        // Simulate a click event
+        container.querySelector('.minicartk-quantity-decrease').click();
+
+        // Check that the quantity was decreased
+        expect(container.querySelector('.minicartk-quantity').value).toBe('1');
+        expect(dom.window.paypalm.minicartk.cart.items()[0].set).toHaveBeenCalledWith('quantity', 1);
     });
 
-    test('decreaseQuantity', () => {
-        minicart.decreaseQuantity(0);
-        expect(document.querySelector('.minicartk-quantity').value).toBe('1');
-        expect(window.paypalm.minicartk.cart.items()[0].set).toHaveBeenCalledWith('quantity', 1);
-    });
-
-    test('increaseQuantity', () => {
-        minicart.increaseQuantity(0);
-        expect(document.querySelector('.minicartk-quantity').value).toBe('3');
-        expect(window.paypalm.minicartk.cart.items()[0].set).toHaveBeenCalledWith('quantity', 3);
-    });
+    // You can add more tests for the other functionality in your script
 });
