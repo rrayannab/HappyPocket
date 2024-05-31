@@ -21,3 +21,6 @@ Por lo tanto, desarrollando esta aplicación web conseguiremos ahorrar tiempo a 
 | 5| Rayan | Abarkan | rayan10@uma.es |
 | 6| Jorge | Rodríguez Mata | jorge_roma@uma.es |
 
+# Cómo ejecutar
+1. Abrir el backend, ubicado en backendHappyPockets/src/main/java/com/happyPockets/BackendHappyPocketsApplication.java
+2. Abrir el frontend, ubicado en happypocketweb/web/index.html
