@@ -1164,38 +1164,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			
 		
 		</script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
-		<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-		<script>
-			function exportTableToPDF() {
-				var pdf = new jsPDF('p', 'pt', 'letter');
-				var source = document.querySelector('.timetable_sub'); // Asegúrate de seleccionar la tabla correcta
-			
-				// Ocultar la columna "Producto"
-				var productColumns = document.querySelectorAll('.timetable_sub .product-column'); // Reemplaza '.product-column' con la clase correcta
-				productColumns.forEach(function(column) {
-					column.style.display = 'none';
-				});
-			
-				html2canvas(source).then(function(canvas) {
-					var data = canvas.toDataURL();
-					var margins = {
-						top: 80,
-						bottom: 60,
-						left: 40,
-						width: 522
-					};
-			
-					pdf.addImage(data, 'JPEG', margins.left, margins.top, margins.width, 0);
-					pdf.save('table.pdf');
-			
-					// Mostrar la columna "Producto" nuevamente después de exportar a PDF
-					productColumns.forEach(function(column) {
-						column.style.display = '';
-					});
-				});
-			}
-		</script>
+		
 		<script>
 			console.log(localStorage.getItem('user'));
 			window.onload = function() {
