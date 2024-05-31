@@ -1046,7 +1046,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				tableBody.innerHTML = '';
 			
 				// Fetch data from the local server
-				fetch('http://localhost:8080/products?category=all')
+				fetch('http://localhost:8080/products')
 					.then(response => response.json())
 					.then(data => {
 						// Generate a new row for each item
