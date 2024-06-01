@@ -1019,13 +1019,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			updatePageContent(data[category]);
 
 			function updatePageContent(data) {
+				if (!data) {
+					data = {
+						title: "Happy Pocket | Todos los productos",
+						nombrecategoria: "Todos",
+						nombrecategoria2: "Todos los productos",
+					};
+				}
 				document.title = data.title;
 				document.getElementById("nombrecategoria").innerHTML =
 					data.nombrecategoria;
 				document.getElementById("nombrecategoria2").innerHTML =
 					data.nombrecategoria2;
 			}
-			function generateUrl(order, priceFrom, priceTo) {
+			function generateUrl(order, priceFrom, priceTo, category) {
 				return `http://localhost:8080/products?order=${order}&priceFrom=${priceFrom}&priceTo=${priceTo}&category=${category}`;
 			}
 			// para ordenar de menor a mayor o viceversa, añadir parametro que ordena data y luego ponerlo
@@ -1035,7 +1042,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				fetch(url, {mode: 'cors'})
 				.then((response) => response.json())
 				.then((data) => {
-					console.log(data);
 					let sections = '';
 					let container = mainContainer.appendChild(document.createElement('div'));
 					container.className = 'product-sec1';
@@ -1260,12 +1266,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				let priceFrom = slider.slider("values", 0);
 				let priceTo = slider.slider("values", 1);
 				let order = 'priceDesc';
-				let url = generateUrl(order, priceFrom, priceTo, "all");
-				if(category === "all"){
+				
+				if(category === "all" || category === null || category === undefined){
+					const url = generateUrl(order, priceFrom, priceTo, "all");
 					fecthAndDisplayProducts(url);
 				}else {
-					let url2 =  `http://localhost:8080/products?category=${category}`;
-					fecthAndDisplayProducts(url2);
+					const url = generateUrl(order, priceFrom, priceTo, category);
+					fecthAndDisplayProducts(url);
+
 				}
 
 				function checkOrder() { 
@@ -1308,11 +1316,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					priceTo = slider.slider("values", 1);
 					order = checkOrder();
 					category = checkCategory();
-
+					
 					url = generateUrl(order, priceFrom, priceTo, category);
 					// currentURL = window.location.href.split('?')[0];
 					// nextURL = currentURL + '?' + url.split('?')[1];
 					fecthAndDisplayProducts(url);
+					console.log('1');
+					console.log(category);
+					updatePageContent(data[category]);
 
 				});
 				
@@ -1322,6 +1333,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					event.preventDefault();
 					let searchTerm = $('input[name="Search"]').val();
 					searchAndDisplayResults(searchTerm);
+
 				});
 
 
@@ -1341,8 +1353,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 			// Función para obtener el valor de un parámetro en la URL
 			function getQueryParam(param) {
-				const urlParams = new URLSearchParams(window.location.search);
-				return urlParams.get(param);
+				try{
+					const urlParams = new URLSearchParams(window.location.search);
+					return urlParams.get(param);
+				}catch(e){
+					return "all";
+				}
 			}
 
 			// Función para normalizar una cadena eliminando tildes y pasando a minúsculas
@@ -1355,43 +1371,58 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				const itemList = document.getElementById('cat-list');
 				
 				// Ordenar los items alfabéticamente
-				const sortedItems = Array.from(items).sort();
+				// const sortedItems = Array.from(items).sort();
 
 				// Normalizar la categoría seleccionada
 				const normalizedSelectedCategory = selectedCategory ? normalizeString(selectedCategory) : '';
 
+				console.log(data);
 				// Crear un elemento <li> por cada item
-				sortedItems.forEach(item => {
-					const normalizedItem = normalizeString(item);
-					const li = document.createElement('li');
-					const input = document.createElement('input');
-					input.type = 'radio';
-					input.name = 'catOption';
-					input.value = item;
-					input.className = 'checked';
 					
-					// Marcar el item como seleccionado si coincide con el parámetro de la URL
-					if (normalizedItem === normalizedSelectedCategory) {
-						input.checked = true;
+				for (const key in data) {
+					if (data.hasOwnProperty(key)) {
+						// Crear un nuevo elemento 'li'
+						const li = document.createElement('li');
+
+						// Crear un nuevo elemento 'input' de tipo radio
+						const input = document.createElement('input');
+						input.type = 'radio';
+						input.name = 'catOption';
+						input.className = 'checked';
+						input.value = key; // Usar la clave del diccionario como valor
+
+						// Crear un nuevo elemento 'span' para el nombre de la categoría
+						const span = document.createElement('span');
+						span.className = 'span';
+						span.textContent = data[key].nombrecategoria;
+						
+						if (data[key].nombrecategoria === normalizedSelectedCategory) {
+							input.checked = true;
+						}
+
+						// Añadir el 'input' y el 'span' al 'li'
+						li.appendChild(input);
+						li.appendChild(span);
+						
+					
+						// Añadir el 'li' a la lista 'cat-list'
+						itemList.appendChild(li);
 					}
-					
-					const span = document.createElement('span');
-					span.className = 'span';
-					span.textContent = item;
-					
-					li.appendChild(input);
-					li.appendChild(span);
-					itemList.appendChild(li);
-				});
+				}
+
+				if (normalizedSelectedCategory === 'all' || normalizedSelectedCategory === null || normalizedSelectedCategory === undefined || normalizedSelectedCategory === ''){
+					const all = itemList.querySelector('input[type="radio"][value="all"]').checked = true;
+				}
 			}
+
+			console.log(data);
 
 			// Obtener la categoría seleccionada de la URL
 			const selectedCategory = getQueryParam('category');
 
 			// Llamar a la función fetchItems y generar la lista con la categoría seleccionada
-			fetchItems().then(items => {
-				generateList(items, selectedCategory);
-			});
+			
+				generateList(data, selectedCategory);
 		</script>
 		<script>
 			console.log(localStorage.getItem('user'));
