@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * 		6 pruebas unitarias
  */
 @SpringBootTest
-public class UserServiceTests {
+public class UserServiceTest {
 	UserService userService = null;
 
 	@BeforeEach
