@@ -10,8 +10,13 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Clase dedicada a las pruebas unitarias de cada uno de los metodos
+ * de la calse UserService
+ * 		6 pruebas unitarias
+ */
 @SpringBootTest
-public class BackendHappyPocketsApplicationUserServiceTests {
+public class UserServiceTests {
 	UserService userService = null;
 
 	@BeforeEach
@@ -19,6 +24,10 @@ public class BackendHappyPocketsApplicationUserServiceTests {
 		userService = new UserService();
 	}
 
+	/**
+	 * Preuba para los metodos:
+	 * 		getUserID
+	 */
 	@Test
 	void UserInDataBaseTest() {
 		for (User us : userService.getUserList()) {
@@ -28,6 +37,10 @@ public class BackendHappyPocketsApplicationUserServiceTests {
 		}
 	}
 
+	/**
+	 * Preuba para los metodos:
+	 * 		getUserID
+	 */
 	@Test
 	void UserNotInDataBaseTest() {
 		int maxId = -1;
@@ -39,6 +52,10 @@ public class BackendHappyPocketsApplicationUserServiceTests {
 		assertFalse(userService.getUserID(maxId+1).isPresent());
 	}
 
+	/**
+	 * Preuba para los metodos:
+	 * 		logIn
+	 */
 	@Test
 	void UserLogInTrueTest() {
 		for (User us : userService.getUserList()) {
@@ -46,6 +63,10 @@ public class BackendHappyPocketsApplicationUserServiceTests {
 		}
 	}
 
+	/**
+	 * Preuba para los metodos:
+	 * 		logIn
+	 */
 	@Test
 	void UserLogInFalseTest() {
 		List<User> userList = userService.getUserList();
@@ -59,6 +80,10 @@ public class BackendHappyPocketsApplicationUserServiceTests {
 		}
 	}
 
+	/**
+	 * Preuba para los metodos:
+	 * 		addUser
+	 */
 	@Test
 	void AddUserFalse() {
 		for (User us : userService.getUserList()) {
@@ -66,8 +91,10 @@ public class BackendHappyPocketsApplicationUserServiceTests {
 		}
 	}
 
-	// Para que la prueba sea mas concisa deberia de poder borrarse el usuario del test para que no se quede en la base de datos
-	// Si se queda en la base de datos para la siquiente iteracion fallará
+	/**
+	 * Preuba para los metodos:
+	 * 		addUser
+	 */
 	@Test
 	void AddUserTrue() {
 		int num = new Random().nextInt();
