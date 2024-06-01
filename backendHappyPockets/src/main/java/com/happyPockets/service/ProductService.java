@@ -20,6 +20,7 @@ public class ProductService {
 	public ProductService() {
 		productList = new ArrayList<>();
 
+		// Leer el archivo de Excel y cargar los productos
 		try (FileInputStream fis = new FileInputStream(new File(rutaArchivo))) {
 			// Abrir el libro de Excel
 			Workbook libro = WorkbookFactory.create(fis);
@@ -58,6 +59,11 @@ public class ProductService {
 		}
 	}
 
+	/*
+	 * Obtiene un producto por su id
+	 * @param id Id del producto
+	 * @return Producto
+	 */
 	public Optional<Product> getProductId(Integer id) {
 		Optional<Product> optinal = Optional.empty();
 
@@ -70,10 +76,24 @@ public class ProductService {
 		return optinal;
 	}
 
+	/*
+	 * Obtiene la lista de productos
+	 * @return Lista de productos
+	 */
 	public List<Product> getProductList() {
 		return productList;
 	}
 
+	/*
+	 * Ordena una lista de productos según el criterio de orden.
+	 * "asc" ordena alfabéticamente de forma ascendente.
+	 * "desc" ordena alfabéticamente de forma descendente.
+	 * "priceAsc" ordena por precio de forma ascendente.
+	 * "priceDesc" ordena por precio de forma descendente.
+	 * @param products Lista de productos
+	 * @param order Criterio de orden
+	 * @return Lista de productos ordenada
+	 */
 	public static List<Product> getProductListOrder(List<Product> products, String order) {
 		if (products == null || order == null)
 			return null;
@@ -94,6 +114,13 @@ public class ProductService {
 			return null;
 	}
 
+	/*
+	 * Obtiene los todos productos de un rango de precios
+	 * @param productListIn Lista de productos
+	 * @param priceFrom Precio mínimo
+	 * @param priceTo Precio máximo
+	 * @return Lista de productos en el rango de precios
+	 */
 	public static List<Product> getProductPriceRange(
 			List<Product> productListIn,
 			@RequestParam Optional<Double> priceFrom,
@@ -115,6 +142,12 @@ public class ProductService {
 		return productListIn;
 	}
 
+	/*
+	 * Obtiene los todos productos de una categoría
+	 * @param productListIn Lista de productos
+	 * @param category Categoría
+	 * @return Lista de productos de la categoría
+	 */
 	public static List<Product> getProductCategory(List<Product> productListIn,
 			@RequestParam Optional<String> category) {
 		if (productListIn == null || category == null || (category.isPresent() && category.get().equals("all")))
@@ -126,6 +159,12 @@ public class ProductService {
 		return productListIn;
 	}
 
+	/*
+	 * Obtiene los todos productos de una marca
+	 * @param productListIn Lista de productos
+	 * @param brand Marca
+	 * @return Lista de productos de la marca
+	 */
 	public static List<Product> getProductSearch(List<Product> productListIn, @RequestParam Optional<String> product) {
 		if (productListIn == null)
 			return productListIn;
@@ -137,6 +176,10 @@ public class ProductService {
 		return productListIn;
 	}
 
+	/*
+	 * Obtiene las categorías de los productos
+	 * @return Lista de categorías
+	 */
 	public List<String> getCategories() {
 		List<String> categories = new ArrayList<>();
 		for (Product product : productList) {
@@ -147,6 +190,10 @@ public class ProductService {
 		return categories;
 	}
 
+	/**
+	 * Obtiene las marcas de los productos
+	 * @return Lista de marcas
+	 */
 	public List<String> getBrands() {
 		List<String> brands = new ArrayList<>();
 		for (Product product : productList) {
