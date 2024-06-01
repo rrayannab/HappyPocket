@@ -25,6 +25,10 @@ public class ProductController {
         this.productService = productService;
     }
 
+    /*
+    * Endpoint para obtener un producto por su id.
+    * id: int
+     */
     @GetMapping("/product")
     public Product getProduct(@RequestParam Integer id){
         Optional<Product> product = productService.getProductId(id);
@@ -33,6 +37,15 @@ public class ProductController {
         return null;
     }
 
+    /*
+    * Endpoint para obtener la lista de productos
+    * Se pueden filtrar por: precio ascendete y descendente, rango de precios, categoría y nombre del producto.
+    * order: {"asc", "desc", "priceAsc", "priceDesc"
+    * priceFrom: double
+    * priceTo: double
+    * category: string
+    * producto: string
+     */
     @CrossOrigin(origins = "http://127.0.0.1:5500")
     @GetMapping("/products")
     public ResponseEntity<List<Product>> getProducts(
@@ -58,12 +71,18 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
     }
 
+    /*
+    * Endpoint para obtener la lista de categorías
+    */
     @CrossOrigin(origins = "http://127.0.0.1:5500")
     @GetMapping("/categories")
     public ResponseEntity<List<String>> getCategories(){
         return ResponseEntity.ok(productService.getCategories());
     }
 
+    /*
+    * Endpoint para obtener la lista de marcas
+     */
     @CrossOrigin(origins = "http://127.0.0.1:5500")
     @GetMapping("/brands")
     public ResponseEntity<List<String>> getBrands(){
