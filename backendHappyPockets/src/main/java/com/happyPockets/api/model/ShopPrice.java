@@ -56,10 +56,8 @@ public class ShopPrice {
         this.prices[2] = priceCorteIngles;
     }
 
+    // Devuelve el índice de la tienda con el precio más barato
     private int getCheapestIndex(){
-//        if (this.prices[0] == this.prices[1] && this.prices[1] == this.prices[2])
-//            return EQUAL;
-
         double min = this.prices[0];
         int index = 0;
         for (int i = 1; i < this.prices.length; i++) {
@@ -71,20 +69,22 @@ public class ShopPrice {
         return index;
     }
 
+    // Devuelve una lista con los precios de las tiendas
     public double[] getPrices(){
         return this.prices;
     }
 
+    // Devuelve una lista con los nombres de las tiendas
     public String[] getStores(){
         return this.stores;
     }
 
-
+    // Devuelve el precio más barato
     public double getBestPrice() {
         return this.prices[getCheapestIndex()];
     }
 
-
+    // Devuelve la tienda con el precio más barato
     public String getBestStore() {
         return this.stores[getCheapestIndex()];
     }
