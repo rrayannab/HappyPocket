@@ -23,6 +23,7 @@ public class UserService {
     public UserService() {
         userList = new ArrayList<>();
 
+        // Leer los usuarios del archivo Excel
         try (FileInputStream fis = new FileInputStream(new File(rutaArchivo)))
         {
             // Abrir el libro de Excel
@@ -62,6 +63,11 @@ public class UserService {
 
     }
 
+    /**
+     * Método que permite obtener un usuario por su ID
+     * @param id ID del usuario
+     * @return Devuelve el usuario si existe, en caso contrario devuelve un Optional vacío
+     */
     public Optional<User> getUserID(Integer id) {
         Optional<User> optional = Optional.empty();
 
@@ -73,11 +79,26 @@ public class UserService {
         return optional;
     }
 
+    /**
+     * Método que permite obtener la lista de usuarios
+     * @return Devuelve la lista de usuarios
+     */
     public List<User> getUserList() {
         return userList;
     }
 
 
+    /**
+     * Método que permite añadir un usuario a la lista de usuarios
+     * @param username Nombre de usuario
+     * @param password Contraseña
+     * @param email Correo electrónico
+     * @param name Nombre
+     * @param surname1 Primer apellido
+     * @param surname2 Segundo apellido
+     * @param phone Teléfono
+     * @return Devuelve true si el usuario se ha añadido correctamente, false en caso contrario
+     */
     public boolean addUser(String username, String password, String email, String name, String surname1, String surname2, int phone) {
         if (InUserList(username, email))
             return false;
@@ -115,6 +136,12 @@ public class UserService {
         }
     }
 
+    /**
+     * Método que permite comprobar si un usuario existe en la lista de usuarios
+     * @param username Nombre de usuario
+     * @param email Correo electrónico
+     * @return Devuelve true si el usuario existe, false en caso contrario
+     */
     private boolean InUserList(String username, String email) {
         for (User user : userList) {
             if (user.getUsername().equals(username) || user.getEmail().equals(email))
@@ -123,6 +150,12 @@ public class UserService {
         return false;
     }
 
+    /**
+     * Método que permite a comprobar si un usuario y una contraseña son correctos
+     * @param username Nombre de usuario
+     * @param password Contraseña
+     * @return Devuelve true si el usuario exite y su contraseña es correcta, false en caso contrario
+     */
     public boolean logIn(String username, String password) {
         for (User user : userList) {
             if (user.getUsername().equals(username))
