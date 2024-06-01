@@ -10,8 +10,13 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Clase dedicada a las pruebas unitarias de cada uno de los metodos
+ * de la calse ProductService
+ * 		7 pruebas unitarias
+ */
 @SpringBootTest
-public class BackendHappyPocketsApplicationProductServiceTest {
+public class ProductServiceTest {
 	ProductService productService = null;
 
 	@BeforeEach
@@ -19,6 +24,10 @@ public class BackendHappyPocketsApplicationProductServiceTest {
 		productService = new ProductService();
 	}
 
+	/**
+	 * Preuba para los metodos:
+	 * 		getProductId
+	 */
 	@Test
 	void ProductInDataBaseTest() {
 		for (Product pr : productService.getProductList()) {
@@ -28,6 +37,10 @@ public class BackendHappyPocketsApplicationProductServiceTest {
 		}
 	}
 
+	/**
+	 * Preuba para los metodos:
+	 * 		getProductId
+	 */
 	@Test
 	void ProductNotInDataBaseTest() {
 		int maxId = -1;
@@ -39,6 +52,10 @@ public class BackendHappyPocketsApplicationProductServiceTest {
 		assertFalse(productService.getProductId(maxId+1).isPresent());
 	}
 
+	/**
+	 * Preuba para los metodos:
+	 * 		getProductPriceRange
+	 */
 	@Test
 	void ProductgetProductPriceRange() {
 		Optional<Double> priceFrom = null;
@@ -87,6 +104,10 @@ public class BackendHappyPocketsApplicationProductServiceTest {
 		}
 	}
 
+	/**
+	 * Preuba para los metodos:
+	 * 		getProductCategory
+	 */
 	@Test
 	void ProductCategory() {
 		assertNull(productService.getProductCategory(null, Optional.empty()));
@@ -108,6 +129,10 @@ public class BackendHappyPocketsApplicationProductServiceTest {
 		}
 	}
 
+	/**
+	 * Preuba para los metodos:
+	 * 		getProductSearch
+	 */
 	@Test
 	void ProductSearch() {
 		assertNull(productService.getProductSearch(null, null));
@@ -121,6 +146,10 @@ public class BackendHappyPocketsApplicationProductServiceTest {
 		assertNotNull(productService.getProductSearch(productService.getProductList(), Optional.of("")));
 	}
 
+	/**
+	 * Preuba para los metodos:
+	 * 		getProductListOrder
+	 */
 	@Test
 	void ProductListOrder() {
 		assertNull(productService.getProductListOrder(null, null));
@@ -135,6 +164,10 @@ public class BackendHappyPocketsApplicationProductServiceTest {
 
 	}
 
+	/**
+	 * Preuba para los metodos:
+	 * 		getCategories
+	 */
 	@Test
 	void ProductCategories() {
 		Set<String> categorias = new HashSet<>();

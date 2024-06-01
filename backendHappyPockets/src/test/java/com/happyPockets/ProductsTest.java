@@ -8,7 +8,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class BackendHappyPocketsApplicationProductsTest {
+/**
+ * Clase dedicada a las pruebas unitarias de cada uno de los metodos
+ * de la calse Products
+ *      3 preubas unitarias
+ */
+public class ProductsTest {
     private Product product1;
     private Product product2;
     private Product product3;
@@ -24,6 +29,10 @@ public class BackendHappyPocketsApplicationProductsTest {
         product3 = new Product(3, "Product C", "Brand C", "Category C", shopPrices3, "link3");
     }
 
+    /**
+     * Preuba para los metodos:
+     * 		compareTo
+     */
     @Test
     public void CompareTo() {
         assertTrue(product1.compareTo(product2) < 0); // Se espera que "Product A" sea menor que "Product B"
@@ -31,6 +40,10 @@ public class BackendHappyPocketsApplicationProductsTest {
         assertEquals(0, product1.compareTo(product1)); // Se espera que "Product A" sea igual a "Product A"
     }
 
+    /**
+     * Preuba para los metodos:
+     * 		comparadorPorPrecio
+     */
     @Test
     public void ComparadorPorPrecio() {
         assertTrue(Product.comparadorPorPrecio.compare(product1, product2) > 0); // Se espera que "Product A" sea mayor que "Product B" en precio
@@ -38,6 +51,18 @@ public class BackendHappyPocketsApplicationProductsTest {
         assertEquals(0, Product.comparadorPorPrecio.compare(product1, product1)); // Se espera que "Product A" sea igual a "Product A" en precio
     }
 
+    /**
+     * Preuba para los metodos:
+     *      setBrand
+     * 		getBrand
+     * 	    setCat
+     * 	    getCat
+     * 	    setImageLink
+     * 	    getImageLink
+     * 	    setId
+     * 	    getId
+     * 	    setShopPrices
+     */
     @Test
     public void testSettersAndGetters() {
         product1.setBrand("New Brand");

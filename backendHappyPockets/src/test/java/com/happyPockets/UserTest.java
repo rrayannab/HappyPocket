@@ -6,7 +6,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class BackendHappyPocketsApplicationUserTest {
+/**
+ * Clase dedicada a las pruebas unitarias de cada uno de los metodos
+ * de la calse User
+ * 		2 pruebas unitarias
+ */
+public class UserTest {
     private User user;
 
     @BeforeEach
@@ -15,6 +20,9 @@ public class BackendHappyPocketsApplicationUserTest {
         user = new User(1, "test", "test", "test@test.com", "test", "test", "test", 123456789);
     }
 
+    /**
+     * Preuba para los metodos getters
+     */
     @Test
     public void testGetters() {
         assertEquals(1, user.getId());
@@ -27,6 +35,9 @@ public class BackendHappyPocketsApplicationUserTest {
         assertEquals(123456789, user.getPhone());
     }
 
+    /**
+     * Preuba para los metodos setter
+     */
     @Test
     public void testSetters() {
         user.setId(2);
