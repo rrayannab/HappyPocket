@@ -22,6 +22,11 @@ public class UserController {
         this.userService = userService;
     }
 
+    /**
+     * Endpoint para obtener un usuario por su id.
+     * @param id
+     * @return el usuario si existe, null en cualquier otro caso.
+     */
     @GetMapping("/user")
     public User getUser(@RequestParam Integer id){
         Optional<User> user = userService.getUserID(id);
@@ -29,13 +34,18 @@ public class UserController {
             return user.get();
         return null;
     }
+
+    /**
+     * Endpoint para obtener todos los usuarios de la base de datos.
+     * @return una lista con todos los usuarios.
+     */
     @GetMapping("/users")
     public List<User> getUsers(){
         return userService.getUserList();
     }
 
     /**
-     *
+     * Endpoint para añadir un usuario a la base de datos.
      * @param username
      * @param password
      * @param email
@@ -51,7 +61,7 @@ public class UserController {
     }
 
     /**
-     *
+     * Endpoint para iniciar sesión.
      * @param username
      * @param password
      * @return true en caso de existir el usuario en la base de datos y la contraseña se correcta.
