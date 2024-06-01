@@ -59,7 +59,7 @@ public class ProductService {
 		}
 	}
 
-	/*
+	/**
 	 * Obtiene un producto por su id
 	 * @param id Id del producto
 	 * @return Producto
@@ -76,7 +76,7 @@ public class ProductService {
 		return optinal;
 	}
 
-	/*
+	/**
 	 * Obtiene la lista de productos
 	 * @return Lista de productos
 	 */
@@ -84,7 +84,7 @@ public class ProductService {
 		return productList;
 	}
 
-	/*
+	/**
 	 * Ordena una lista de productos según el criterio de orden.
 	 * "asc" ordena alfabéticamente de forma ascendente.
 	 * "desc" ordena alfabéticamente de forma descendente.
@@ -114,7 +114,7 @@ public class ProductService {
 			return null;
 	}
 
-	/*
+	/**
 	 * Obtiene los todos productos de un rango de precios
 	 * @param productListIn Lista de productos
 	 * @param priceFrom Precio mínimo
@@ -142,7 +142,7 @@ public class ProductService {
 		return productListIn;
 	}
 
-	/*
+	/**
 	 * Obtiene los todos productos de una categoría
 	 * @param productListIn Lista de productos
 	 * @param category Categoría
@@ -159,7 +159,7 @@ public class ProductService {
 		return productListIn;
 	}
 
-	/*
+	/**
 	 * Obtiene los todos productos de una marca
 	 * @param productListIn Lista de productos
 	 * @param brand Marca
@@ -176,7 +176,7 @@ public class ProductService {
 		return productListIn;
 	}
 
-	/*
+	/**
 	 * Obtiene las categorías de los productos
 	 * @return Lista de categorías
 	 */
