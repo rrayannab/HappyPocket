@@ -1427,36 +1427,150 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			
 				generateList(data, selectedCategory);
 		</script>
+		<script src="js/jquery.min.js"></script>
+    	<script src="js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script>
 			console.log(localStorage.getItem('user'));
 			window.onload = function() {
-				// document.getElementById('loader').style.display = 'none';
-				var user;
 				var intervalId = setInterval(function() {
-					var userItem = localStorage.getItem('user');
-					if (userItem) {
-						user = JSON.parse(userItem);
-						console.log(user);
-						clearInterval(intervalId);
+					// Comprobar si el usuario ha iniciado sesión como invitado
+					if (localStorage.getItem('isGuest') === 'true') {
+						var guestExpiry = parseInt(localStorage.getItem('guestExpiry'), 10);
+						if (new Date().getTime() > guestExpiry) {
+							// La sesión de invitado ha expirado
+							localStorage.setItem('isGuest', 'false');
+						} else {
+							// El usuario ha iniciado sesión como invitado, detener el intervalo
+							clearInterval(intervalId);
+							return;
+						}
+					}
 
+					var userItem = localStorage.getItem('user');
+					console.log(userItem);
+					if (userItem) {
+						try {
+							var user = JSON.parse(userItem);
+							if (user) {
+								console.log(user);
+								clearInterval(intervalId);
+
+								// El usuario ha iniciado sesión y la sesión sigue activa
+								document.querySelector('[data-target="#myModal2"]').style.display = 'none';
+
+								var loginLink = document.querySelector('[data-target="#myModal1"]');
+								loginLink.textContent = "Bienvenido, " + user.username;
+								loginLink.href = "cuenta.html?id=" + user.id;
+								loginLink.removeAttribute('data-toggle');
+								loginLink.removeAttribute('data-target');
+								// document.getElementById('loader').style.display = 'none';
+							}
+						} catch (e) {
+							// Error al parsear userItem, se intentará de nuevo en el próximo intervalo
+							console.error("Error parsing userItem: ", e);
+						}
+					} else {
+						// No hay información de usuario en localStorage
+						
+						
+						clearInterval(intervalId);		
+						// document.getElementById('loader').style.display = 'none';
+					}
+				}, 1000); // Comprueba cada segundo
+
+				// document.getElementById('loader').classList.remove('hidden');
+			};
+		
+			function login(form) {
+				var formData = {
+					username: form.Name.value,
+					password: form.password.value
+				};
+
+				$.ajax({
+					type: "GET",
+					url: "http://localhost:8080/users",
+					success: function(response){
+						var user = response.find(user => user.username === formData.username && user.password === formData.password);
+						var loginMessage = document.getElementById('loginMessage');
 						if (user) {
-							// El usuario ha iniciado sesión y la sesión sigue activa
+							// El usuario existe y la contraseña es correcta
+							loginMessage.textContent = "Inicio de sesión exitoso";
+							loginMessage.style.color = "green";
+							$('#myModal1').modal('hide');
+							// document.getElementById('loader').classList.add('hidden');
+							// Hide register form
 							document.querySelector('[data-target="#myModal2"]').style.display = 'none';
+							// Change login link to user link
 							var loginLink = document.querySelector('[data-target="#myModal1"]');
 							loginLink.textContent = "Bienvenido, " + user.username;
 							loginLink.href = "cuenta.html?id=" + user.id;
 							loginLink.removeAttribute('data-toggle');
 							loginLink.removeAttribute('data-target');
+
+							// Guardar información de inicio de sesión en localStorage
+							localStorage.setItem('user', JSON.stringify(user));
+							localStorage.setItem('isGuest', 'false');
+
+							// Establecer cookie de sesión para rastrear el tiempo de inactividad
+							document.cookie = "session=active; max-age=600"; // 600 segundos = 10 minutos
+							console.log(localStorage.getItem('user'));
+							console.log(document.cookie);
 						} else {
-							// El usuario no ha iniciado sesión o la sesión ha expirado
-							$('#myModal1').modal({backdrop: 'static', keyboard: false});
+							// El usuario no existe o la contraseña es incorrecta
+							loginMessage.textContent = "Error de inicio de sesión";
+							loginMessage.style.color = "red";
 						}
-
-						// document.getElementById('loader').classList.remove('hidden');
+					},
+					error: function(jqXHR, textStatus, errorThrown){
+						console.log(textStatus, errorThrown);
 					}
-				}, 1000); // Comprueba cada segundo
-			};
+				});
+			}
+			function register(form) {
+				var formData = new FormData(form);
+			
+				fetch('http://localhost:8080/addUser', {
+					method: 'POST',
+					body: formData
+				})
+				.then(response => {
+					if (!response.ok) {
+						throw new Error('Error en la solicitud.');
+					}
+					return response.json();
+				})
+				.then(data => {
+					// Registro exitoso
+					alert("Registro exitoso. Por favor, inicie sesión.");
+					// Ocultar el formulario de registro
+					$('#myModal2').modal('hide');
+					// Mostrar el formulario de inicio de sesión
+					$('#myModal1').modal('show');
+				})
+				.catch(error => {
+					console.error('Error:', error);
+					alert('Hubo un error al registrar el usuario. Por favor, inténtelo de nuevo más tarde.');
+				});
+			}
+			
+			
+		
+			function guestLogin() {
+				setTimeout(() => {
+					var guestLoginMessage = document.getElementById('guestLoginMessage');
+					guestLoginMessage.textContent = "Ingresado como invitado";
+					guestLoginMessage.style.color = "green";
+					var guestExpiry = new Date().getTime() + 5 * 60 * 1000; // 5 minutos a partir de ahora
+					localStorage.setItem('isGuest', 'true');
+					localStorage.setItem('guestExpiry', guestExpiry.toString());
 
+					$('#myModal1').modal('hide');
+					// document.getElementById('loader').classList.add('hidden');
+
+				}, 1000);
+			}
 		</script>
 		<!-- for bootstrap working -->
 		<script src="js/bootstrap.js"></script>
