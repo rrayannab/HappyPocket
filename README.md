@@ -23,8 +23,8 @@ Por lo tanto, desarrollando esta aplicación web conseguiremos ahorrar tiempo a 
 
 # Cómo ejecutar
 1. Ejecutar el servidor backend, tenemos dos opciones:
-    1.1. ubicado en backendHappyPockets/src/main/java/com/happyPockets/BackendHappyPocketsApplication.java
-    1.2. desde terminal ubicarse en la careta backendHappyPockets y lanzar el comando ./mvnw spring-boot:run
+    A. ubicado en backendHappyPockets/src/main/java/com/happyPockets/BackendHappyPocketsApplication.java
+    B. desde terminal ubicarse en la careta backendHappyPockets y lanzar el comando ./mvnw spring-boot:run
 2. Abrir el frontend, ubicado en happypocketweb/web/index.html
 
 # Cómo ejecutar las preubas del servidor backend
@@ -33,11 +33,11 @@ Tenemos varias opciones:
 2. Desde IntelliJ hacer clic derecho sobre la carpeta src/test/java lo que ejecutara todos los tests a la vez
 
 Estos tests costan de:
-1. 2 preubas unitarias para la clase User
-2. 6 preubas unitarias para la clase UserService
-3. 3 preubas unitarias para la clase Products
-4. 7 preubas unitarias para la clase ProductService
-5. 6 preubas de integracion para la clase ProductController cubriendo los casos de uso de busqueda: Búsqueda por filtro, Por categoría, Por rango de precios, Alfabéticamente, Búsqueda sin filtro.
-6. _ preubas de integracion para la clase _ cubriendo los casos de uso de _
+1. 2 pruebas unitarias para la clase User
+2. 6 pruebas unitarias para la clase UserService
+3. 3 pruebas unitarias para la clase Products
+4. 7 pruebas unitarias para la clase ProductService
+5. 6 pruebas de integracion para la clase ProductController cubriendo los casos de uso de busqueda: Búsqueda por filtro, Por categoría, Por rango de precios, Alfabéticamente, Búsqueda sin filtro.
+6. _ pruebas de integracion para la clase _ cubriendo los casos de uso de _
 
 # Cómo ejecutar las preubas del frontend
