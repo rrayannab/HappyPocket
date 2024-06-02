@@ -203,11 +203,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <body>
 	<!-- top-header -->
-	<div id="loader" class="loader">
+	<!--div id="loader" class="loader">
 		<h1 class="loading-title">Happy Pocket</h1>
 		<img src="images/Logo.png" alt="Loading" class="loading-image">
 		<div class="spinner"></div>
-	</div>
+	</div-->
 	<div class="header-most-top">
 		<p>Happy Pocket</p>
 	</div>
@@ -1199,7 +1199,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<script>
 			console.log(localStorage.getItem('user'));
 			window.onload = function() {
-				document.getElementById('loader').style.display = 'none';
+				//document.getElementById('loader').style.display = 'none';
 				var user;
 				var intervalId = setInterval(function() {
 					var userItem = localStorage.getItem('user');
@@ -1221,7 +1221,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							$('#myModal1').modal({backdrop: 'static', keyboard: false});
 						}
 
-						document.getElementById('loader').classList.remove('hidden');
+				//		document.getElementById('loader').classList.remove('hidden');
 					}
 				}, 1000); // Comprueba cada segundo
 			};
