@@ -1,4 +1,4 @@
-'use strict';
+
 
 const assert = require('assert');
 const Cart = require('../js/minicart.js');
