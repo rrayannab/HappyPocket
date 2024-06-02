@@ -52,7 +52,7 @@ Estos tests costan de:
 # Cómo ejecutar las pruebas del frontend
 El archivo `..\minicart.js` que se encuentra en `PROGRAMA\happypocketweb\web\js` es generado como parte de la salida de un paquete de módulos, utilizando herramientas como Browserify o Webpack. Este archivo no se escribe a mano, sino que se crea a partir de un proceso de compilación automatizado que integra múltiples módulos y dependencias en un solo archivo optimizado para su uso en páginas web.
 
-Dada esta situación se ha aprovechado dicho archivo para implementarlo en Happy Pocket.
+Dada esta situación se ha aprovechado dicho archivo para implementarlo en Happy Pocket, al cuál se ha modificado y personalizado en ciertos puntos para que se adapte a nuestras necesidades.
 
 Debido a esta configuración, todas las pruebas relacionadas con la funcionalidad del carrito de compras se encuentran en la carpeta comprimida `minicart.zip` añadido al proyecto o accediendo al repositorio https://github.com/jeffharrell/minicart donde en ambos se pueden encontrar y ejecutar los tests necesarios para asegurar su correcto funcionamiento.
 
