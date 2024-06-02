@@ -22,22 +22,24 @@ Por lo tanto, desarrollando esta aplicación web conseguiremos ahorrar tiempo a 
 | 6| Jorge | Rodríguez Mata | jorge_roma@uma.es |
 
 # Contenido del repositorio
-1. Carpeta "ENTREGAS": en ella se encuentran todos los documentos que han sido creados durante la documentacion del proyecto.
-2. Carpeta "LOGO": contiene el logo del proyecto.
-3. Carpeta "PROGRAMA": podemos encontrar:
-   - carpeta "backendHappyPockets", contiene todos los archivos para ejecutar el backend, así como la base de datos de usuarios y de productos.
-   - carpeta "happypocketweb", contiene todos los archivos para poder abrir la página web del proyecto.
+1. Carpeta `.\ENTREGAS`: en ella se encuentran todos los documentos que han sido creados durante la documentacion del proyecto.
+2. Carpeta `.\LOGO`: contiene el logo del proyecto.
+3. Carpeta `.\PROGRAMA`: podemos encontrar:
+   - carpeta `..\backendHappyPockets`, contiene todos los archivos para ejecutar el backend, así como la base de datos de usuarios y de productos.
+   - carpeta `..\happypocketweb`, contiene todos los archivos para poder abrir la página web del proyecto.
 
 # Cómo ejecutar
 1. Ejecutar el servidor backend, tenemos dos opciones:
-   - ubicado en PROGRAMA/backendHappyPockets/src/main/java/com/happyPockets/BackendHappyPocketsApplication.java
-   - desde terminal ubicarse en la careta PROGRAMA/backendHappyPockets y lanzar el comando ./mvnw spring-boot:run
-2. Abrir el frontend, ubicado en PROGRAMA/happypocketweb/web/index.html
+   - ubicado en `.\PROGRAMA/backendHappyPockets/src/main/java/com/happyPockets/BackendHappyPocketsApplication.java`
+   - desde terminal ubicarse en la carpeta `.\PROGRAMA/backendHappyPockets` y lanzar el comando `./mvnw spring-boot:run`
+2. Abrir el frontend, tenemos dos opciones: 
+   - ubicado en `.\PROGRAMA/happypocketweb/web/index.html`
+   - accediendo mediante el enlace https://happypocket.vercel.app/
 
-# Cómo ejecutar las preubas del servidor backend
+# Cómo ejecutar las pruebas del servidor backend
 Tenemos varias opciones:
-1. Desde terminal ubicarse en la careta PROGRAMA/backendHappyPockets y lanzar el comando ./mvnw test
-2. Desde IntelliJ hacer clic derecho sobre la carpeta src/test/java lo que ejecutara todos los tests a la vez
+1. Desde terminal ubicarse en la carpeta `.\PROGRAMA/backendHappyPockets` y lanzar el comando `./mvnw test`
+2. Desde IntelliJ hacer clic derecho sobre la carpeta `..\src/test/java` lo que ejecutara todos los tests a la vez
 
 Estos tests costan de:
 1. Para la clase User, 2 pruebas unitarias 
@@ -49,6 +51,8 @@ Estos tests costan de:
 
 # Cómo ejecutar las pruebas del frontend
 El archivo `..\minicart.js` que se encuentra en `PROGRAMA\happypocketweb\web\js` es generado como parte de la salida de un paquete de módulos, utilizando herramientas como Browserify o Webpack. Este archivo no se escribe a mano, sino que se crea a partir de un proceso de compilación automatizado que integra múltiples módulos y dependencias en un solo archivo optimizado para su uso en páginas web.
-Se ha aprovechado dicho archivo para implementarlo en Happy Pocket.
+
+Dada esta situación se ha aprovechado dicho archivo para implementarlo en Happy Pocket.
+
 Debido a esta configuración, todas las pruebas relacionadas con la funcionalidad del carrito de compras se encuentran en la carpeta comprimida `minicart.zip` añadido al proyecto o accediendo al repositorio https://github.com/jeffharrell/minicart donde en ambos se pueden encontrar y ejecutar los tests necesarios para asegurar su correcto funcionamiento.
 
