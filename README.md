@@ -23,8 +23,8 @@ Por lo tanto, desarrollando esta aplicación web conseguiremos ahorrar tiempo a 
 
 # Cómo ejecutar
 1. Ejecutar el servidor backend, tenemos dos opciones:
-    A. ubicado en backendHappyPockets/src/main/java/com/happyPockets/BackendHappyPocketsApplication.java
-    B. desde terminal ubicarse en la careta backendHappyPockets y lanzar el comando ./mvnw spring-boot:run
+       A. ubicado en backendHappyPockets/src/main/java/com/happyPockets/BackendHappyPocketsApplication.java
+       B. desde terminal ubicarse en la careta backendHappyPockets y lanzar el comando ./mvnw spring-boot:run
 2. Abrir el frontend, ubicado en happypocketweb/web/index.html
 
 # Cómo ejecutar las preubas del servidor backend
@@ -40,4 +40,4 @@ Estos tests costan de:
 5. 6 pruebas de integracion para la clase ProductController cubriendo los casos de uso de busqueda: Búsqueda por filtro, Por categoría, Por rango de precios, Alfabéticamente, Búsqueda sin filtro.
 6. _ pruebas de integracion para la clase _ cubriendo los casos de uso de _
 
-# Cómo ejecutar las preubas del frontend
+# Cómo ejecutar las pruebas del frontend
