@@ -21,6 +21,11 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+/**
+ * Clase dedicada a las pruebas de integracions de los casos de uso de Iniciar sesion y Registro
+ * de la calse UserController
+ * 		4 pruebas de integracion
+ */
 public class UserControllerTest {
 
     private MockMvc mockMvc;

@@ -21,15 +21,22 @@ Por lo tanto, desarrollando esta aplicación web conseguiremos ahorrar tiempo a 
 | 5| Rayan | Abarkan | rayan10@uma.es |
 | 6| Jorge | Rodríguez Mata | jorge_roma@uma.es |
 
+# Contenido del repositorio
+1. Carpeta "ENTREGAS": en ella se encuentran todos los documentos que han sido creados durante la documentacion del proyecto.
+2. Carpeta "LOGO": contiene el logo del proyecto.
+3. Carpeta "PROGRAMA": podemos encontrar:
+   - carpeta "backendHappyPockets", contiene todos los archivos para ejecutar el backend, así como la base de datos de usuarios y de productos.
+   - carpeta "happypocketweb", contiene todos los archivos para poder abrir la página web del proyecto.
+
 # Cómo ejecutar
 1. Ejecutar el servidor backend, tenemos dos opciones:
-   - ubicado en backendHappyPockets/src/main/java/com/happyPockets/BackendHappyPocketsApplication.java
-   - desde terminal ubicarse en la careta backendHappyPockets y lanzar el comando ./mvnw spring-boot:run
-2. Abrir el frontend, ubicado en happypocketweb/web/index.html
+   - ubicado en PROGRAMA/backendHappyPockets/src/main/java/com/happyPockets/BackendHappyPocketsApplication.java
+   - desde terminal ubicarse en la careta PROGRAMA/backendHappyPockets y lanzar el comando ./mvnw spring-boot:run
+2. Abrir el frontend, ubicado en PROGRAMA/happypocketweb/web/index.html
 
 # Cómo ejecutar las preubas del servidor backend
 Tenemos varias opciones:
-1. Desde terminal ubicarse en la careta backendHappyPockets y lanzar el comando ./mvnw test
+1. Desde terminal ubicarse en la careta PROGRAMA/backendHappyPockets y lanzar el comando ./mvnw test
 2. Desde IntelliJ hacer clic derecho sobre la carpeta src/test/java lo que ejecutara todos los tests a la vez
 
 Estos tests costan de:

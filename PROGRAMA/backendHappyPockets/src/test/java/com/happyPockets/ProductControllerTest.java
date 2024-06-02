@@ -27,6 +27,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import com.happyPockets.api.controller.ProductController;
 
+/**
+ * Clase dedicada a las pruebas de integracions de los casos de uso de busqueda:
+ * Búsqueda por filtro, Por categoría, Por rango de precios, Alfabéticamente, Búsqueda sin filtro.
+ * de la calse ProductController
+ * 		6 pruebas de integracion
+ */
 @ExtendWith(MockitoExtension.class)
 @WebMvcTest(ProductController.class)
 public class ProductControllerTest {
