@@ -1412,7 +1412,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						span.className = 'span';
 						span.textContent = data[key].nombrecategoria;
 						
-						if (data[key].nombrecategoria === normalizedSelectedCategory) {
+						if (key === normalizedSelectedCategory) {
 							input.checked = true;
 						}
 
