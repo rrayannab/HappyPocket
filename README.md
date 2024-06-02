@@ -33,11 +33,11 @@ Tenemos varias opciones:
 2. Desde IntelliJ hacer clic derecho sobre la carpeta src/test/java lo que ejecutara todos los tests a la vez
 
 Estos tests costan de:
-1. 2 pruebas unitarias para la clase User
-2. 6 pruebas unitarias para la clase UserService
-3. 3 pruebas unitarias para la clase Products
-4. 7 pruebas unitarias para la clase ProductService
-5. 6 pruebas de integracion para la clase ProductController cubriendo los casos de uso de busqueda: Búsqueda por filtro, Por categoría, Por rango de precios, Alfabéticamente, Búsqueda sin filtro.
-6. _ pruebas de integracion para la clase _ cubriendo los casos de uso de _
+1. Para la clase User, 2 pruebas unitarias 
+2. Para la clase UserService, 6 pruebas unitarias 
+3. Para la clase Products, 3 pruebas unitarias 
+4. Para la clase ProductService, 7 pruebas unitarias 
+5. Para la clase ProductController, 6 pruebas de integracion, cubriendo los casos de uso de busqueda: Búsqueda por filtro, Por categoría, Por rango de precios, Alfabéticamente, Búsqueda sin filtro. 
+6. Para la clase UserController, 4 pruebas de integracion, cubriendo los casos de uso de Iniciar sesion y Registro
 
 # Cómo ejecutar las pruebas del frontend
