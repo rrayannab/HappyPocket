@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "src/main/java/**/*",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "target"
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "backendHappyPockets"
+      }
+    ]
+}
+  

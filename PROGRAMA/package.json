@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha 'web/test/minicart.test.js'"
+    "test": "mocha 'happypocketweb/web/test/minicart.test.js'",
+    "build": "./build.sh"
   },
   "keywords": [],
   "author": "",
@@ -12,4 +13,5 @@
   "devDependencies": {
     "mocha": "^9.0.0"
   }
+  
 }
