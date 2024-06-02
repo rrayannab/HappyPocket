@@ -1,4 +1,4 @@
-# HappyPocket!
+# HappyPocket
 El proyecto software que desarrollaremos tendrá la función de ser un buscador para encontrar los mejores precios y ofertas de productos, con opción de ser indexados por categorías, dando la posibilidad de crear la cesta de la compra. 
 
 Realizando un estudio de mercado hemos visto que no hay disponibles muchas aplicaciones que ofrezcan este servicio, algunas de estas son SoySuper, tiendeo, FindItApp y Onprice.
