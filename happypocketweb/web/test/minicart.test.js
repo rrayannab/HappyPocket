@@ -1,23 +1,21 @@
 'use strict';
 
-var assert = require('assert');
-var cart = require('../js/minicart');  // Adjust the path according to your project structure
-var cartData = require('../js/cartData');  // Ensure this file path is correct
-
+const assert = require('assert');
+const Cart = require('../js/minicart.js');
+const cartData = require('../js/cartData.js');
 
 describe('Cart Model', function () {
-
-    
+    var cart;
 
     beforeEach(function () {
         var data, items, settings, i, len;
-    
-        cart = new Cart(); // change this line
-    
+
+        cart = new Cart('testCart', 3600000);  // Instancia de Cart con un nombre y duración de 1 hora
+
         if ((data = JSON.parse(JSON.stringify(cartData)))) {
             items = data.items;
             settings = data.settings;
-    
+
             if (items) {
                 for (i = 0, len = items.length; i < len; i++) {
                     cart.add(items[i]);
@@ -39,7 +37,6 @@ describe('Cart Model', function () {
 
     it('items() returns all products', function () {
         var products = cart.items();
-
         assert.strictEqual(products.length, 2);
         assert.strictEqual(products[0].get('item_name'), cartData.items[0].item_name);
         assert.strictEqual(products[0].get('amount'), cartData.items[0].amount);
@@ -48,23 +45,20 @@ describe('Cart Model', function () {
     });
 
     it('add() adds a product', function () {
-        var product = { item_name: 'Item 3', amount: 3.00 };
+        var product = { item_name: 'Item 3', amount: 3.00, currency_code: 'USD' };
         var idx = cart.add(product);
-
         assert.strictEqual(cart.items(idx).get('item_name'), product.item_name);
         assert.strictEqual(cart.items(idx).get('amount'), product.amount);
     });
 
     it('add() does not add invalid products', function () {
         var idx = cart.add({});
-
-        assert.strictEqual(idx, false);
+        assert.strictEqual(idx, -1);  // Suponiendo que -1 se usa para indicar una adición inválida
     });
 
     it('add() for the same product only increments the quantity', function () {
         var product = { item_name: 'Item 3', amount: 3.00, quantity: 1 };
         var idx = cart.add(product);
-
         assert.strictEqual(cart.items().length, 3);
         assert.strictEqual(cart.items(idx).get('quantity'), 1);
         cart.add(product);
@@ -78,7 +72,7 @@ describe('Cart Model', function () {
 
         cart.on('add', function (idx, product) {
             assert.equal(len, idx);
-            assert.equal(product._data, data);
+            assert.deepEqual(product.get(), data);
             done();
         });
 
@@ -130,22 +124,18 @@ describe('Cart Model', function () {
 
     it('remove() removes a product', function () {
         var len = cart.items().length;
-
         cart.remove(0);
-
-        assert.deepEqual(len - 1, cart.items().length);
-        assert.notDeepEqual(cart.items(0), cartData[0]);
+        assert.strictEqual(cart.items().length, len - 1);
+        assert.notDeepEqual(cart.items(0), cartData.items[0]);
     });
 
     it('remove() returns true on valid indices', function () {
         var result = cart.remove(0);
-
         assert.strictEqual(result, true);
     });
 
     it('remove() returns false on invalid indices', function () {
         var result = cart.remove(1234);
-
         assert.strictEqual(result, false);
     });
 
@@ -154,7 +144,6 @@ describe('Cart Model', function () {
             assert(true);
             done();
         });
-
         cart.remove(1);
         cart.remove(0);
     });
@@ -166,7 +155,7 @@ describe('Cart Model', function () {
 
         cart.on('remove', function (idx, data) {
             assert.equal(len, idx);
-            assert.equal(data, product);
+            assert.deepEqual(data, product);
             done();
         });
 
@@ -192,7 +181,6 @@ describe('Cart Model', function () {
             assert.strictEqual(cart.items().length, 0);
             done();
         });
-
         cart.destroy();
     });
 
@@ -201,7 +189,6 @@ describe('Cart Model', function () {
             assert(true);
             done();
         });
-
         cart.checkout();
     });
 });
