@@ -1,4 +1,4 @@
-
+'use strict';
 
 const assert = require('assert');
 const Cart = require('../js/minicart.js');
@@ -10,7 +10,7 @@ describe('Cart Model', function () {
     beforeEach(function () {
         var data, items, settings, i, len;
 
-        cart = new Cart('testCart', 3600000);  // Instancia de Cart con un nombre y duración de 1 hora
+        cart = Cart('testCart', 3600000);  // Instancia de Cart con un nombre y duración de 1 hora
 
         if ((data = JSON.parse(JSON.stringify(cartData)))) {
             items = data.items;
