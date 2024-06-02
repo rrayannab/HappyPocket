@@ -1169,7 +1169,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					fetch(url, {mode: 'cors'})
 					.then((response) => response.json())
 					.then((data) => {
-						console.log(data);
 						let filteredData = data.filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
 						console.log(filteredData);
 
@@ -1297,12 +1296,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						'input[name="sortOption"]:checked');
 					
 					if(checkRadio != null) {
-						// console.log("Selected Radio Button: "
-						// 	+ checkRadio.value);
 							return checkRadio.value;
 					}
 					else {
-						// console.log("No Radio Button Selected");
 						return 'asc';
 					}
 				}
@@ -1312,12 +1308,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						'input[name="catOption"]:checked');
 					
 					if(checkRadio != null) {
-						console.log("Selected Radio Button: "
-							+ checkRadio.value);
-							return checkRadio.value;
+						return checkRadio.value;
 					}
 					else {
-						console.log("No Radio Button Selected");
 						return 'all';
 					}
 				}
@@ -1334,11 +1327,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					category = checkCategory();
 					
 					url = generateUrl(order, priceFrom, priceTo, category);
-					// currentURL = window.location.href.split('?')[0];
-					// nextURL = currentURL + '?' + url.split('?')[1];
+
 					fecthAndDisplayProducts(url);
-					console.log('1');
-					console.log(category);
 					updatePageContent(data[category]);
 
 				});
@@ -1392,7 +1382,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				// Normalizar la categoría seleccionada
 				const normalizedSelectedCategory = selectedCategory ? normalizeString(selectedCategory) : '';
 
-				console.log(data);
 				// Crear un elemento <li> por cada item
 					
 				for (const key in data) {
@@ -1430,8 +1419,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					const all = itemList.querySelector('input[type="radio"][value="all"]').checked = true;
 				}
 			}
-
-			console.log(data);
 
 			// Obtener la categoría seleccionada de la URL
 			const selectedCategory = getQueryParam('category');
