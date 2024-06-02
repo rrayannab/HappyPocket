@@ -188,11 +188,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 
 <body>
-	<div id="loader" class="loader">
+	<!--div id="loader" class="loader">
 		<h1 class="loading-title">Happy Pocket</h1>
 		<img src="images/Logo.png" alt="Loading" class="loading-image">
 		<div class="spinner"></div>
-	</div>
+	</div-->
 	
 	
 	
@@ -1191,7 +1191,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							loginLink.href = "cuenta.html?id=" + user.id;
 							loginLink.removeAttribute('data-toggle');
 							loginLink.removeAttribute('data-target');
-							document.getElementById('loader').style.display = 'none';
+							// document.getElementById('loader').style.display = 'none';
 						}
 					} catch (e) {
 						// Error al parsear userItem, se intentará de nuevo en el próximo intervalo
@@ -1202,11 +1202,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					
 					
 					clearInterval(intervalId);		
-					document.getElementById('loader').style.display = 'none';
+					// document.getElementById('loader').style.display = 'none';
 				}
 			}, 1000); // Comprueba cada segundo
 
-			document.getElementById('loader').classList.remove('hidden');
+			// document.getElementById('loader').classList.remove('hidden');
 		};
 	
 		function login(form) {
@@ -1226,7 +1226,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						loginMessage.textContent = "Inicio de sesión exitoso";
 						loginMessage.style.color = "green";
 						$('#myModal1').modal('hide');
-						document.getElementById('loader').classList.add('hidden');
+						// document.getElementById('loader').classList.add('hidden');
 						// Hide register form
 						document.querySelector('[data-target="#myModal2"]').style.display = 'none';
 						// Change login link to user link
@@ -1294,7 +1294,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				localStorage.setItem('guestExpiry', guestExpiry.toString());
 
 				$('#myModal1').modal('hide');
-				document.getElementById('loader').classList.add('hidden');
+				// document.getElementById('loader').classList.add('hidden');
 
 			}, 1000);
 		}

@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha 'happypocketweb/web/test/minicart.test.js'",
-    "build": "./build.sh"
+    "test": "mocha 'happypocketweb/web/test/minicart.test.js'"
   },
   "keywords": [],
   "author": "",
