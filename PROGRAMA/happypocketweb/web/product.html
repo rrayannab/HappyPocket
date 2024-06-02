@@ -944,6 +944,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			var category = getParameterByName("category");
 
 			var data = {
+				all: {
+					title: "Happy Pocket | Todos los productos",
+					nombrecategoria: "Todos",
+					nombrecategoria2: "Todos los productos",
+				},
 				aceites: {
 					title: "Happy Pocket | Aceites",
 					nombrecategoria: "Aceites",
@@ -980,12 +985,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					nombrecategoria: "Cereales y galletas",
 					nombrecategoria2: "Cereales y galletas",
 				},
+				charcuteria: {
+					title: "Happy Pocket | Charcuteía",
+					nombrecategoria: "Charcuteía",
+					nombrecategoria2: "Charcuteía",
+				},
 				congelados: {
 					title: "Happy Pocket | Congelados",
 					nombrecategoria: "Congelados",
 					nombrecategoria2: "Congelados",
 				},
-				lacteos: {
+				frutas: {
+					title: "Happy Pocket | Frutas",
+					nombrecategoria: "Frutas",
+					nombrecategoria2: "Frutas",
+				},lacteos: {
 					title: "Happy Pocket | Lácteos",
 					nombrecategoria: "Lácteos",
 					nombrecategoria2: "Lácteos",
@@ -1000,6 +1014,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					nombrecategoria: "Pastas",
 					nombrecategoria2: "Pastas",
 				},
+				refrescos: {
+					title: "Happy Pocket | Refrescos",
+					nombrecategoria: "Refrescos",
+					nombrecategoria2: "Refrescos",
+				},
 				snacks: {
 					title: "Happy Pocket | Snacks",
 					nombrecategoria: "Snacks",
@@ -1010,11 +1029,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					nombrecategoria: "Zumos",
 					nombrecategoria2: "Zumos",
 				},
-				all: {
-					title: "Happy Pocket | Todos los productos",
-					nombrecategoria: "Todos",
-					nombrecategoria2: "Todos los productos",
-				},
+				
 			};
 
 			updatePageContent(data[category]);
