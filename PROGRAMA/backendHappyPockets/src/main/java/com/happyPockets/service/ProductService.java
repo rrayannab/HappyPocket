@@ -187,6 +187,7 @@ public class ProductService {
 				categories.add(product.getCat());
 			}
 		}
+		Collections.sort(categories);
 		return categories;
 	}
 
