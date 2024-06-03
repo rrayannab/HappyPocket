@@ -33,10 +33,7 @@ public class UserController {
     @GetMapping("/user")
     public User getUser(@RequestParam Integer id){
         Optional<User> user = userService.getUserID(id);
-        if (user.isPresent())
-            return user.get();
-        System.out.println("consulta getUser " + id);
-        return null;
+        return user.isPresent()? user.get() : null;
     }
 
     /**
@@ -45,7 +42,6 @@ public class UserController {
      */
     @GetMapping("/users")
     public List<User> getUsers(){
-        System.out.println("consulta getUsers");
         return userService.getUserList();
     }
 
@@ -62,7 +58,6 @@ public class UserController {
      */
     @PostMapping("/addUser")
     public boolean addUser(@RequestParam String username, String password, String email, String name, String surname1, String surname2, int phone){
-        System.out.println("consulta addUser");
         return userService.addUser(username, password, email, name, surname1, surname2, phone);
     }
 
@@ -75,7 +70,6 @@ public class UserController {
      */
     @GetMapping("/logIn")
     public ResponseEntity<User> logIn(@RequestParam String username, String password) {
-        System.out.println("consulta login: " + username + " username");
         User us = userService.logIn(username, password);
         return us == null ? ResponseEntity.status(HttpStatus.FORBIDDEN).body(null) : ResponseEntity.ok().body(us);
     }
