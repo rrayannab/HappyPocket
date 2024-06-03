@@ -930,6 +930,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!--CARGA DINAMICA-->
 		<script src="js/jquery-ui.js"></script>
 		<script>
+			document.querySelector('[data-target="#myModal2"]').style.display = 'none';
+			document.querySelector('[data-target="#myModal1"]').style.display = 'none';
 			function getParameterByName(name, url) {
 				if (!url) url = window.location.href;
 				name = name.replace(/[\[\]]/g, "\\$&");
