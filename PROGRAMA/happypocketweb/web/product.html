@@ -1481,17 +1481,10 @@
 			function login(form) {
 
 				const url = 'http://localhost:8080/logIn';
-	
+
 				const username = form.Name.value;
 				const password = form.password.value;
 				console.log(JSON.stringify({ username, password }));
-				// fetch(url, {
-				// 	method: 'POST',
-				// 	headers: {
-				// 		'Content-Type': 'application/json',
-				// 	},
-				// 	body: JSON.stringify({ username, password }),
-				// })
 				fetch(`${url}?username=${username}&password=${password}`)
 				.then(response => response.status == 200 ? response.json() : null)
 				.then(data => {
@@ -1508,14 +1501,14 @@
 						loginLink.href = "cuenta.html?id=" + user.id;
 						loginLink.removeAttribute('data-toggle');
 						loginLink.removeAttribute('data-target');
-	
+
 						// Guardar información de inicio de sesión en localStorage
 						localStorage.setItem('user', JSON.stringify(user));
 						localStorage.setItem('isGuest', 'false');
-	
+
 						// Establecer cookie de sesión para rastrear el tiempo de inactividad
 						document.cookie = "session=active; max-age=600"; // 600 segundos = 10 minutos
-	
+
 						console.log(localStorage.getItem('user'));
 						console.log(document.cookie);
 					} else {
@@ -1529,7 +1522,7 @@
 				.catch((error) => {
 					console.error('Error:', error);
 				});
-			}	
+				}	
 			
 			function register(form) {
 				var formData = new FormData(form);
