@@ -85,5 +85,10 @@ public class User {
         this.phone = phone;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        return (o instanceof User u) && u.getUsername().equals(this.getUsername())
+                && u.getPassword().equals(this.getPassword()) && u.getEmail().equals(this.getEmail());
+    }
 
 }
