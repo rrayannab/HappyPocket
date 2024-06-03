@@ -1524,7 +1524,11 @@
 			
 			function register(form) {
 				var formData = new FormData(form);
-			
+				if (formData.get('password') !== formData.get('confirmPassword')) {
+					alert('Las contraseñas no coinciden.');
+					return;
+				}
+				
 				fetch('http://localhost:8080/addUser', {
 					method: 'POST',
 					body: formData
