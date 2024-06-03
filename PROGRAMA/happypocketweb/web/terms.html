@@ -962,10 +962,8 @@
 			console.log(JSON.stringify({ username, password }));
 			fetch(`${url}?username=${username}&password=${password}`)
 			.then(response => response.status == 200 ? response.json() : null)
-			.then(data => {
-				console.log(data);
-				if (data) {
-					user = {username: 'test', id: 1}
+			.then(user => {
+				if (user) {
 					console.log('Inicio de sesión exitoso');
 					loginMessage.textContent = "Inicio de sesión exitoso";
 					loginMessage.style.color = "green";
@@ -1002,7 +1000,11 @@
 		function register(form) {
 			var formData = new FormData(form);
 		
-			fetch('http://localhost:8080/addUser', {
+			if (formData.get('password') !== formData.get('confirmPassword')) {
+					alert('Las contraseñas no coinciden.');
+					return;
+				}
+				fetch('http://localhost:8080/addUser', {
 				method: 'POST',
 				body: formData
 			})

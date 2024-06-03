@@ -156,11 +156,11 @@ public class UserService {
      * @param password Contraseña
      * @return Devuelve true si el usuario exite y su contraseña es correcta, false en caso contrario
      */
-    public boolean logIn(String username, String password) {
+    public User logIn(String username, String password) {
         for (User user : userList) {
             if (user.getUsername().equals(username))
-                return user.getPassword().equals(password);
+                return user.getPassword().equals(password)? user : null;
         }
-        return false;
+        return null;
     }
 }

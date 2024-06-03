@@ -4,6 +4,9 @@ import com.happyPockets.api.model.Product;
 import com.happyPockets.api.model.User;
 import com.happyPockets.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,6 +35,7 @@ public class UserController {
         Optional<User> user = userService.getUserID(id);
         if (user.isPresent())
             return user.get();
+        System.out.println("consulta getUser " + id);
         return null;
     }
 
@@ -41,6 +45,7 @@ public class UserController {
      */
     @GetMapping("/users")
     public List<User> getUsers(){
+        System.out.println("consulta getUsers");
         return userService.getUserList();
     }
 
@@ -57,6 +62,7 @@ public class UserController {
      */
     @PostMapping("/addUser")
     public boolean addUser(@RequestParam String username, String password, String email, String name, String surname1, String surname2, int phone){
+        System.out.println("consulta addUser");
         return userService.addUser(username, password, email, name, surname1, surname2, phone);
     }
 
@@ -64,11 +70,13 @@ public class UserController {
      * Endpoint para iniciar sesión.
      * @param username
      * @param password
-     * @return true en caso de existir el usuario en la base de datos y la contraseña se correcta.
-     *          En cualquier otro caso devuelve false.
+     * @return el user en caso de existir el usuario en la base de datos y la contraseña se correcta.
+     *          En cualquier otro caso devolvera peticion fallida.
      */
     @GetMapping("/logIn")
-    public boolean logIn(@RequestParam String username, String password) {
-        return userService.logIn(username, password);
+    public ResponseEntity<User> logIn(@RequestParam String username, String password) {
+        System.out.println("consulta login: " + username + " username");
+        User us = userService.logIn(username, password);
+        return us == null ? ResponseEntity.status(HttpStatus.FORBIDDEN).body(null) : ResponseEntity.ok().body(us);
     }
 }
