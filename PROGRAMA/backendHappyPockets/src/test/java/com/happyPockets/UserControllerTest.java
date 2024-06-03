@@ -18,8 +18,7 @@ import java.util.Optional;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 /**
  * Clase dedicada a las pruebas de integracions de los casos de uso de Iniciar sesion y Registro
@@ -96,18 +95,39 @@ public class UserControllerTest {
     }
 
     @Test
-    public void testLogIn() throws Exception {
-        // Configurar el mock para devolver true cuando se hace login con credenciales correctas
-        when(userService.logIn("testUser", "password")).thenReturn(true);
+    public void testLogInSuccess() throws Exception {
+        // Datos de prueba
+        String username = "testUser";
+        String password = "testPassword";
+        User mockUser = new User(1, "testUser", "password", "mail@test.com", "John", "Doe", "Smith", 123456789);
+        // Configura tu objeto User según tu implementación
+        mockUser.setUsername(username);
+        mockUser.setPassword(password);
 
-        // Probar el endpoint /logIn
+        // Simulación del comportamiento del servicio
+        when(userService.logIn(username, password)).thenReturn(mockUser);
+
+        // Realizar la petición y verificar la respuesta
         mockMvc.perform(get("/logIn")
-                        .param("username", "testUser")
-                        .param("password", "password"))
+                        .param("username", username)
+                        .param("password", password))
                 .andExpect(status().isOk())
-                .andExpect(content().string("true"));
+                .andExpect(jsonPath("$.username").value(username));
+    }
 
-        // Verificar que el método del servicio se llamó una vez con los parámetros correctos
-        verify(userService, times(1)).logIn("testUser", "password");
+    @Test
+    public void testLogInFailure() throws Exception {
+        // Datos de prueba
+        String username = "testUser";
+        String password = "wrongPassword";
+
+        // Simulación del comportamiento del servicio
+        when(userService.logIn(username, password)).thenReturn(null);
+
+        // Realizar la petición y verificar la respuesta
+        mockMvc.perform(get("/logIn")
+                        .param("username", username)
+                        .param("password", password))
+                .andExpect(status().isForbidden());
     }
 }
