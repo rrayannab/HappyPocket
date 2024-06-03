@@ -335,16 +335,28 @@
 							<h3 class="agileinfo_sign">Registrarse</h3>
 							<form id="registerForm" onsubmit="register(this); return false;">
 								<div class="styled-input agile-styled-input-top">
-									<input type="text" placeholder="Nombre" name="Name" required="">
+									<input type="text" placeholder="Nombre" name="name" required="">
 								</div>
 								<div class="styled-input">
-									<input type="email" placeholder="Correo electrónico" name="Email" required="">
+									<input type="text" placeholder="Apellido 1" name="surname1" required="">
+								</div>
+								<div class="styled-input">
+									<input type="text" placeholder="Apellido 2" name="surname2" required="">
+								</div>
+								<div class="styled-input">
+									<input type="text" placeholder="Nombre de usuario" name="username" required="">
+								</div>
+								<div class="styled-input">
+									<input type="email" placeholder="Correo electrónico" name="email" required="">
 								</div>
 								<div class="styled-input">
 									<input type="password" placeholder="Contraseña" name="password" required="">
 								</div>
 								<div class="styled-input">
-									<input type="password" placeholder="Confirmar contraseña" name="Confirm Password" required="">
+									<input type="password" placeholder="Confirmar contraseña" name="confirmPassword" required="">
+								</div>
+								<div class="styled-input">
+									<input type="text" placeholder="Teléfono" name="phone" required="">
 								</div>
 								<input type="submit" value="Registrarse" class="btn">
 							</form>

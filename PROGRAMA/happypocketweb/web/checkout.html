@@ -319,42 +319,54 @@
 	<!-- signup Model -->
 	<!-- Registration Modal (if not present) -->
     <div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body modal-body-sub_agile">
-                    <div class="main-mailposi">
-                        <span class="fa fa-envelope-o" aria-hidden="true"></span>
-                    </div>
-                    <div class="modal_body_left modal_body_left1">
-                        <h3 class="agileinfo_sign">Registrarse</h3>
-                        <form id="registerForm" onsubmit="register(this); return false;">
-                            <div class="styled-input agile-styled-input-top">
-                                <input type="text" placeholder="Nombre" name="Name" required="">
-                            </div>
-                            <div class="styled-input">
-                                <input type="email" placeholder="Correo electrónico" name="Email" required="">
-                            </div>
-                            <div class="styled-input">
-                                <input type="password" placeholder="Contraseña" name="password" required="">
-                            </div>
-                            <div class="styled-input">
-                                <input type="password" placeholder="Confirmar contraseña" name="Confirm Password" required="">
-                            </div>
-                            <input type="submit" value="Registrarse" class="btn">
-                        </form>
-                        <p>
-                            <label>
-                                <input type="checkbox" name="check" value="yes"> Registrándose afirma que ha leído y acepta los términos y condiciones
-                            </label>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body modal-body-sub_agile">
+					<div class="main-mailposi">
+						<span class="fa fa-envelope-o" aria-hidden="true"></span>
+					</div>
+					<div class="modal_body_left modal_body_left1">
+						<h3 class="agileinfo_sign">Registrarse</h3>
+						<form id="registerForm" onsubmit="register(this); return false;">
+							<div class="styled-input agile-styled-input-top">
+								<input type="text" placeholder="Nombre" name="name" required="">
+							</div>
+							<div class="styled-input">
+								<input type="text" placeholder="Apellido 1" name="surname1" required="">
+							</div>
+							<div class="styled-input">
+								<input type="text" placeholder="Apellido 2" name="surname2" required="">
+							</div>
+							<div class="styled-input">
+								<input type="text" placeholder="Nombre de usuario" name="username" required="">
+							</div>
+							<div class="styled-input">
+								<input type="email" placeholder="Correo electrónico" name="email" required="">
+							</div>
+							<div class="styled-input">
+								<input type="password" placeholder="Contraseña" name="password" required="">
+							</div>
+							<div class="styled-input">
+								<input type="password" placeholder="Confirmar contraseña" name="confirmPassword" required="">
+							</div>
+							<div class="styled-input">
+								<input type="text" placeholder="Teléfono" name="phone" required="">
+							</div>
+							<input type="submit" value="Registrarse" class="btn">
+						</form>
+						<p>
+							<label>
+								<input type="checkbox" name="check" value="yes"> Registrándose afirma que ha leído y acepta los términos y condiciones
+							</label>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- //signup Model -->
 	<!-- //signup Model -->
 	<!-- //header-bot -->
