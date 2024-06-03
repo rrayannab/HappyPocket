@@ -59,7 +59,7 @@ public class UserServiceTest {
 	@Test
 	void UserLogInTrueTest() {
 		for (User us : userService.getUserList()) {
-			assertTrue(userService.logIn(us.getUsername(), us.getPassword()));
+            assertEquals(userService.logIn(us.getUsername(), us.getPassword()), us);
 		}
 	}
 
@@ -71,11 +71,11 @@ public class UserServiceTest {
 	void UserLogInFalseTest() {
 		List<User> userList = userService.getUserList();
 		if (userList.isEmpty()) {
-			assertFalse(userService.logIn("test", "test"));
+			assertNull(userService.logIn("test", "test"));
 		} else {
 			for (User us : userService.getUserList()) {
-				assertFalse(userService.logIn(us.getUsername(), us.getPassword()+"test"));
-				assertFalse(userService.logIn(us.getUsername()+"test", us.getPassword()));
+				assertNull(userService.logIn(us.getUsername(), us.getPassword()+"test"));
+				assertNull(userService.logIn(us.getUsername()+"test", us.getPassword()));
 			}
 		}
 	}
